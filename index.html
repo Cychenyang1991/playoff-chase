@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NBA Playoffs Milestone Tracker | Are They Breaking Records?</title>
+  <meta name="description" content="See how close NBA stars are to all-time playoff records. Live-style milestone progress for points, threes, assists, and more during the NBA Playoffs." />
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --bg-elevated: #141414;
+      --bg-card: #111111;
+      --border: #2a2a2a;
+      --text: #f0f0f0;
+      --text-muted: #8a8a8a;
+      --accent: #f5a623;
+      --accent-dim: rgba(245, 166, 35, 0.15);
+      --radius: 14px;
+      --font: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1.25rem 1rem 3rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 1.5rem 0 1rem;
+    }
+
+    header h1 {
+      font-size: clamp(1.35rem, 4vw, 1.85rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.35rem;
+      background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .search-section {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .search-section label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+
+    #player-search {
+      width: 100%;
+      padding: 1rem 1.15rem;
+      font-size: 1.05rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--bg-elevated);
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    #player-search::placeholder {
+      color: var(--text-muted);
+    }
+
+    #player-search:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-dim);
+    }
+
+    #autocomplete-list {
+      list-style: none;
+      margin: 0.35rem 0 0;
+      padding: 0;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg-elevated);
+      max-height: 220px;
+      overflow-y: auto;
+      display: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    #autocomplete-list.visible {
+      display: block;
+    }
+
+    #autocomplete-list li {
+      padding: 0.75rem 1rem;
+      cursor: pointer;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+
+    #autocomplete-list li:last-child {
+      border-bottom: none;
+    }
+
+    #autocomplete-list li:hover,
+    #autocomplete-list li[aria-selected="true"] {
+      background: var(--accent-dim);
+    }
+
+    .not-found {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      display: none;
+    }
+
+    .not-found.visible {
+      display: block;
+      animation: fadeIn 0.35s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background: linear-gradient(165deg, #161616 0%, var(--bg-card) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.35rem;
+      display: none;
+      animation: cardIn 0.45s ease;
+    }
+
+    .card.visible {
+      display: block;
+    }
+
+    @keyframes cardIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-header img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .card-header h2 {
+      margin: 0;
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+
+    .status-line {
+      margin: 0 0 1.25rem;
+      font-size: 0.95rem;
+      color: #c8c8c8;
+      line-height: 1.45;
+    }
+
+    .milestone {
+      margin-bottom: 1.15rem;
+    }
+
+    .milestone-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.35rem 0.75rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .milestone-name {
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--text);
+    }
+
+    .milestone-nums {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .milestone-nums strong {
+      color: var(--accent);
+    }
+
+    .chasing {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .bar-track {
+      height: 10px;
+      border-radius: 999px;
+      background: #222;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: 0%;
+      border-radius: 999px;
+      transition: width 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .upcoming {
+      margin-top: 1.35rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .upcoming h3 {
+      margin: 0 0 0.5rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    .upcoming ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      font-size: 0.85rem;
+      color: #b8b8b8;
+    }
+
+    .upcoming li {
+      margin-bottom: 0.35rem;
+    }
+
+    .actions {
+      margin-top: 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      align-items: center;
+    }
+
+    .btn-share {
+      appearance: none;
+      border: 1px solid var(--accent);
+      background: linear-gradient(180deg, rgba(245, 166, 35, 0.2) 0%, rgba(245, 166, 35, 0.05) 100%);
+      color: var(--accent);
+      padding: 0.65rem 1.1rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+
+    .btn-share:hover {
+      box-shadow: 0 4px 20px rgba(245, 166, 35, 0.25);
+    }
+
+    .btn-share:active {
+      transform: scale(0.98);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 1.25rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(120%);
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.65rem 1rem;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      z-index: 100;
+      transition: transform 0.35s ease;
+      max-width: 90vw;
+      text-align: center;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .ad-row {
+      margin-top: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 520px) {
+      .ad-row {
+        flex-direction: row;
+        align-items: stretch;
+      }
+    }
+
+    /* AdSense Ad Unit */
+    .adsense-placeholder {
+      flex: 1;
+      min-height: 100px;
+      background: #1e1e1e;
+      border: 1px dashed #444;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .affiliate-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+    }
+
+    /* Affiliate link: Fanatics/NBA Store */
+    .affiliate-wrap a {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+
+    .affiliate-wrap a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>NBA Playoffs Milestone Tracker</h1>
+      <p>How close is your star to all-time playoff history?</p>
+    </header>
+
+    <section class="search-section" aria-labelledby="search-heading">
+      <h2 id="search-heading" class="visually-hidden" style="position:absolute;clip:rect(0 0 0 0);width:1px;height:1px;overflow:hidden;">Search players</h2>
+      <label for="player-search">Player name</label>
+      <input
+        type="search"
+        id="player-search"
+        autocomplete="off"
+        placeholder="Enter player name (e.g. Stephen Curry)"
+        aria-autocomplete="list"
+        aria-controls="autocomplete-list"
+        aria-expanded="false"
+      />
+      <ul id="autocomplete-list" role="listbox" aria-label="Matching players"></ul>
+    </section>
+
+    <p id="not-found" class="not-found" role="status">Player not found. We keep adding more stars.</p>
+
+    <article id="tracker-card" class="card" aria-live="polite">
+      <div class="card-header">
+        <img id="card-avatar" src="" alt="" width="64" height="64" />
+        <div>
+          <h2 id="card-name"></h2>
+        </div>
+      </div>
+      <p id="card-status" class="status-line"></p>
+      <div id="milestones-container"></div>
+      <section class="upcoming" aria-labelledby="upcoming-heading">
+        <h3 id="upcoming-heading">Upcoming milestones</h3>
+        <ul id="upcoming-list"></ul>
+      </section>
+      <div class="actions">
+        <button type="button" class="btn-share" id="btn-share">Share this card</button>
+      </div>
+      <div class="ad-row">
+        <!-- AdSense Ad Unit -->
+        <div class="adsense-placeholder" aria-hidden="true">AdSense - Responsive</div>
+        <div class="affiliate-wrap">
+          <!-- Affiliate link: Fanatics/NBA Store -->
+          <a href="#">Get his jersey and witness history →</a>
+        </div>
+      </div>
+    </article>
+
+    <footer>
+      <p>© 2025 Playoff Milestones. Data updates daily.</p>
+      <p><a href="#">Privacy Policy</a></p>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    (function () {
+      var PLAYERS = [
+        {
+          id: "lebron",
+          names: ["LeBron James", "Lebron James", "LeBron", "Lebron"],
+          displayName: "LeBron James",
+          avatar: "https://ui-avatars.com/api/?name=LeBron+James&background=552583&color=fff&size=128",
+          teamGradient: ["#552583", "#fdb927"],
+          statusTemplate: function (p) {
+            var m = p.milestones[1];
+            var gap = m.target - m.current;
+            return "LeBron is " + gap + " playoff assists away from passing Magic Johnson for the all-time postseason assists record.";
+          },
+          milestones: [
+            {
+              name: "Playoff Points (record watch)",
+              current: 8289,
+              target: 8500,
+              chasing: "Extending his own #1 mark",
+              displayChasing: "Self (#1 all-time — pace to 8,500)"
+            },
+            {
+              name: "Playoff Assists",
+              current: 2151,
+              target: 2346,
+              chasing: "Magic Johnson",
+              displayChasing: "Magic Johnson"
+            },
+            {
+              name: "Playoff Rebounds",
+              current: 2675,
+              target: 2859,
+              chasing: "Tim Duncan",
+              displayChasing: "Tim Duncan"
+            },
+            {
+              name: "Playoff 3-Pointers Made",
+              current: 464,
+              target: 474,
+              chasing: "James Harden",
+              displayChasing: "James Harden"
+            },
+            {
+              name: "Playoff Free Throws Made",
+              current: 1248,
+              target: 1320,
+              chasing: "Kobe Bryant",
+              displayChasing: "Kobe Bryant"
+            }
+          ],
+          upcoming: [
+            "About 200 more playoff dimes puts Magic’s 2,346 assist total squarely in range.",
+            "Roughly 185 boards moves him past Tim Duncan (2,859) on the all-time playoff glass list.",
+            "A long run with steady foul shooting could lift him past Kobe-era postseason free-throw volume."
+          ]
+        },
+        {
+          id: "curry",
+          names: ["Stephen Curry", "Steph Curry", "Curry", "Stephen"],
+          displayName: "Stephen Curry",
+          avatar: "https://ui-avatars.com/api/?name=Stephen+Curry&background=1D428A&color=fff&size=128",
+          teamGradient: ["#1D428A", "#ffc72c"],
+          statusTemplate: function (p) {
+            var gap = p.milestones[1].target - p.milestones[1].current;
+            return "Curry is " + gap + " playoff points away from passing Jerry West on the all-time postseason scoring list.";
+          },
+          milestones: [
+            {
+              name: "Playoff 3-Pointers Made",
+              current: 650,
+              target: 700,
+              chasing: "Extending his own #1 mark",
+              displayChasing: "Self (#1 all-time — pace to 700)"
+            },
+            {
+              name: "Playoff Points",
+              current: 4147,
+              target: 4457,
+              chasing: "Jerry West",
+              displayChasing: "Jerry West"
+            },
+            {
+              name: "Playoff Assists",
+              current: 953,
+              target: 970,
+              chasing: "Jerry West",
+              displayChasing: "Jerry West"
+            },
+            {
+              name: "Playoff Free Throws Made",
+              current: 721,
+              target: 864,
+              chasing: "James Harden",
+              displayChasing: "James Harden"
+            },
+            {
+              name: "Playoff Field Goals Made",
+              current: 1388,
+              target: 1748,
+              chasing: "Tony Parker",
+              displayChasing: "Tony Parker"
+            }
+          ],
+          upcoming: [
+            "About 310 more playoff points vaults him into the top ten on the career postseason scoring list.",
+            "Seventeen more assists ties Jerry West’s playoff assist line from the classic-era leaderboards.",
+            "Fifty more triples before the next tier keeps the distance between him and every other shooter historically wide."
+          ]
+        },
+        {
+          id: "durant",
+          names: ["Kevin Durant", "Durant", "KD"],
+          displayName: "Kevin Durant",
+          avatar: "https://ui-avatars.com/api/?name=Kevin+Durant&background=E56020&color=fff&size=128",
+          teamGradient: ["#e56020", "#f5a623"],
+          statusTemplate: function (p) {
+            var gap = p.milestones[0].target - p.milestones[0].current;
+            return "Durant is " + gap + " playoff points from climbing another spot on the all-time postseason scoring list.";
+          },
+          milestones: [
+            {
+              name: "Playoff Points",
+              current: 4985,
+              target: 5172,
+              chasing: "Tim Duncan",
+              displayChasing: "Tim Duncan"
+            },
+            {
+              name: "Playoff 3-Pointers Made",
+              current: 431,
+              target: 475,
+              chasing: "Klay Thompson",
+              displayChasing: "Klay Thompson"
+            },
+            {
+              name: "Playoff Field Goals Made",
+              current: 1762,
+              target: 1978,
+              chasing: "Tim Duncan",
+              displayChasing: "Tim Duncan"
+            },
+            {
+              name: "Playoff Rebounds",
+              current: 1333,
+              target: 1561,
+              chasing: "Al Horford",
+              displayChasing: "Al Horford"
+            },
+            {
+              name: "Playoff Assists",
+              current: 713,
+              target: 764,
+              chasing: "Tim Duncan",
+              displayChasing: "Tim Duncan"
+            }
+          ],
+          upcoming: [
+            "Under 200 points to pass another Hall-of-Fame guard on the playoff scoring ladder.",
+            "40 more triples moves him into the next cluster behind Curry-era shooters.",
+            "A healthy conference finals run could flip another rebounds-plus-points combo milestone."
+          ]
+        },
+        {
+          id: "giannis",
+          names: ["Giannis Antetokounmpo", "Giannis", "Antetokounmpo", "Giannis Antetekounmpo"],
+          displayName: "Giannis Antetokounmpo",
+          avatar: "https://ui-avatars.com/api/?name=Giannis+Antetokounmpo&background=00471B&color=fff&size=128",
+          teamGradient: ["#00471c", "#f5a623"],
+          statusTemplate: function (p) {
+            var gap = p.milestones[0].target - p.milestones[0].current;
+            return "Giannis is " + gap + " playoff points away from passing Al Horford on the career postseason scoring list.";
+          },
+          milestones: [
+            {
+              name: "Playoff Points",
+              current: 2270,
+              target: 2353,
+              chasing: "Al Horford",
+              displayChasing: "Al Horford"
+            },
+            {
+              name: "Playoff Rebounds",
+              current: 1022,
+              target: 1051,
+              chasing: "Dolph Schayes",
+              displayChasing: "Dolph Schayes"
+            },
+            {
+              name: "Playoff Assists",
+              current: 446,
+              target: 449,
+              chasing: "Ray Allen",
+              displayChasing: "Ray Allen"
+            },
+            {
+              name: "Playoff Steals",
+              current: 71,
+              target: 81,
+              chasing: "Jamal Murray",
+              displayChasing: "Jamal Murray"
+            },
+            {
+              name: "Playoff Field Goals Made",
+              current: 891,
+              target: 942,
+              chasing: "Kyrie Irving",
+              displayChasing: "Kyrie Irving"
+            }
+          ],
+          upcoming: [
+            "One more big scoring series could lift him past several Hall-of-Fame forwards clustered around 2,350 playoff points.",
+            "Twenty-five boards in a deep run tightens the gap on the all-time playoff rebound list.",
+            "Three more playoff assists ties Ray Allen on the next rung of the all-time assist list."
+          ]
+        },
+        {
+          id: "jokic",
+          names: ["Nikola Jokić", "Nikola Jokic", "Jokić", "Jokic", "Nikola"],
+          displayName: "Nikola Jokić",
+          avatar: "https://ui-avatars.com/api/?name=Nikola+Jokic&background=0E2240&color=fff&size=128",
+          teamGradient: ["#0e2240", "#fec524"],
+          statusTemplate: function (p) {
+            var m = p.milestones[0];
+            var gap = m.target - m.current;
+            return (
+              "Jokić is " +
+              gap +
+              " playoff assist" +
+              (gap === 1 ? "" : "s") +
+              " away from matching Bill Russell’s career playoff assist total."
+            );
+          },
+          milestones: [
+            {
+              name: "Playoff Assists",
+              current: 769,
+              target: 770,
+              chasing: "Bill Russell",
+              displayChasing: "Bill Russell"
+            },
+            {
+              name: "Playoff Points",
+              current: 2580,
+              target: 2601,
+              chasing: "Kevin Garnett",
+              displayChasing: "Kevin Garnett"
+            },
+            {
+              name: "Playoff Rebounds",
+              current: 1238,
+              target: 1246,
+              chasing: "Pau Gasol",
+              displayChasing: "Pau Gasol"
+            },
+            {
+              name: "Playoff Triple-Doubles",
+              current: 17,
+              target: 28,
+              chasing: "LeBron James",
+              displayChasing: "LeBron James"
+            },
+            {
+              name: "Playoff Steals",
+              current: 68,
+              target: 81,
+              chasing: "Jamal Murray",
+              displayChasing: "Jamal Murray"
+            }
+          ],
+          upcoming: [
+            "One more triple-double run tightens the gap with LeBron on the all-time playoff triple-double list.",
+            "Roughly twenty points clears the next cluster of forwards ahead of him on postseason scoring.",
+            "Eight more boards and he moves past Pau Gasol’s playoff rebound total on the career list."
+          ]
+        }
+      ];
+
+      function normalize(s) {
+        return String(s || "")
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .trim();
+      }
+
+      function findPlayers(query) {
+        var q = normalize(query);
+        if (!q) return PLAYERS.slice();
+        return PLAYERS.filter(function (p) {
+          return p.names.some(function (n) {
+            return normalize(n).indexOf(q) !== -1 || q.indexOf(normalize(n)) !== -1;
+          });
+        });
+      }
+
+      function findExactOrBest(query) {
+        var q = normalize(query);
+        if (!q) return null;
+        for (var i = 0; i < PLAYERS.length; i++) {
+          var p = PLAYERS[i];
+          for (var j = 0; j < p.names.length; j++) {
+            if (normalize(p.names[j]) === q) return p;
+          }
+        }
+        var list = findPlayers(query);
+        if (list.length === 1) return list[0];
+        return null;
+      }
+
+      var searchInput = document.getElementById("player-search");
+      var listEl = document.getElementById("autocomplete-list");
+      var notFound = document.getElementById("not-found");
+      var card = document.getElementById("tracker-card");
+      var cardAvatar = document.getElementById("card-avatar");
+      var cardName = document.getElementById("card-name");
+      var cardStatus = document.getElementById("card-status");
+      var milestonesContainer = document.getElementById("milestones-container");
+      var upcomingList = document.getElementById("upcoming-list");
+      var btnShare = document.getElementById("btn-share");
+      var toast = document.getElementById("toast");
+      var selectedIndex = -1;
+      var currentPlayer = null;
+
+      function showToast(msg) {
+        toast.textContent = msg;
+        toast.classList.add("show");
+        setTimeout(function () {
+          toast.classList.remove("show");
+        }, 2600);
+      }
+
+      function renderAutocomplete(matches) {
+        listEl.innerHTML = "";
+        selectedIndex = matches.length ? 0 : -1;
+        matches.forEach(function (p, idx) {
+          var li = document.createElement("li");
+          li.setAttribute("role", "option");
+          li.setAttribute("id", "ac-opt-" + idx);
+          li.textContent = p.displayName;
+          li.dataset.playerId = p.id;
+          if (idx === 0) li.setAttribute("aria-selected", "true");
+          listEl.appendChild(li);
+        });
+        listEl.classList.toggle("visible", matches.length > 0);
+        searchInput.setAttribute("aria-expanded", matches.length > 0 ? "true" : "false");
+      }
+
+      function updateAriaSelected() {
+        var items = listEl.querySelectorAll("li");
+        items.forEach(function (li, i) {
+          if (i === selectedIndex) li.setAttribute("aria-selected", "true");
+          else li.removeAttribute("aria-selected");
+        });
+      }
+
+      function selectPlayer(p) {
+        currentPlayer = p;
+        listEl.classList.remove("visible");
+        searchInput.setAttribute("aria-expanded", "false");
+        notFound.classList.remove("visible");
+        card.classList.add("visible");
+
+        cardAvatar.src = p.avatar;
+        cardAvatar.alt = p.displayName;
+        cardName.textContent = p.displayName;
+
+        var statusText =
+          typeof p.statusTemplate === "function" ? p.statusTemplate(p) : p.statusTemplate;
+        cardStatus.textContent = statusText;
+
+        milestonesContainer.innerHTML = "";
+        p.milestones.forEach(function (m) {
+          var pct = Math.min(100, Math.round((m.current / m.target) * 1000) / 10);
+          var row = document.createElement("div");
+          row.className = "milestone";
+          var grad =
+            "linear-gradient(90deg, " + p.teamGradient[0] + ", " + (p.teamGradient[1] || "#f5a623") + ")";
+          row.innerHTML =
+            '<div class="milestone-top">' +
+            '<span class="milestone-name">' +
+            escapeHtml(m.name) +
+            "</span>" +
+            '<span class="milestone-nums"><strong>' +
+            m.current +
+            "</strong> / " +
+            m.target +
+            " · " +
+            pct +
+            "%</span></div>" +
+            '<div class="chasing">Chasing: ' +
+            escapeHtml(m.displayChasing || m.chasing) +
+            "</div>" +
+            '<div class="bar-track"><div class="bar-fill" data-pct="' +
+            pct +
+            '" style="background:' +
+            grad +
+            ';"></div></div>';
+          milestonesContainer.appendChild(row);
+        });
+
+        upcomingList.innerHTML = "";
+        p.upcoming.forEach(function (line) {
+          var li = document.createElement("li");
+          li.textContent = line;
+          upcomingList.appendChild(li);
+        });
+
+        requestAnimationFrame(function () {
+          milestonesContainer.querySelectorAll(".bar-fill").forEach(function (bar) {
+            var pct = bar.getAttribute("data-pct");
+            bar.style.width = "0%";
+            requestAnimationFrame(function () {
+              bar.style.width = pct + "%";
+            });
+          });
+        });
+      }
+
+      function escapeHtml(str) {
+        return String(str)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
+      }
+
+      function tryCommitSearch() {
+        var q = searchInput.value.trim();
+        var exact = findExactOrBest(q);
+        if (exact) {
+          selectPlayer(exact);
+          return;
+        }
+        var matches = findPlayers(q);
+        if (matches.length === 1) {
+          selectPlayer(matches[0]);
+        } else if (matches.length === 0 && q.length > 0) {
+          card.classList.remove("visible");
+          currentPlayer = null;
+          notFound.classList.add("visible");
+        } else if (matches.length > 1) {
+          notFound.classList.remove("visible");
+        }
+      }
+
+      searchInput.addEventListener("input", function () {
+        notFound.classList.remove("visible");
+        var q = searchInput.value.trim();
+        if (!q) {
+          listEl.classList.remove("visible");
+          card.classList.remove("visible");
+          currentPlayer = null;
+          return;
+        }
+        var matches = findPlayers(q);
+        renderAutocomplete(matches);
+        if (matches.length === 0) {
+          listEl.classList.remove("visible");
+          card.classList.remove("visible");
+          currentPlayer = null;
+          notFound.classList.add("visible");
+        } else {
+          notFound.classList.remove("visible");
+        }
+      });
+
+      searchInput.addEventListener("keydown", function (e) {
+        var items = listEl.querySelectorAll("li");
+        if (e.key === "Enter") {
+          e.preventDefault();
+          if (listEl.classList.contains("visible") && items.length) {
+            var id = items[selectedIndex] && items[selectedIndex].dataset.playerId;
+            if (id) {
+              var sel = PLAYERS.filter(function (x) {
+                return x.id === id;
+              })[0];
+              if (sel) {
+                searchInput.value = sel.displayName;
+                selectPlayer(sel);
+              }
+            }
+          } else {
+            tryCommitSearch();
+          }
+          return;
+        }
+        if (!listEl.classList.contains("visible") || !items.length) return;
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
+          updateAriaSelected();
+        } else if (e.key === "ArrowUp") {
+          e.preventDefault();
+          selectedIndex = Math.max(selectedIndex - 1, 0);
+          updateAriaSelected();
+        } else if (e.key === "Escape") {
+          listEl.classList.remove("visible");
+        }
+      });
+
+      listEl.addEventListener("click", function (e) {
+        var li = e.target.closest("li");
+        if (!li || !li.dataset.playerId) return;
+        var p = PLAYERS.find(function (x) {
+          return x.id === li.dataset.playerId;
+        });
+        if (p) {
+          searchInput.value = p.displayName;
+          selectPlayer(p);
+        }
+      });
+
+      document.addEventListener("click", function (e) {
+        if (!searchInput.contains(e.target) && !listEl.contains(e.target)) {
+          listEl.classList.remove("visible");
+        }
+      });
+
+      btnShare.addEventListener("click", function () {
+        var name = currentPlayer ? currentPlayer.displayName : "your star";
+        var text =
+          "Can " + name + " catch history? Check his playoff milestone tracker! " + window.location.href;
+        if (navigator.share) {
+          navigator
+            .share({ title: document.title, text: text, url: window.location.href })
+            .catch(function () {
+              copyFallback(text);
+            });
+        } else {
+          copyFallback(text);
+        }
+      });
+
+      function copyFallback(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(
+            function () {
+              showToast("Link copied to clipboard");
+            },
+            function () {
+              showToast("Copy blocked — select and copy the address bar");
+            }
+          );
+        } else {
+          var ta = document.createElement("textarea");
+          ta.value = text;
+          document.body.appendChild(ta);
+          ta.select();
+          try {
+            document.execCommand("copy");
+            showToast("Link copied to clipboard");
+          } catch (err) {
+            showToast("Copy not supported");
+          }
+          document.body.removeChild(ta);
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
