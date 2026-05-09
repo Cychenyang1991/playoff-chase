@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Austin Reaves' 48-Hour Redemption: From 8-Point Disaster to 31-Point Playoff Career High</title>
+  <meta name="description" content="The most dramatic bounce-back of the 2026 NBA Playoffs. Austin Reaves went from the worst playoff game by a Laker in 35 years to a career-high 31 points — in just 48 hours. Track every stat, reaction, and milestone." />
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --card: #111111;
+      --border: #2a2a2a;
+      --text: #f0f0f0;
+      --muted: #9a9a9a;
+      --lakers-purple: #552583;
+      --lakers-gold: #fdb927;
+      --rock-red: #8b1538;
+      --radius: 14px;
+      --font: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 1.25rem 1rem 3rem;
+    }
+
+    a {
+      color: var(--lakers-gold);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1.25rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .hero {
+      text-align: center;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.75rem;
+    }
+
+    .hero img {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 3px solid var(--lakers-gold);
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.25rem, 4vw, 1.85rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.65rem;
+      line-height: 1.2;
+    }
+
+    .hero .sub {
+      margin: 0 auto 1rem;
+      max-width: 38em;
+      font-size: 1.02rem;
+      color: var(--muted);
+    }
+
+    .hero .jersey-link {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .hero .jersey-link a {
+      color: var(--muted);
+      border-bottom: 1px solid transparent;
+    }
+
+    .hero .jersey-link a:hover {
+      color: var(--lakers-gold);
+      border-bottom-color: var(--lakers-gold);
+    }
+
+    .compare-wrap {
+      margin-bottom: 2rem;
+    }
+
+    .compare-wrap h2 {
+      margin: 0 0 1rem;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    .compare-split {
+      display: grid;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--card);
+    }
+
+    @media (min-width: 640px) {
+      .compare-split {
+        grid-template-columns: 1fr auto 1fr;
+      }
+    }
+
+    .compare-col {
+      padding: 1.1rem 1rem;
+    }
+
+    .compare-col--g1 {
+      background: linear-gradient(180deg, #1a1014 0%, #120c10 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    @media (min-width: 640px) {
+      .compare-col--g1 {
+        border-bottom: none;
+        border-right: 1px solid var(--border);
+      }
+    }
+
+    .compare-col--g2 {
+      background: linear-gradient(165deg, rgba(85, 37, 131, 0.45) 0%, rgba(15, 12, 20, 0.95) 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    @media (min-width: 640px) {
+      .compare-col--g2 {
+        border-bottom: none;
+        border-left: 1px solid var(--border);
+      }
+    }
+
+    .compare-col h3 {
+      margin: 0 0 0.75rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .compare-col--g1 h3 {
+      color: #b07080;
+    }
+
+    .compare-col--g2 h3 {
+      color: var(--lakers-gold);
+    }
+
+    .compare-table {
+      width: 100%;
+      font-size: 0.84rem;
+      border-collapse: collapse;
+    }
+
+    .compare-table th {
+      text-align: left;
+      padding: 0.4rem 0.35rem 0.4rem 0;
+      font-weight: 600;
+      color: var(--muted);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .compare-table td {
+      padding: 0.45rem 0.35rem 0.45rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      vertical-align: middle;
+    }
+
+    .compare-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .g1-val {
+      color: #9a7a82;
+      font-weight: 600;
+    }
+
+    .g2-val {
+      color: var(--lakers-gold);
+      font-weight: 700;
+    }
+
+    .arrow-cell {
+      text-align: center;
+      font-size: 0.9rem;
+      min-width: 2.25rem;
+      color: var(--muted);
+      padding: 0.35rem 0.25rem !important;
+    }
+
+    .arrow-up {
+      color: #5fd68a;
+    }
+
+    .arrow-down {
+      color: #e85d6f;
+    }
+
+    .arrow-flat {
+      color: var(--muted);
+    }
+
+    .timeline-48 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 0.75rem;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    @media (min-width: 640px) {
+      .timeline-48 {
+        flex-direction: column;
+        padding: 1rem 0.5rem;
+        border-top: none;
+        border-bottom: none;
+        border-left: 1px solid var(--border);
+        border-right: 1px solid var(--border);
+        min-width: 100px;
+      }
+    }
+
+    .timeline-48 .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--lakers-gold);
+      box-shadow: 0 0 0 3px rgba(253, 185, 39, 0.25);
+    }
+
+    .timeline-48 .line {
+      flex: 1;
+      height: 2px;
+      max-width: 80px;
+      background: linear-gradient(90deg, var(--rock-red), var(--lakers-gold));
+      border-radius: 2px;
+    }
+
+    @media (min-width: 640px) {
+      .timeline-48 .line {
+        width: 2px;
+        height: 48px;
+        max-width: none;
+        background: linear-gradient(180deg, var(--rock-red), var(--lakers-gold));
+      }
+    }
+
+    .timeline-48 strong {
+      color: var(--lakers-gold);
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+    }
+
+    .milestones-section h2 {
+      font-size: 1.12rem;
+      margin: 0 0 1.15rem;
+      padding-bottom: 0.45rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .milestone {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .milestone:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .milestone h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1rem;
+    }
+
+    .milestone .meta {
+      margin: 0 0 0.55rem;
+      font-size: 0.88rem;
+      color: #c8c8c8;
+    }
+
+    .milestone .legend {
+      margin: 0 0 0.4rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .milestone .nums {
+      margin: 0 0 0.35rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .milestone .nums strong {
+      color: var(--lakers-gold);
+    }
+
+    .bar-track {
+      height: 10px;
+      border-radius: 999px;
+      background: #222;
+      overflow: hidden;
+      margin-top: 0.3rem;
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--lakers-purple), var(--lakers-gold));
+      animation: barGrow 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: var(--delay, 0s);
+    }
+
+    .bar-fill--danger {
+      background: linear-gradient(90deg, #3a1018, var(--rock-red));
+    }
+
+    @keyframes barGrow {
+      from {
+        width: 0;
+      }
+      to {
+        width: var(--target, 100%);
+      }
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 0.45rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border: 1px solid var(--border);
+      color: #ccc;
+    }
+
+    .badge--rock {
+      border-color: var(--rock-red);
+      background: rgba(139, 21, 56, 0.25);
+      color: #ffb3c6;
+    }
+
+    .badge--gold {
+      border-color: var(--lakers-gold);
+      background: rgba(253, 185, 39, 0.12);
+      color: var(--lakers-gold);
+    }
+
+    .story,
+    .quotes,
+    .stakes {
+      margin: 2rem 0;
+      padding: 1.25rem 1.15rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .story h2,
+    .quotes h2,
+    .stakes h2 {
+      margin: 0 0 0.85rem;
+      font-size: 1.15rem;
+    }
+
+    .story ul {
+      margin: 0;
+      padding-left: 1.15rem;
+      color: #d4d4d4;
+      font-size: 0.92rem;
+    }
+
+    .story li {
+      margin-bottom: 0.55rem;
+    }
+
+    .quote-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 700px) {
+      .quote-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    blockquote {
+      margin: 0;
+      padding: 0.9rem 1rem;
+      background: var(--card);
+      border-radius: 10px;
+      border-left: 3px solid var(--lakers-purple);
+    }
+
+    blockquote p {
+      margin: 0 0 0.65rem;
+      font-size: 0.88rem;
+      font-style: italic;
+      color: #e6e6e6;
+    }
+
+    blockquote cite {
+      font-size: 0.78rem;
+      font-style: normal;
+      color: var(--lakers-gold);
+      font-weight: 600;
+    }
+
+    .stakes ul {
+      margin: 0;
+      padding-left: 1.15rem;
+      color: #d0d0d0;
+      font-size: 0.9rem;
+    }
+
+    .stakes li {
+      margin-bottom: 0.55rem;
+    }
+
+    .share-section {
+      margin: 2rem 0;
+      padding: 1.2rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--card);
+    }
+
+    .share-section h2 {
+      margin: 0 0 0.65rem;
+      font-size: 1rem;
+    }
+
+    .btn-share {
+      appearance: none;
+      border: 1px solid var(--lakers-gold);
+      background: linear-gradient(180deg, rgba(253, 185, 39, 0.15) 0%, transparent);
+      color: var(--lakers-gold);
+      padding: 0.65rem 1.1rem;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-bottom: 0.85rem;
+    }
+
+    .adsense-placeholder {
+      min-height: 88px;
+      background: #1a1a1a;
+      border: 1px dashed #444;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 0.76rem;
+      font-weight: 600;
+      margin-bottom: 0.65rem;
+    }
+
+    .affiliate-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .affiliate-note a {
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 2.25rem;
+      padding-top: 1.35rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    footer p {
+      margin: 0.35rem 0;
+    }
+
+    .visit-stats {
+      margin: 0.75rem 0 0;
+      font-size: 0.78rem;
+      font-variant-numeric: tabular-nums;
+      color: var(--muted);
+    }
+
+    .visit-stats strong {
+      color: var(--accent, var(--gold, var(--lakers-gold, #f5a623)));
+      font-weight: 700;
+    }
+
+    .comments-section {
+      margin-top: 2.25rem;
+      padding: 1.35rem 1.15rem;
+      background: linear-gradient(165deg, #161616 0%, var(--card) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .comments-section h2 {
+      margin: 0 0 0.35rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .comments-intro {
+      margin: 0 0 1rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .comments-intro a {
+      color: var(--accent, var(--gold, var(--lakers-gold, #f5a623)));
+      text-decoration: none;
+    }
+
+    .comments-intro a:hover {
+      text-decoration: underline;
+    }
+
+    .comments-intro code {
+      font-size: 0.8rem;
+      background: var(--surface);
+      padding: 0.1rem 0.35rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    #giscus-anchor {
+      min-height: 1rem;
+    }
+
+    .giscus-setup-hint {
+      margin: 0;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .giscus-setup-hint[hidden] {
+      display: none;
+    }
+
+    .giscus-setup-hint code {
+      font-size: 0.78rem;
+      background: var(--surface);
+      padding: 0.1rem 0.35rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    .giscus-setup-hint a {
+      color: var(--accent, var(--gold, var(--lakers-gold, #f5a623)));
+      text-decoration: none;
+    }
+
+    .giscus-setup-hint a:hover {
+      text-decoration: underline;
+    }
+
+    .giscus-setup-hint strong {
+      color: var(--text);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 1.2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(130%);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.6rem 1rem;
+      border-radius: 10px;
+      font-size: 0.84rem;
+      z-index: 40;
+      transition: transform 0.35s ease;
+      max-width: 92vw;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back-link" href="../index.html">← Back to Full Playoff Tracker</a>
+
+    <header class="hero">
+      <img
+        src="https://ui-avatars.com/api/?name=Austin+Reaves&background=552583&color=fff&size=128"
+        width="96"
+        height="96"
+        alt="Austin Reaves"
+      />
+      <h1>The 48-Hour Redemption of Austin Reaves</h1>
+      <p class="sub">Game 1: 8 points on 3-of-16 shooting. Game 2: 31 points on 10-of-16 shooting. This is the story of how Austin Reaves went from playoff villain to playoff hero in two nights.</p>
+      <p class="jersey-link">
+        <!-- Affiliate link: Fanatics/NBA Store -->
+        <a href="#">Wear his jersey — Fanatics / NBA Store →</a>
+      </p>
+    </header>
+
+    <section class="compare-wrap" aria-labelledby="compare-h">
+      <h2 id="compare-h">The Tale of Two Games</h2>
+      <div class="compare-split">
+        <div class="compare-col compare-col--g1">
+          <h3>Game 1 — May 5</h3>
+          <p style="margin:0;font-size:1.75rem;font-weight:800;color:#9a7a82">8</p>
+          <p style="margin:0.35rem 0 0;font-size:0.85rem;color:#9a7a82">PTS · 3-16 FG · 18.8%</p>
+          <p style="margin:0.5rem 0 0;font-size:0.82rem;color:#7a6568">L 108-90 @ OKC</p>
+        </div>
+
+        <div class="timeline-48" aria-hidden="true">
+          <span class="dot" title="Game 1"></span>
+          <span class="line"></span>
+          <div>
+            <strong>48 HOURS</strong>
+            May 5 → May 7
+          </div>
+          <span class="line"></span>
+          <span class="dot" title="Game 2"></span>
+        </div>
+
+        <div class="compare-col compare-col--g2">
+          <h3>Game 2 — May 7</h3>
+          <p style="margin:0;font-size:1.75rem;font-weight:800;color:var(--lakers-gold)">31</p>
+          <p style="margin:0.35rem 0 0;font-size:0.85rem;color:var(--lakers-gold)">PTS · 10-16 FG · 62.5%</p>
+          <p style="margin:0.5rem 0 0;font-size:0.82rem;color:#e8c96a">L 125-107 @ OKC</p>
+        </div>
+      </div>
+
+      <table class="compare-table" style="margin-top: 1rem; border: 1px solid var(--border); border-radius: 10px; background: var(--surface)" aria-label="Game 1 vs Game 2 with trend arrows">
+        <caption style="caption-side: top; text-align: left; padding: 0.65rem 1rem; font-size: 0.8rem; color: var(--muted)">Full stat sheet — Game 1 (muted) vs Game 2 (gold). Arrows show Game 2 vs Game 1 movement.</caption>
+        <thead>
+          <tr>
+            <th scope="col" style="padding-left: 1rem">Stat</th>
+            <th scope="col">Game 1 (May 5)</th>
+            <th scope="col"></th>
+            <th scope="col">Game 2 (May 7)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding-left: 1rem">Points</td>
+            <td class="g1-val">8</td>
+            <td class="arrow-cell"><span class="arrow-up" aria-label="Improved">↑</span></td>
+            <td class="g2-val">31</td>
+          </tr>
+          <tr>
+            <td style="padding-left: 1rem">FG</td>
+            <td class="g1-val">3-16</td>
+            <td class="arrow-cell"><span class="arrow-up">↑</span></td>
+            <td class="g2-val">10-16</td>
+          </tr>
+          <tr>
+            <td style="padding-left: 1rem">FG%</td>
+            <td class="g1-val">18.8%</td>
+            <td class="arrow-cell"><span class="arrow-up">↑</span></td>
+            <td class="g2-val">62.5%</td>
+          </tr>
+          <tr>
+            <td style="padding-left: 1rem">3PT</td>
+            <td class="g1-val">0-5</td>
+            <td class="arrow-cell"><span class="arrow-up">↑</span></td>
+            <td class="g2-val">3-6</td>
+          </tr>
+          <tr>
+            <td style="padding-left: 1rem">3PT%</td>
+            <td class="g1-val">0.0%</td>
+            <td class="arrow-cell"><span class="arrow-up">↑</span></td>
+            <td class="g2-val">50.0%</td>
+          </tr>
+          <tr>
+            <td style="padding-left: 1rem">FT</td>
+            <td class="g1-val">2-2</td>
+            <td class="arrow-cell"><span class="arrow-up">↑</span></td>
+            <td class="g2-val">8-10</td>
+          </tr>
+          <tr>
+            <td style="padding-left: 1rem">Assists</td>
+            <td class="g1-val">6</td>
+            <td class="arrow-cell"><span class="arrow-flat">→</span></td>
+            <td class="g2-val">6</td>
+          </tr>
+          <tr>
+            <td style="padding-left: 1rem">Rebounds</td>
+            <td class="g1-val">5</td>
+            <td class="arrow-cell"><span class="arrow-down">↓</span></td>
+            <td class="g2-val">2</td>
+          </tr>
+          <tr>
+            <td style="padding-left: 1rem">Turnovers</td>
+            <td class="g1-val">4</td>
+            <td class="arrow-cell"><span class="arrow-down">↓</span></td>
+            <td class="g2-val">5</td>
+          </tr>
+          <tr>
+            <td style="padding-left: 1rem">Minutes</td>
+            <td class="g1-val">36</td>
+            <td class="arrow-cell"><span class="arrow-up">↑</span></td>
+            <td class="g2-val">38</td>
+          </tr>
+          <tr>
+            <td style="padding-left: 1rem">Result</td>
+            <td class="g1-val">L 108-90</td>
+            <td class="arrow-cell"><span class="arrow-flat">—</span></td>
+            <td class="g2-val">L 125-107</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="milestones-section" aria-labelledby="mile-h">
+      <h2 id="mile-h">Milestone Tracker</h2>
+
+      <article class="milestone">
+        <h3>Milestone 1: The Rock Bottom — Worst Laker Playoff Shooting in 35 Years</h3>
+        <p class="meta">18.8% field goal percentage (3-16 FG) in Game 1. Significance: lowest FG% by any Laker in a playoff game in the last 35 years (minimum 15 attempts), according to ESPN Insights. Missed all 5 three-point attempts. Had 4 turnovers. Was 1-of-11 from the field before the 4th quarter.</p>
+        <p class="legend">Chasing: Historical Laker playoff shooting floors — this game hit rock bottom</p>
+        <p class="nums"><strong>18.8%</strong> FG · bar shows the cold-shooting floor (illustrative 19%)</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill bar-fill--danger" style="--target: 19%; --delay: 0.05s"></div>
+        </div>
+        <span class="badge badge--rock">Rock Bottom</span>
+      </article>
+
+      <article class="milestone">
+        <h3>Milestone 2: The Bounce-Back — Playoff Career High</h3>
+        <p class="meta">31 points on 10-16 FG (62.5%), 3-6 3PT (50%), 8-10 FT in Game 2. New playoff career high; previous playoff career high was 23 points. Led all scorers in the game. The &quot;AR of old&quot; finally returned.</p>
+        <p class="legend">Chasing: Sustaining this ceiling through Game 3 and beyond</p>
+        <p class="nums"><strong>31 PTS</strong> · vs prior playoff high 23 · <strong>100%</strong> milestone unlocked</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" style="--target: 100%; --delay: 0.1s"></div>
+        </div>
+        <span class="badge badge--gold">Career High</span>
+      </article>
+
+      <article class="milestone">
+        <h3>Milestone 3: The 14-Miss Streak — Then It All Changed</h3>
+        <p class="meta">Had missed 14 consecutive three-pointers entering Game 2 (dating back to the first round vs Houston). Shot 3-of-6 from three in Game 2 (50%). The moment the &quot;Hillbilly Kobe&quot; shooting touch returned.</p>
+        <p class="legend">Chasing: Rhythm and confidence from deep — streak snapped</p>
+        <p class="nums"><strong>Streak ended</strong> · 3-6 from three · 100%</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" style="--target: 100%; --delay: 0.14s"></div>
+        </div>
+        <span class="badge">Streak Snapped</span>
+      </article>
+
+      <article class="milestone">
+        <h3>Milestone 4: Regular Season vs. Playoffs — The Injury Factor</h3>
+        <p class="meta">Regular season 2025-26: 23.3 PPG, 49.0% FG, 36.0% 3PT, 4.7 RPG, 5.5 APG. Playoffs 2026 (before G2): 30.4% FG, 0% 3PT, struggling after returning from Grade 2 left oblique strain. Injury: suffered Grade 2 left oblique strain on April 2 vs Thunder. Missed nearly a month. Rushed back for Game 5 of Round 1 vs Houston.</p>
+        <p class="legend">Chasing: Full-strength conditioning vs OKC's length and pace</p>
+        <p class="nums"><strong>Comeback arc</strong> · Game 2 as inflection · 85%</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" style="--target: 85%; --delay: 0.18s"></div>
+        </div>
+        <span class="badge">Injury Comeback</span>
+      </article>
+
+      <article class="milestone">
+        <h3>Milestone 5: The Narrative Shift — Social Media's Whipping Boy to Silencing Critics</h3>
+        <p class="meta">After Game 1: criticism dominated social media — &quot;playoff fraud,&quot; memes of the 18.8% FG line. JJ Redick before Game 2: &quot;He's got a great sense of self-accountability to where he's his own worst critic.&quot; LeBron James after Game 1: &quot;He was out a month. We know he's gonna make shots and make plays.&quot; Reaves after Game 1: &quot;Nobody cares about that. I gotta go out there and play better.&quot; After Game 2: Reaves proved he could still dominate against the NBA's #1 defense.</p>
+        <p class="legend">Chasing: Consistency that rewrites the postseason storyline</p>
+        <p class="nums"><strong>Narrative reset</strong> · post–Game 2 · 100%</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" style="--target: 100%; --delay: 0.22s"></div>
+        </div>
+        <span class="badge badge--gold">Critics Silenced</span>
+      </article>
+
+      <article class="milestone">
+        <h3>Milestone 6: The Fire Within — Confrontation with Officials</h3>
+        <p class="meta">Reaves ended Game 2 in a heated exchange with referee John Goble, surrounded by almost all of his teammates. Reaves: &quot;I just thought it was disrespectful... I just didn't feel like he needed to yell in my face like that. I told him if I did that to him first, I would've gotten a tech.&quot; Despite the confrontation, Reaves led all scorers.</p>
+        <p class="legend">Chasing: Channeling emotion into production — mission accomplished in Game 2</p>
+        <p class="nums"><strong>Composure + edge</strong> · 95%</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" style="--target: 95%; --delay: 0.26s"></div>
+        </div>
+        <span class="badge">Fire &amp; Focus</span>
+      </article>
+    </section>
+
+    <section class="story" aria-labelledby="story-h">
+      <h2 id="story-h">From Villain to Hero in 48 Hours</h2>
+      <ul>
+        <li>In Game 1 on May 5, Austin Reaves produced what ESPN called the worst shooting performance by a Laker in a playoff game in 35 years. His 18.8% field goal percentage on 16 attempts was historically bad.</li>
+        <li>Reaves had only recently returned from a Grade 2 left oblique strain suffered on April 2 against the same Thunder team. Game 1 was just his third game back from a month-long absence.</li>
+        <li>The criticism was immediate and brutal. NBA Twitter and sports media eviscerated the undrafted guard who had averaged 23.3 PPG during the regular season.</li>
+        <li>LeBron James defended him: &quot;He was out a month... his presence alone helps us, no matter what.&quot; Coach JJ Redick was equally supportive: &quot;He's a great player. He's gonna bounce back.&quot;</li>
+        <li>In Game 2 on May 7, Reaves responded with the best playoff performance of his career: 31 points on sizzling 62.5% shooting and 50% from three.</li>
+        <li>He broke a streak of 14 consecutive missed three-pointers dating back to the first round.</li>
+        <li>The Lakers still lost 125-107 to fall behind 0-2 in the series, but Reaves' resurgence gave the team hope heading back to Los Angeles for Game 3.</li>
+        <li>Without Luka Dončić (hamstring injury, expected out 3 more weeks), Reaves' return to form is the Lakers' biggest — and perhaps only — silver lining.</li>
+      </ul>
+    </section>
+
+    <section class="quotes" aria-labelledby="quotes-h">
+      <h2 id="quotes-h">What They Said</h2>
+      <div class="quote-grid">
+        <blockquote>
+          <p>&quot;He didn't play well, but he's gonna bounce back. He's a great player.&quot;</p>
+          <cite>JJ Redick (Lakers Head Coach)</cite>
+        </blockquote>
+        <blockquote>
+          <p>&quot;He was out a month. His presence alone helps us, no matter what.&quot;</p>
+          <cite>LeBron James</cite>
+        </blockquote>
+        <blockquote>
+          <p>&quot;Nobody cares about that. I gotta go out there and play better.&quot;</p>
+          <cite>Austin Reaves (after Game 1)</cite>
+        </blockquote>
+        <blockquote>
+          <p>&quot;I just didn't feel like he needed to yell in my face like that... I felt disrespected.&quot;</p>
+          <cite>Austin Reaves (after Game 2, on the referee)</cite>
+        </blockquote>
+        <blockquote style="grid-column: 1 / -1">
+          <p>&quot;He's got a great sense of self-accountability to where he's his own worst critic.&quot;</p>
+          <cite>JJ Redick (on Reaves' mentality)</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="stakes" aria-labelledby="stakes-h">
+      <h2 id="stakes-h">What's at Stake</h2>
+      <ul>
+        <li><strong>Series status:</strong> Lakers trail Thunder 0-2 heading into Game 3 in Los Angeles (May 10).</li>
+        <li><strong>Luka Dončić:</strong> Out indefinitely with a strained left hamstring, unlikely to return for the semifinals.</li>
+        <li><strong>Reaves' contract:</strong> The 27-year-old is due for a new contract this summer that would solidify his status as one of the sport's star players.</li>
+        <li><strong>The bottom line:</strong> If Reaves can sustain his Game 2 production at home, the Lakers have a fighting chance to tie the series. If the Game 1 version returns, a sweep is inevitable.</li>
+      </ul>
+    </section>
+
+    <section class="share-section" aria-labelledby="share-h">
+      <h2 id="share-h">Share &amp; Support</h2>
+      <button type="button" class="btn-share" id="btn-share">Share this page</button>
+      <!-- AdSense Ad Unit -->
+      <div class="adsense-placeholder" aria-hidden="true">AdSense - Responsive</div>
+      <p class="affiliate-note">
+        <!-- Affiliate link: Fanatics/NBA Store -->
+        <a href="#">Rep the bounce-back king — Get Reaves' Jersey →</a>
+      </p>
+    </section>
+
+    <section class="comments-section" aria-labelledby="comments-heading">
+      <h2 id="comments-heading">Comments</h2>
+      <p class="comments-intro">
+        Powered by <a href="https://giscus.app" target="_blank" rel="noopener noreferrer">Giscus</a> — sign in with
+        GitHub to post. Uses a separate discussion thread per page (<code>pathname</code> mapping).
+      </p>
+      <div id="giscus-anchor"></div>
+      <p id="giscus-setup-hint" class="giscus-setup-hint">
+        To enable comments: enable <strong>Discussions</strong> on your repo, install the
+        <strong>Giscus</strong> GitHub App, then open
+        <a href="https://giscus.app" target="_blank" rel="noopener noreferrer">giscus.app</a> → paste the generated
+        IDs into <code>js/site-config.js</code> (<code>giscusRepo</code>, <code>giscusRepoId</code>,
+        <code>giscusCategoryId</code>, and matching <code>giscusCategory</code>).
+      </p>
+    </section>
+
+    <footer>
+      <p>Data sources: ESPN, Basketball-Reference.com, LA Times, Sporting News, Fadeaway World, Spectrum SportsNet</p>
+      <p>© 2025 Playoff Milestones. Data updates daily.</p>
+      <p
+        class="visit-stats"
+        title="Public estimate via Page Views API: about one count per browser per 30 minutes on this site."
+      >
+        Site visits: <strong id="visit-count">—</strong>
+      </p>
+      <p><a href="#">Privacy Policy</a></p>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    (function () {
+      var btn = document.getElementById("btn-share");
+      var toast = document.getElementById("toast");
+      var SHARE_TEXT =
+        "Austin Reaves went from the worst Laker playoff game in 35 years to a career-high 31 points — all in 48 hours. Check his redemption story.";
+
+      function showToast(msg) {
+        toast.textContent = msg;
+        toast.classList.add("show");
+        setTimeout(function () {
+          toast.classList.remove("show");
+        }, 2600);
+      }
+
+      function copyFallback(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(
+            function () {
+              showToast("Link copied to clipboard");
+            },
+            function () {
+              showToast("Copy blocked — try the address bar");
+            }
+          );
+        } else {
+          var ta = document.createElement("textarea");
+          ta.value = text;
+          document.body.appendChild(ta);
+          ta.select();
+          try {
+            document.execCommand("copy");
+            showToast("Link copied to clipboard");
+          } catch (e) {
+            showToast("Copy not supported");
+          }
+          document.body.removeChild(ta);
+        }
+      }
+
+      btn.addEventListener("click", function () {
+        var text = SHARE_TEXT + " " + window.location.href;
+        if (navigator.share) {
+          navigator
+            .share({
+              title: document.title,
+              text: text,
+              url: window.location.href
+            })
+            .catch(function () {
+              copyFallback(text);
+            });
+        } else {
+          copyFallback(text);
+        }
+      });
+    })();
+  </script>
+  <script src="js/site-config.js" defer></script>
+  <script src="js/giscus-loader.js" defer></script>
+  <script src="js/visit-counter.js" defer></script>
+</body>
+</html>

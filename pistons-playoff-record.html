@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detroit Pistons Playoff Records Tracker 2026: From 14 Wins to Championship Chase</title>
+  <meta name="description" content="Track every Detroit Pistons franchise playoff record in 2026. From ending the 18-year series win drought to Cade Cunningham breaking Isiah Thomas' scoring record — the full story of Detroit's historic postseason run." />
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --card: #111111;
+      --border: #2a2a2a;
+      --text: #f0f0f0;
+      --muted: #9a9a9a;
+      --pistons-blue: #1d428a;
+      --pistons-red: #c8102e;
+      --gold: #f5a623;
+      --radius: 14px;
+      --font: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1.25rem 1rem 3rem;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1.25rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .back-link:hover {
+      color: var(--gold);
+    }
+
+    .page-header {
+      text-align: center;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.75rem;
+    }
+
+    .logo-wrap {
+      margin: 0 auto 1rem;
+      width: 88px;
+      height: 88px;
+    }
+
+    .page-header h1 {
+      font-size: clamp(1.3rem, 4vw, 1.9rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.65rem;
+      line-height: 1.2;
+    }
+
+    .subhead {
+      margin: 0 auto;
+      max-width: 38em;
+      font-size: 1.02rem;
+      color: var(--muted);
+    }
+
+    .snapshot {
+      background: linear-gradient(160deg, #161922 0%, var(--card) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.35rem 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .snapshot h2 {
+      margin: 0 0 1rem;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+    }
+
+    .snapshot-grid {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    @media (min-width: 560px) {
+      .snapshot-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .snapshot dl {
+      margin: 0;
+      padding: 0.85rem 1rem;
+      background: var(--surface);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    .snapshot dt {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .snapshot dd {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .snapshot .full {
+      grid-column: 1 / -1;
+    }
+
+    .milestones-section h2 {
+      font-size: 1.15rem;
+      margin: 0 0 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .milestone {
+      margin-bottom: 1.65rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .milestone:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .milestone h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .milestone .meta {
+      font-size: 0.88rem;
+      color: #c8c8c8;
+      margin: 0 0 0.65rem;
+    }
+
+    .milestone .legend {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin: 0 0 0.5rem;
+    }
+
+    .milestone .nums {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin: 0 0 0.45rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .milestone .nums strong {
+      color: var(--gold);
+    }
+
+    .bar-track {
+      height: 11px;
+      border-radius: 999px;
+      background: #222;
+      overflow: hidden;
+      margin-top: 0.35rem;
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--pistons-blue), var(--pistons-red));
+      animation: barGrow 1.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: var(--delay, 0s);
+    }
+
+    @keyframes barGrow {
+      from {
+        width: 0;
+      }
+      to {
+        width: var(--target, 100%);
+      }
+    }
+
+    .badge-row {
+      margin-top: 0.5rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, rgba(29, 66, 138, 0.35) 0%, rgba(200, 16, 46, 0.2) 100%);
+      border: 1px solid var(--pistons-red);
+      color: #fff;
+    }
+
+    .badge--gold {
+      background: linear-gradient(135deg, rgba(245, 166, 35, 0.28) 0%, rgba(245, 166, 35, 0.08) 100%);
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .leaderboard {
+      margin: 0.75rem 0 0;
+      padding: 0.85rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .leaderboard h4 {
+      margin: 0 0 0.65rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+    }
+
+    .leaderboard ol {
+      margin: 0;
+      padding-left: 1.25rem;
+      color: #d8d8d8;
+      font-size: 0.88rem;
+    }
+
+    .leaderboard li {
+      margin-bottom: 0.5rem;
+    }
+
+    .leaderboard .note {
+      margin: 0.75rem 0 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .story {
+      margin: 2.25rem 0;
+      padding: 1.35rem 1.25rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .story h2 {
+      margin: 0 0 1rem;
+      font-size: 1.2rem;
+    }
+
+    .story ul {
+      margin: 0;
+      padding-left: 1.2rem;
+      color: #d0d0d0;
+    }
+
+    .story li {
+      margin-bottom: 0.65rem;
+    }
+
+    .story li:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-section {
+      margin: 2.25rem 0;
+    }
+
+    .timeline-section h2 {
+      font-size: 1.15rem;
+      margin: 0 0 1.25rem;
+    }
+
+    .timeline {
+      margin: 0;
+      padding: 0 0 0 1.15rem;
+      list-style: none;
+      border-left: 3px solid var(--pistons-red);
+    }
+
+    .timeline li {
+      position: relative;
+      padding: 0.65rem 0 0.65rem 1.1rem;
+      margin: 0;
+      font-size: 0.9rem;
+      color: #d6d6d6;
+    }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -1.36rem;
+      top: 0.85rem;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--pistons-blue);
+      box-shadow: 0 0 0 3px var(--bg);
+    }
+
+    .timeline strong {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .share-section {
+      margin: 2rem 0;
+      padding: 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--card);
+    }
+
+    .share-section h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1rem;
+    }
+
+    .btn-share {
+      appearance: none;
+      border: 1px solid var(--gold);
+      background: linear-gradient(180deg, rgba(245, 166, 35, 0.18) 0%, rgba(245, 166, 35, 0.05) 100%);
+      color: var(--gold);
+      padding: 0.7rem 1.15rem;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-bottom: 1rem;
+    }
+
+    .btn-share:hover {
+      box-shadow: 0 4px 24px rgba(245, 166, 35, 0.2);
+    }
+
+    .ad-row {
+      margin-bottom: 0.75rem;
+    }
+
+    /* AdSense Ad Unit */
+    .adsense-placeholder {
+      min-height: 90px;
+      background: #1a1a1a;
+      border: 1px dashed #444;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .affiliate-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* Affiliate link: Fanatics/NBA Store */
+    .affiliate-note a {
+      color: var(--muted);
+      border-bottom: 1px solid transparent;
+    }
+
+    .affiliate-note a:hover {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0.35rem 0;
+    }
+
+    .visit-stats {
+      margin: 0.75rem 0 0;
+      font-size: 0.78rem;
+      font-variant-numeric: tabular-nums;
+      color: var(--muted);
+    }
+
+    .visit-stats strong {
+      color: var(--accent, var(--gold, var(--lakers-gold, #f5a623)));
+      font-weight: 700;
+    }
+
+    .comments-section {
+      margin-top: 2.25rem;
+      padding: 1.35rem 1.15rem;
+      background: linear-gradient(165deg, #161616 0%, var(--card) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .comments-section h2 {
+      margin: 0 0 0.35rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .comments-intro {
+      margin: 0 0 1rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .comments-intro a {
+      color: var(--accent, var(--gold, var(--lakers-gold, #f5a623)));
+      text-decoration: none;
+    }
+
+    .comments-intro a:hover {
+      text-decoration: underline;
+    }
+
+    .comments-intro code {
+      font-size: 0.8rem;
+      background: var(--surface);
+      padding: 0.1rem 0.35rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    #giscus-anchor {
+      min-height: 1rem;
+    }
+
+    .giscus-setup-hint {
+      margin: 0;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .giscus-setup-hint[hidden] {
+      display: none;
+    }
+
+    .giscus-setup-hint code {
+      font-size: 0.78rem;
+      background: var(--surface);
+      padding: 0.1rem 0.35rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    .giscus-setup-hint a {
+      color: var(--accent, var(--gold, var(--lakers-gold, #f5a623)));
+      text-decoration: none;
+    }
+
+    .giscus-setup-hint a:hover {
+      text-decoration: underline;
+    }
+
+    .giscus-setup-hint strong {
+      color: var(--text);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 1.25rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(140%);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.65rem 1rem;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      z-index: 50;
+      transition: transform 0.35s ease;
+      max-width: 92vw;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back-link" href="../index.html">← Back to Full Playoff Tracker</a>
+
+    <header class="page-header">
+      <div class="logo-wrap" aria-hidden="true">
+        <svg viewBox="0 0 88 88" width="88" height="88" role="img" aria-label="Detroit Pistons themed mark">
+          <circle cx="44" cy="44" r="40" fill="#1d428a" stroke="#c8102e" stroke-width="4" />
+          <text x="44" y="48" text-anchor="middle" fill="#fff" font-size="22" font-weight="800" font-family="Segoe UI, sans-serif">D</text>
+          <circle cx="44" cy="44" r="6" fill="#c8102e" />
+        </svg>
+      </div>
+      <h1>Detroit Pistons: 2026 Playoff Records Tracker</h1>
+      <p class="subhead">From 14 wins to the #1 seed. From 18-year drought to Eastern Conference Semifinals. Every record, milestone, and historic moment.</p>
+    </header>
+
+    <section class="snapshot" aria-labelledby="snapshot-heading">
+      <h2 id="snapshot-heading">At a Glance</h2>
+      <div class="snapshot-grid">
+        <dl>
+          <dt>2025-26 Regular Season</dt>
+          <dd>60-22 (.732), #1 Seed in Eastern Conference</dd>
+        </dl>
+        <dl>
+          <dt>2024-25 Regular Season</dt>
+          <dd>44-38, #6 Seed (first playoff appearance since 2019)</dd>
+        </dl>
+        <dl>
+          <dt>2023-24 Regular Season</dt>
+          <dd>14-68 (NBA's worst record)</dd>
+        </dl>
+        <dl>
+          <dt>All-Time Playoff Record</dt>
+          <dd>193-189</dd>
+        </dl>
+        <dl>
+          <dt>All-Time Playoff Series Record</dt>
+          <dd>39-39</dd>
+        </dl>
+        <dl>
+          <dt>NBA Championships</dt>
+          <dd>3 (1989, 1990, 2004)</dd>
+        </dl>
+        <dl class="full">
+          <dt>Current Playoff Status</dt>
+          <dd>Lead Cavaliers 2-0 in Eastern Conference Semifinals</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="milestones-section" aria-labelledby="milestones-heading">
+      <h2 id="milestones-heading">Franchise Milestones — 2026 Edition</h2>
+
+      <article class="milestone">
+        <h3>Milestone 1: 18-Year Playoff Series Win Drought — ENDED</h3>
+        <p class="meta">Won first playoff series since 2008. How it ended: defeated Orlando Magic 4-3 in the 2026 First Round. Irony: the last series win was also against the Orlando Magic (2008 Eastern Conference Semifinals, won 4-1). The 2008 Pistons roster included Chauncey Billups, Richard Hamilton, Tayshaun Prince, and Rasheed Wallace — the &quot;Goin' to Work&quot; era core.</p>
+        <p class="legend">Chasing: Closure on nearly two decades without a series victory — achieved in 2026</p>
+        <p class="nums"><strong>Drought ended</strong> · 100%</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" style="--target: 100%; --delay: 0.05s"></div>
+        </div>
+        <div class="badge-row"><span class="badge badge--gold">History Made — 2026</span></div>
+      </article>
+
+      <article class="milestone">
+        <h3>Milestone 2: NBA-Record 11-Game Home Playoff Losing Streak — ENDED</h3>
+        <p class="meta">Won first home playoff game since May 26, 2008. Breakthrough game: April 23, 2026 — Pistons 98, Magic 83 (Game 2, First Round). Previous home win: May 26, 2008 vs Boston Celtics (94-75, Game 4 of Eastern Conference Finals). Cade Cunningham: 27 PTS, 11 AST, 6 REB to lead the breakthrough.</p>
+        <p class="legend">Chasing: Home-court pride at Little Caesars Arena — streak snapped</p>
+        <p class="nums"><strong>Home playoff win</strong> · 100%</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" style="--target: 100%; --delay: 0.1s"></div>
+        </div>
+        <div class="badge-row"><span class="badge badge--gold">History Made</span></div>
+      </article>
+
+      <article class="milestone">
+        <h3>Milestone 3: 5-Game Playoff Win Streak — First Since 2008</h3>
+        <p class="meta">Current streak: 5 straight playoff wins (G5 vs ORL through G2 vs CLE). Last comparable streak: 2008 playoffs (won 4 straight vs 76ers, then 2 straight vs Magic). The Pistons have not had a playoff win streak this long since the &quot;Goin' to Work&quot; era.</p>
+        <p class="legend">Chasing: Sustaining momentum deeper into the 2026 bracket</p>
+        <p class="nums"><strong>5</strong> straight wins · active · 100% of this checkpoint</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" style="--target: 100%; --delay: 0.15s"></div>
+        </div>
+        <div class="badge-row"><span class="badge badge--gold">Active Streak</span></div>
+      </article>
+
+      <article class="milestone">
+        <h3>Milestone 4: 60-Win Season — First Since 2005-06</h3>
+        <p class="meta">60-22 record, #1 seed in the Eastern Conference. Last 60-win season: 2005-06 (64-18 under Flip Saunders). Last #1 seed: 2006-07 season. Context: just two seasons after winning only 14 games — the greatest single-season turnaround in franchise history (46-win improvement).</p>
+        <p class="legend">Chasing: Banner seasons of the mid-2000s — matched for win total in the modern era</p>
+        <p class="nums"><strong>60 wins</strong> · #1 seed · 100%</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" style="--target: 100%; --delay: 0.2s"></div>
+        </div>
+        <div class="badge-row"><span class="badge">Franchise Record</span></div>
+      </article>
+
+      <article class="milestone">
+        <h3>Milestone 5: Team Playoff Scoring — Cade Cunningham's Record Chase</h3>
+        <p class="meta">Cade Cunningham averaging 28.3 career playoff PPG — highest in Pistons franchise history. Previous record: Isiah Thomas (20.4 PPG across 111 career playoff games). Cunningham is redefining playoff excellence in Detroit; his 30.6 PPG this postseason is on pace to challenge single-postseason franchise marks.</p>
+        <p class="legend">Chasing: Every scoring chart in the Pistons' postseason record book</p>
+        <p class="nums"><strong>28.3</strong> career playoff PPG · franchise #1 · bar at 100% (defending the mark)</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" style="--target: 100%; --delay: 0.25s"></div>
+        </div>
+        <div class="badge-row"><span class="badge">Franchise #1</span></div>
+      </article>
+
+      <article class="milestone">
+        <h3>Milestone 6: Franchise Single-Game Playoff Scoring — Top 5 All-Time</h3>
+        <p class="meta">The highest single-game scoring performances in Detroit Pistons playoff history.</p>
+        <p class="legend">Chasing: The ghosts of Bing, Zeke, Rip, and Mr. Big Shot</p>
+        <div class="leaderboard">
+          <h4>All-Time Leaderboard</h4>
+          <ol>
+            <li>Dave Bing: 44 points (1968 Eastern Division Semifinals, Game 6 vs Celtics)</li>
+            <li>Isiah Thomas: 43 points (1988 NBA Finals, Game 6 vs Lakers) *</li>
+            <li>Chauncey Billups: 40 points (2003 Eastern Conference First Round, Game 6 vs Magic)</li>
+            <li>Richard Hamilton: 40 points (2006 Eastern Conference First Round, Game 5 vs Bucks)</li>
+            <li>Kelly Tripucka: 40 points (1984 Eastern Conference First Round, Game 3 vs Knicks)</li>
+          </ol>
+          <p class="note">* Thomas scored 43 points on a severely sprained ankle in one of the most iconic performances in NBA Finals history.</p>
+        </div>
+      </article>
+
+      <article class="milestone">
+        <h3>Milestone 7: The Road Ahead — 2026 Edition</h3>
+        <p class="meta">Current round: Eastern Conference Semifinals (first time since 2008). Lead Cavaliers 2-0. Next milestone: first Conference Finals appearance since 2008. Ultimate goal: first NBA Championship since 2004.</p>
+        <p class="legend">Chasing: The 2004 and 2005-era ceiling — conference finals, then the Finals</p>
+        <p class="nums"><strong>Semifinals</strong> · 2-0 lead · progress toward next round (illustrative 40%)</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" style="--target: 40%; --delay: 0.32s"></div>
+        </div>
+        <div class="badge-row"><span class="badge">The Chase Continues</span></div>
+      </article>
+    </section>
+
+    <section class="story" aria-labelledby="story-heading">
+      <h2 id="story-heading">From Worst to First: The Pistons' Historic Comeback</h2>
+      <ul>
+        <li>In 2023-24, the Detroit Pistons won just 14 games — the worst record in the NBA. The franchise appeared directionless, mired in a rebuild with no clear path forward.</li>
+        <li>In 2024-25, under head coach J.B. Bickerstaff, the Pistons won 44 games and returned to the playoffs for the first time since 2019, losing in the first round to the New York Knicks.</li>
+        <li>In 2025-26, the Pistons exploded to a 60-22 record — a 46-game improvement from their 14-win season just two years prior, earning the #1 seed in the Eastern Conference for the first time since 2007.</li>
+        <li>The turnaround was fueled by Cade Cunningham (the 2021 #1 overall pick), Tobias Harris (the veteran leader), Jalen Duren (the dominant center), and a deep supporting cast including Duncan Robinson and Daniss Jenkins.</li>
+        <li>In the 2026 First Round, the Pistons defeated the Orlando Magic 4-3 — the same team they last beat in a playoff series back in 2008.</li>
+        <li>Pistons legend Isiah Thomas praised the team's resurgence, noting how Cunningham and Harris embody the &quot;Goin' to Work&quot; ethos that defined Detroit's championship eras.</li>
+      </ul>
+    </section>
+
+    <section class="timeline-section" aria-labelledby="franchise-timeline-heading">
+      <h2 id="franchise-timeline-heading">Franchise Playoff Timeline</h2>
+      <ul class="timeline">
+        <li><strong>1988</strong>: Isiah Thomas scores 43 points on a sprained ankle in Game 6 of the NBA Finals vs Lakers — one of the most legendary performances in sports history. Pistons lose series in 7.</li>
+        <li><strong>1989</strong>: Pistons win first NBA Championship, sweeping the Lakers 4-0. Joe Dumars named Finals MVP.</li>
+        <li><strong>1990</strong>: Pistons repeat as champions, defeating Portland Trail Blazers 4-1. Isiah Thomas named Finals MVP.</li>
+        <li><strong>2004</strong>: The &quot;Goin' to Work&quot; Pistons — Chauncey Billups, Richard Hamilton, Tayshaun Prince, Ben Wallace, Rasheed Wallace — defeat the Lakers 4-1 for the franchise's third championship. Billups named Finals MVP.</li>
+        <li><strong>2005</strong>: Pistons return to NBA Finals, lose to San Antonio Spurs in 7 games.</li>
+        <li><strong>2008</strong>: Last playoff series win (before 2026 drought) — beat Orlando Magic 4-1 in Eastern Conference Semifinals. Last Conference Finals appearance.</li>
+        <li><strong>2008-2025</strong>: 17-year playoff series win drought. 11-game home playoff losing streak.</li>
+        <li><strong>2025</strong>: Pistons return to playoffs after 6-year absence, lose to Knicks in first round.</li>
+        <li><strong>2026</strong>: Win 60 games. Earn #1 seed. Win first playoff series in 18 years. End 11-game home playoff losing streak. Currently in Eastern Conference Semifinals.</li>
+      </ul>
+    </section>
+
+    <section class="share-section" aria-labelledby="share-heading">
+      <h2 id="share-heading">Share &amp; Support</h2>
+      <button type="button" class="btn-share" id="btn-share">Share this page</button>
+      <div class="ad-row">
+        <!-- AdSense Ad Unit -->
+        <div class="adsense-placeholder" aria-hidden="true">AdSense - Responsive</div>
+      </div>
+      <p class="affiliate-note">
+        <!-- Affiliate link: Fanatics/NBA Store -->
+        <a href="#">Rep MoTown — Get Pistons Playoff Gear →</a>
+      </p>
+    </section>
+
+    <section class="comments-section" aria-labelledby="comments-heading">
+      <h2 id="comments-heading">Comments</h2>
+      <p class="comments-intro">
+        Powered by <a href="https://giscus.app" target="_blank" rel="noopener noreferrer">Giscus</a> — sign in with
+        GitHub to post. Uses a separate discussion thread per page (<code>pathname</code> mapping).
+      </p>
+      <div id="giscus-anchor"></div>
+      <p id="giscus-setup-hint" class="giscus-setup-hint">
+        To enable comments: enable <strong>Discussions</strong> on your repo, install the
+        <strong>Giscus</strong> GitHub App, then open
+        <a href="https://giscus.app" target="_blank" rel="noopener noreferrer">giscus.app</a> → paste the generated
+        IDs into <code>js/site-config.js</code> (<code>giscusRepo</code>, <code>giscusRepoId</code>,
+        <code>giscusCategoryId</code>, and matching <code>giscusCategory</code>).
+      </p>
+    </section>
+
+    <footer>
+      <p>Data sources: Basketball-Reference.com, NBA.com, FanSided, Detroit Free Press, USA Today</p>
+      <p>© 2025 Playoff Milestones. Data updates daily.</p>
+      <p
+        class="visit-stats"
+        title="Public estimate via Page Views API: about one count per browser per 30 minutes on this site."
+      >
+        Site visits: <strong id="visit-count">—</strong>
+      </p>
+      <p><a href="#">Privacy Policy</a></p>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    (function () {
+      var btn = document.getElementById("btn-share");
+      var toast = document.getElementById("toast");
+
+      function showToast(msg) {
+        toast.textContent = msg;
+        toast.classList.add("show");
+        setTimeout(function () {
+          toast.classList.remove("show");
+        }, 2600);
+      }
+
+      function copyFallback(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(
+            function () {
+              showToast("Link copied to clipboard");
+            },
+            function () {
+              showToast("Copy blocked — try copying the address bar");
+            }
+          );
+        } else {
+          var ta = document.createElement("textarea");
+          ta.value = text;
+          document.body.appendChild(ta);
+          ta.select();
+          try {
+            document.execCommand("copy");
+            showToast("Link copied to clipboard");
+          } catch (e) {
+            showToast("Copy not supported");
+          }
+          document.body.removeChild(ta);
+        }
+      }
+
+      btn.addEventListener("click", function () {
+        var text =
+          "Detroit Pistons 2026 Playoff Records Tracker — follow the chase. " + window.location.href;
+        if (navigator.share) {
+          navigator
+            .share({
+              title: document.title,
+              text: text,
+              url: window.location.href
+            })
+            .catch(function () {
+              copyFallback(text);
+            });
+        } else {
+          copyFallback(text);
+        }
+      });
+    })();
+  </script>
+  <script src="js/site-config.js" defer></script>
+  <script src="js/giscus-loader.js" defer></script>
+  <script src="js/visit-counter.js" defer></script>
+</body>
+</html>

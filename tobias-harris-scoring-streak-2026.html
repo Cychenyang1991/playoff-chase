@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tobias Harris 2026 Playoff Scoring Streak: 7 Straight 20-Point Games and Counting</title>
+  <meta name="description" content="Track Tobias Harris' incredible 2026 playoff scoring streak. From zero consecutive 20-point games in the regular season to 7 straight in the playoffs — every milestone, stat, and story behind Detroit's unlikely postseason hero." />
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --card: #111111;
+      --border: #2a2a2a;
+      --text: #f0f0f0;
+      --muted: #9a9a9a;
+      --pistons-blue: #1d428a;
+      --pistons-red: #c8102e;
+      --gold: #f5a623;
+      --radius: 14px;
+      --font: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 1.25rem 1rem 3rem;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1.25rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .back-link:hover {
+      color: var(--gold);
+    }
+
+    .page-header {
+      text-align: center;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.75rem;
+    }
+
+    .page-header img {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 3px solid var(--gold);
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .page-header h1 {
+      font-size: clamp(1.35rem, 4vw, 1.95rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.65rem;
+      line-height: 1.2;
+    }
+
+    .subhead {
+      margin: 0 auto;
+      max-width: 36em;
+      font-size: 1.02rem;
+      color: var(--muted);
+    }
+
+    .snapshot {
+      background: linear-gradient(160deg, #161922 0%, var(--card) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.35rem 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .snapshot h2 {
+      margin: 0 0 1rem;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+    }
+
+    .snapshot-grid {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    @media (min-width: 560px) {
+      .snapshot-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .snapshot dl {
+      margin: 0;
+      padding: 0.85rem 1rem;
+      background: var(--surface);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    .snapshot dt {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .snapshot dd {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .snapshot .full {
+      grid-column: 1 / -1;
+    }
+
+    .milestones-section h2 {
+      font-size: 1.15rem;
+      margin: 0 0 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .milestone {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .milestone:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .milestone h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .milestone .meta {
+      font-size: 0.88rem;
+      color: #c8c8c8;
+      margin: 0 0 0.65rem;
+    }
+
+    .milestone .legend {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin: 0 0 0.5rem;
+    }
+
+    .milestone .nums {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin: 0 0 0.45rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .milestone .nums strong {
+      color: var(--gold);
+    }
+
+    .bar-track {
+      height: 11px;
+      border-radius: 999px;
+      background: #222;
+      overflow: hidden;
+      margin-top: 0.35rem;
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--pistons-blue), var(--pistons-red));
+      animation: barGrow 1.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: var(--delay, 0s);
+    }
+
+    @keyframes barGrow {
+      from {
+        width: 0;
+      }
+      to {
+        width: var(--target, 100%);
+      }
+    }
+
+    .badge-row {
+      margin-top: 0.5rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, rgba(29, 66, 138, 0.35) 0%, rgba(200, 16, 46, 0.2) 100%);
+      border: 1px solid var(--pistons-red);
+      color: #fff;
+    }
+
+    .badge--gold {
+      background: linear-gradient(135deg, rgba(245, 166, 35, 0.28) 0%, rgba(245, 166, 35, 0.08) 100%);
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .story {
+      margin: 2.25rem 0;
+      padding: 1.35rem 1.25rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .story h2 {
+      margin: 0 0 1rem;
+      font-size: 1.2rem;
+    }
+
+    .story ul {
+      margin: 0;
+      padding-left: 1.2rem;
+      color: #d0d0d0;
+    }
+
+    .story li {
+      margin-bottom: 0.65rem;
+    }
+
+    .story li:last-child {
+      margin-bottom: 0;
+    }
+
+    .gamelog {
+      margin: 2rem 0;
+    }
+
+    .gamelog h2 {
+      font-size: 1.15rem;
+      margin: 0 0 0.75rem;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.78rem;
+    }
+
+    caption {
+      text-align: left;
+      padding: 0.65rem 1rem;
+      font-size: 0.76rem;
+      color: var(--muted);
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    th,
+    td {
+      padding: 0.55rem 0.5rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: #181818;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .pending {
+      color: var(--muted);
+      font-style: italic;
+      font-size: 0.74rem;
+    }
+
+    .journey {
+      margin: 2.25rem 0;
+    }
+
+    .journey h2 {
+      font-size: 1.15rem;
+      margin: 0 0 1.25rem;
+    }
+
+    .timeline {
+      margin: 0;
+      padding: 0 0 0 1.15rem;
+      list-style: none;
+      border-left: 3px solid var(--pistons-red);
+    }
+
+    .timeline li {
+      position: relative;
+      padding: 0.65rem 0 0.65rem 1.1rem;
+      margin: 0;
+      font-size: 0.9rem;
+      color: #d6d6d6;
+    }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -1.32rem;
+      top: 0.85rem;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--pistons-red);
+      box-shadow: 0 0 0 3px var(--bg);
+    }
+
+    .quotes {
+      margin: 2.25rem 0;
+    }
+
+    .quotes h2 {
+      font-size: 1.15rem;
+      margin: 0 0 1rem;
+    }
+
+    .quote-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .quote-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    .quote-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      border-top: 3px solid var(--pistons-blue);
+    }
+
+    .quote-card p {
+      margin: 0 0 0.75rem;
+      font-size: 0.88rem;
+      color: #e4e4e4;
+      font-style: italic;
+    }
+
+    .quote-card cite {
+      font-size: 0.78rem;
+      font-style: normal;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .share-section {
+      margin: 2rem 0;
+      padding: 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--card);
+    }
+
+    .share-section h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1rem;
+    }
+
+    .btn-share {
+      appearance: none;
+      border: 1px solid var(--gold);
+      background: linear-gradient(180deg, rgba(245, 166, 35, 0.18) 0%, rgba(245, 166, 35, 0.05) 100%);
+      color: var(--gold);
+      padding: 0.7rem 1.15rem;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-bottom: 1rem;
+    }
+
+    .btn-share:hover {
+      box-shadow: 0 4px 24px rgba(245, 166, 35, 0.2);
+    }
+
+    .ad-row {
+      margin-bottom: 0.75rem;
+    }
+
+    /* AdSense Ad Unit */
+    .adsense-placeholder {
+      min-height: 90px;
+      background: #1a1a1a;
+      border: 1px dashed #444;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .affiliate-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* Affiliate link: Fanatics/NBA Store */
+    .affiliate-note a {
+      color: var(--muted);
+      border-bottom: 1px solid transparent;
+    }
+
+    .affiliate-note a:hover {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0.35rem 0;
+    }
+
+    .visit-stats {
+      margin: 0.75rem 0 0;
+      font-size: 0.78rem;
+      font-variant-numeric: tabular-nums;
+      color: var(--muted);
+    }
+
+    .visit-stats strong {
+      color: var(--accent, var(--gold, var(--lakers-gold, #f5a623)));
+      font-weight: 700;
+    }
+
+    .comments-section {
+      margin-top: 2.25rem;
+      padding: 1.35rem 1.15rem;
+      background: linear-gradient(165deg, #161616 0%, var(--card) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .comments-section h2 {
+      margin: 0 0 0.35rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .comments-intro {
+      margin: 0 0 1rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .comments-intro a {
+      color: var(--accent, var(--gold, var(--lakers-gold, #f5a623)));
+      text-decoration: none;
+    }
+
+    .comments-intro a:hover {
+      text-decoration: underline;
+    }
+
+    .comments-intro code {
+      font-size: 0.8rem;
+      background: var(--surface);
+      padding: 0.1rem 0.35rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    #giscus-anchor {
+      min-height: 1rem;
+    }
+
+    .giscus-setup-hint {
+      margin: 0;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .giscus-setup-hint[hidden] {
+      display: none;
+    }
+
+    .giscus-setup-hint code {
+      font-size: 0.78rem;
+      background: var(--surface);
+      padding: 0.1rem 0.35rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    .giscus-setup-hint a {
+      color: var(--accent, var(--gold, var(--lakers-gold, #f5a623)));
+      text-decoration: none;
+    }
+
+    .giscus-setup-hint a:hover {
+      text-decoration: underline;
+    }
+
+    .giscus-setup-hint strong {
+      color: var(--text);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 1.25rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(140%);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.65rem 1rem;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      z-index: 50;
+      transition: transform 0.35s ease;
+      max-width: 92vw;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back-link" href="../index.html">← Back to Full Playoff Tracker</a>
+
+    <header class="page-header">
+      <img
+        src="https://ui-avatars.com/api/?name=Tobias+Harris&background=1D428A&color=fff&size=128"
+        width="96"
+        height="96"
+        alt="Tobias Harris"
+      />
+      <h1>The Tobias Harris Playoff Scoring Streak</h1>
+      <p class="subhead">He couldn't string together two 20-point games all regular season. Now he's making NBA playoff history.</p>
+    </header>
+
+    <section class="snapshot" aria-labelledby="snapshot-heading">
+      <h2 id="snapshot-heading">At a Glance</h2>
+      <div class="snapshot-grid">
+        <dl>
+          <dt>2025-26 Regular Season</dt>
+          <dd>13.3 PPG, 5.1 RPG, 2.5 APG, 46.9% FG</dd>
+        </dl>
+        <dl>
+          <dt>2026 Playoffs (Last 7 Games)</dt>
+          <dd>22.7 PPG, 7.9 RPG, 1.7 SPG, 1.9 3PM</dd>
+        </dl>
+        <dl>
+          <dt>Current Streak</dt>
+          <dd>7 consecutive 20-point playoff games (active)</dd>
+        </dl>
+        <dl>
+          <dt>Team Status</dt>
+          <dd>Pistons lead Cavaliers 2-0 in Eastern Conference Semifinals</dd>
+        </dl>
+        <dl class="full">
+          <dt>Pistons Record</dt>
+          <dd>5 straight playoff wins (first time since 2008)</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="milestones-section" aria-labelledby="milestones-heading">
+      <h2 id="milestones-heading">Playoff Milestones</h2>
+
+      <article class="milestone">
+        <h3>Milestone 1: Consecutive 20-Point Playoff Games (Active Streak)</h3>
+        <p class="meta">Current: 7 games (G3 vs ORL through G2 vs CLE). Target / significance: Longest 20-point streak of Harris' entire career (regular season or playoffs). Previous career best: tied his personal record across 15 NBA seasons.</p>
+        <p class="legend">Chasing: His own career ceiling — and the NBA record books for playoff scoring consistency</p>
+        <p class="nums"><strong>7</strong> / 7 · 100% — ACTIVE STREAK</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" style="--target: 100%; --delay: 0.05s"></div>
+        </div>
+      </article>
+
+      <article class="milestone">
+        <h3>Milestone 2: Playoff Scoring Average — Regular Season vs. Playoffs Jump</h3>
+        <p class="meta">Regular season: 13.3 PPG (zero back-to-back 20-point games in 63 games). Playoffs (7-game streak): 22.7 PPG. Increase: +9.4 PPG (71% increase). Significance: Largest regular season to playoffs scoring jump by any player in the 2026 postseason.</p>
+        <p class="legend">Chasing: The 2026 field for biggest postseason scoring lift</p>
+        <p class="nums"><strong>+9.4 PPG</strong> vs regular season · 71% jump · bar reflects jump magnitude (capped at 100%)</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" style="--target: 71%; --delay: 0.1s"></div>
+        </div>
+        <div class="badge-row"><span class="badge">Most Improved</span></div>
+      </article>
+
+      <article class="milestone">
+        <h3>Milestone 3: Historic Contrast — Regular Season vs. Playoffs</h3>
+        <p class="meta">Longest 20-point streak in playoff history by a player who failed to record even two straight 20-point games during the regular season. Harris played 63 regular season games and scored 20+ in many of them — but never back-to-back. Significance: First player in NBA history with this specific &quot;zero RS back-to-back / 7 playoff straight&quot; combination.</p>
+        <p class="legend">Chasing: A place in the league's one-of-one playoff record books</p>
+        <p class="nums"><strong>Historic contrast</strong> · 100%</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" style="--target: 100%; --delay: 0.15s"></div>
+        </div>
+        <div class="badge-row"><span class="badge badge--gold">NBA History</span></div>
+      </article>
+
+      <article class="milestone">
+        <h3>Milestone 4: 20+ Point Duo Streak — LeBron &amp; Wade Territory</h3>
+        <p class="meta">Harris and Cade Cunningham have each scored 20+ points in 5 straight playoff wins. Only the 3rd duo in NBA history to each score 20+ over at least a 5-game postseason winning streak. Other duos: LeBron James &amp; Dwyane Wade; Shaquille O'Neal &amp; Kobe Bryant.</p>
+        <p class="legend">Chasing: Elite championship-duo company — Wade/LeBron, Shaq/Kobe</p>
+        <p class="nums"><strong>5</strong> straight shared 20-point wins · 100%</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" style="--target: 100%; --delay: 0.2s"></div>
+        </div>
+        <div class="badge-row"><span class="badge badge--gold">All-Time Duo</span></div>
+      </article>
+
+      <article class="milestone">
+        <h3>Milestone 5: Game 7 Breakout Performance</h3>
+        <p class="meta">First Round, Game 7 vs Orlando Magic (May 3, 2026): 30 points, 9 rebounds, 11-of-18 FG, 5-of-7 3PT. Career playoff high at age 33; led Pistons to first playoff series win since 2008. Scored 17 points in the second quarter alone, hitting 4 straight shots over 90 seconds.</p>
+        <p class="legend">Chasing: A signature Game 7 that defines a legacy postseason</p>
+        <p class="nums"><strong>30 PTS</strong> · playoff career high · 100% milestone unlocked</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" style="--target: 100%; --delay: 0.25s"></div>
+        </div>
+        <div class="badge-row"><span class="badge">Signature Game</span></div>
+      </article>
+
+      <article class="milestone">
+        <h3>Milestone 6: 15-Season Journey — First True Playoff Breakthrough</h3>
+        <p class="meta">15 NBA seasons, 5 teams, 1,033+ regular season games, 67+ playoff games. Never an NBA All-Star. Over $300 million in career earnings with frequent &quot;overpaid&quot; criticism. 2024: signed 2-year, $52 million contract with Pistons. 2026 Playoffs: Detroit's second-leading scorer and most reliable veteran. Significance: Vindication from punchline to playoff savior.</p>
+        <p class="legend">Chasing: Respect as a winner — narrative arc complete for this chapter</p>
+        <p class="nums"><strong>Breakthrough</strong> · 100%</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" style="--target: 100%; --delay: 0.3s"></div>
+        </div>
+        <div class="badge-row"><span class="badge">Redemption Arc</span></div>
+      </article>
+    </section>
+
+    <section class="story" aria-labelledby="story-heading">
+      <h2 id="story-heading">From Regular Season Role Player to Playoff Hero</h2>
+      <ul>
+        <li>During the 2025-26 regular season, Tobias Harris averaged just 13.3 points per game and never once scored 20+ points in consecutive games across 63 appearances.</li>
+        <li>In the playoffs, he has transformed into Detroit's second scoring option, averaging 22.7 PPG over his last seven games — a 71% increase.</li>
+        <li>This is the longest 20-point playoff streak in NBA history by a player who didn't record a single back-to-back 20-point game in the preceding regular season.</li>
+        <li>Harris scored 75 total points across the three elimination games (Games 5-7) against Orlando, including a playoff career-high 30 in Game 7 with five three-pointers.</li>
+        <li>Pistons head coach J.B. Bickerstaff called Harris &quot;our safety blanket&quot; and said: &quot;Without him, we wouldn't be in this position. Not just because of the basketball talent — his leadership, his willingness to show people what preparation looks like.&quot;</li>
+        <li>Cade Cunningham called Harris &quot;a pro's pro&quot; and said: &quot;We're lucky to have him. He set the tone early in Game 7 and was a huge reason why we won.&quot;</li>
+        <li>Harris and Cunningham have joined LeBron James &amp; Dwyane Wade, and Shaq &amp; Kobe, as the only duos in NBA history to each score 20+ points in 5 consecutive playoff wins.</li>
+        <li>Harris overcame a first-half hip injury in Game 2 vs Cleveland to finish with 21 points, 7 rebounds, 2 steals, and 2 blocks — the defensive effort sealing Detroit's win.</li>
+      </ul>
+    </section>
+
+    <section class="gamelog" aria-labelledby="gamelog-heading">
+      <h2 id="gamelog-heading">The Streak: Complete 7-Game Game Log</h2>
+      <div class="table-wrap">
+        <table>
+          <caption>Seven consecutive 20-point playoff games. Cells marked &quot;Detailed stats pending&quot; await full box-score verification.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Game</th>
+              <th scope="col">Opponent</th>
+              <th scope="col">PTS</th>
+              <th scope="col">FG</th>
+              <th scope="col">3PT</th>
+              <th scope="col">FT</th>
+              <th scope="col">REB</th>
+              <th scope="col">AST</th>
+              <th scope="col">STL</th>
+              <th scope="col">BLK</th>
+              <th scope="col">Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>G2 vs CLE (May 7)</td>
+              <td>Cavaliers</td>
+              <td>21</td>
+              <td>9-16</td>
+              <td>2-3</td>
+              <td>1-2</td>
+              <td>7</td>
+              <td>0</td>
+              <td>2</td>
+              <td>2</td>
+              <td>W 107-97</td>
+            </tr>
+            <tr>
+              <td>G1 vs CLE (May 5)</td>
+              <td>Cavaliers</td>
+              <td>20</td>
+              <td>6-14</td>
+              <td>1-5</td>
+              <td>7-8</td>
+              <td>8</td>
+              <td>1</td>
+              <td>2</td>
+              <td>0</td>
+              <td>W 111-101</td>
+            </tr>
+            <tr>
+              <td>G7 vs ORL (May 3)</td>
+              <td>Magic</td>
+              <td>30</td>
+              <td>11-18</td>
+              <td>5-7</td>
+              <td>3-3</td>
+              <td>9</td>
+              <td>2</td>
+              <td>0</td>
+              <td>1</td>
+              <td>W 116-94</td>
+            </tr>
+            <tr>
+              <td>G6 vs ORL (May 1)</td>
+              <td>Magic</td>
+              <td>22</td>
+              <td>7-20</td>
+              <td class="pending" colspan="6">Detailed stats pending</td>
+              <td>W 93-79</td>
+            </tr>
+            <tr>
+              <td>G5 vs ORL (Apr 29)</td>
+              <td>Magic</td>
+              <td>23</td>
+              <td>9-18</td>
+              <td class="pending" colspan="6">Detailed stats pending</td>
+              <td>W 116-109</td>
+            </tr>
+            <tr>
+              <td>G4 vs ORL (Apr 27)</td>
+              <td>Magic</td>
+              <td>20</td>
+              <td>8-17</td>
+              <td class="pending" colspan="6">Detailed stats pending</td>
+              <td>L 94-88</td>
+            </tr>
+            <tr>
+              <td>G3 vs ORL (Apr 25)</td>
+              <td>Magic</td>
+              <td>23</td>
+              <td>8-16</td>
+              <td class="pending" colspan="6">Detailed stats pending</td>
+              <td>L 113-105</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="journey" aria-labelledby="journey-heading">
+      <h2 id="journey-heading">The 15-Year Journey</h2>
+      <ul class="timeline">
+        <li>15 NBA seasons across 5 teams (Bucks, Magic, Pistons, Clippers, 76ers, Pistons again)</li>
+        <li>1,033+ regular season games played</li>
+        <li>67+ playoff games played across 8 playoff series before 2026</li>
+        <li>Career regular season averages: 15.9 PPG, 6.1 RPG, 2.4 APG</li>
+        <li>Career playoff averages (before 2026): 16.3 PPG, 8.2 RPG, 3.0 APG</li>
+        <li>2011: Drafted 19th overall by Charlotte, traded to Milwaukee</li>
+        <li>2016: First playoff appearance with Detroit (swept by Cavaliers in Round 1)</li>
+        <li>2019: Signed 5-year, $180 million contract with Philadelphia</li>
+        <li>2023-24: Pistons won just 14 games</li>
+        <li>2024: Signed 2-year, $52 million deal to return to Detroit</li>
+        <li>2025-26: Pistons win 60 games (most since 2005-06), clinch #1 seed in East</li>
+        <li>2026 Playoffs: Breaks through with career-defining postseason performance</li>
+      </ul>
+    </section>
+
+    <section class="quotes" aria-labelledby="quotes-heading">
+      <h2 id="quotes-heading">What They're Saying</h2>
+      <div class="quote-grid">
+        <blockquote class="quote-card">
+          <p>&quot;He means the world. I can't put it into words. Without him, we wouldn't be in this position.&quot;</p>
+          <cite>J.B. Bickerstaff (Pistons Head Coach)</cite>
+        </blockquote>
+        <blockquote class="quote-card">
+          <p>&quot;He's a pro's pro. We're lucky to have him.&quot;</p>
+          <cite>Cade Cunningham (Pistons Star)</cite>
+        </blockquote>
+        <blockquote class="quote-card">
+          <p>&quot;It's been special to watch. His leadership is one thing, but to come out and actually impact winning — that's another level.&quot;</p>
+          <cite>Daniss Jenkins (Pistons Guard)</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="share-section" aria-labelledby="share-heading">
+      <h2 id="share-heading">Share &amp; Support</h2>
+      <button type="button" class="btn-share" id="btn-share">Share this page</button>
+      <div class="ad-row">
+        <!-- AdSense Ad Unit -->
+        <div class="adsense-placeholder" aria-hidden="true">AdSense - Responsive</div>
+      </div>
+      <p class="affiliate-note">
+        <!-- Affiliate link: Fanatics/NBA Store -->
+        <a href="#">Rep the veteran — Get Tobias' Jersey →</a>
+      </p>
+    </section>
+
+    <section class="comments-section" aria-labelledby="comments-heading">
+      <h2 id="comments-heading">Comments</h2>
+      <p class="comments-intro">
+        Powered by <a href="https://giscus.app" target="_blank" rel="noopener noreferrer">Giscus</a> — sign in with
+        GitHub to post. Uses a separate discussion thread per page (<code>pathname</code> mapping).
+      </p>
+      <div id="giscus-anchor"></div>
+      <p id="giscus-setup-hint" class="giscus-setup-hint">
+        To enable comments: enable <strong>Discussions</strong> on your repo, install the
+        <strong>Giscus</strong> GitHub App, then open
+        <a href="https://giscus.app" target="_blank" rel="noopener noreferrer">giscus.app</a> → paste the generated
+        IDs into <code>js/site-config.js</code> (<code>giscusRepo</code>, <code>giscusRepoId</code>,
+        <code>giscusCategoryId</code>, and matching <code>giscusCategory</code>).
+      </p>
+    </section>
+
+    <footer>
+      <p>Data sources: Basketball-Reference.com, ESPN, CBS Sports, ClutchPoints, USA Today</p>
+      <p>© 2025 Playoff Milestones. Data updates daily.</p>
+      <p
+        class="visit-stats"
+        title="Public estimate via Page Views API: about one count per browser per 30 minutes on this site."
+      >
+        Site visits: <strong id="visit-count">—</strong>
+      </p>
+      <p><a href="#">Privacy Policy</a></p>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    (function () {
+      var btn = document.getElementById("btn-share");
+      var toast = document.getElementById("toast");
+
+      function showToast(msg) {
+        toast.textContent = msg;
+        toast.classList.add("show");
+        setTimeout(function () {
+          toast.classList.remove("show");
+        }, 2600);
+      }
+
+      function copyFallback(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(
+            function () {
+              showToast("Link copied to clipboard");
+            },
+            function () {
+              showToast("Copy blocked — try copying the address bar");
+            }
+          );
+        } else {
+          var ta = document.createElement("textarea");
+          ta.value = text;
+          document.body.appendChild(ta);
+          ta.select();
+          try {
+            document.execCommand("copy");
+            showToast("Link copied to clipboard");
+          } catch (e) {
+            showToast("Copy not supported");
+          }
+          document.body.removeChild(ta);
+        }
+      }
+
+      btn.addEventListener("click", function () {
+        var text =
+          "Tobias Harris 2026 playoff scoring streak — 7 straight 20-point games. " + window.location.href;
+        if (navigator.share) {
+          navigator
+            .share({
+              title: document.title,
+              text: text,
+              url: window.location.href
+            })
+            .catch(function () {
+              copyFallback(text);
+            });
+        } else {
+          copyFallback(text);
+        }
+      });
+    })();
+  </script>
+  <script src="js/site-config.js" defer></script>
+  <script src="js/giscus-loader.js" defer></script>
+  <script src="js/visit-counter.js" defer></script>
+</body>
+</html>
