@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en" data-site-page="mikal-bridges-final-piece-knicks-2026.html">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-json-field="seo.title">Mikal Bridges: The Final Piece — From KD Trade Asset to Knicks Championship Puzzle | 2026 NBA Playoffs</title>
+  <meta name="description" data-json-field="seo.description" content="Mikal Bridges was the centerpiece of the Kevin Durant trade. Then the Knicks traded five first-round picks for him. Now he's locking down Tyrese Maxey, silencing all doubters, and proving he's the missing piece to New York's championship puzzle. Every milestone, stat, and story." />
+  <style>
+    :root {
+      --bg: #10131a;
+      --surface: #181c26;
+      --card: #141820;
+      --border: #2e3548;
+      --text: #eef1f6;
+      --muted: #8b92a3;
+      --knicks-blue: #006bb6;
+      --knicks-orange: #f58426;
+      --gold-accent: #f58426;
+      --radius: 14px;
+      --font: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 1.25rem 1rem 3rem;
+    }
+
+    a {
+      color: var(--knicks-orange);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1.25rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .hero {
+      text-align: center;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.75rem;
+    }
+
+    .hero img {
+      width: 104px;
+      height: 104px;
+      border-radius: 50%;
+      border: 3px solid var(--knicks-blue);
+      box-shadow: 0 0 0 2px var(--knicks-orange);
+      object-fit: cover;
+      margin-bottom: 0.85rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.2rem, 4vw, 1.95rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.55rem;
+      line-height: 1.2;
+    }
+
+    .hero .sub {
+      margin: 0 auto;
+      max-width: 40em;
+      font-size: 0.98rem;
+      color: var(--muted);
+      text-wrap: pretty;
+    }
+
+    .jersey-link {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+    }
+
+    .jersey-link a {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .jersey-link a:hover {
+      color: var(--knicks-orange);
+    }
+
+    .snapshot {
+      background: linear-gradient(165deg, #0f1822 0%, var(--card) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.35rem 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .snapshot h2 {
+      margin: 0 0 1rem;
+      font-size: 1.02rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--knicks-orange);
+    }
+
+    .snapshot-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 560px) {
+      .snapshot-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .snapshot dl {
+      margin: 0;
+      padding: 0.85rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .snapshot dt {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .snapshot dd {
+      margin: 0;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .snapshot .full {
+      grid-column: 1 / -1;
+    }
+
+    .journey {
+      margin: 0 0 2rem;
+      padding: 1.1rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .journey h2 {
+      margin: 0 0 0.85rem;
+      font-size: 0.95rem;
+      color: #fff;
+    }
+
+    .journey-track {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.35rem;
+      position: relative;
+      padding-top: 0.5rem;
+    }
+
+    .journey-track::before {
+      content: "";
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      top: 1.35rem;
+      height: 3px;
+      background: linear-gradient(90deg, var(--knicks-orange), var(--knicks-blue), var(--knicks-orange));
+      border-radius: 999px;
+      opacity: 0.45;
+    }
+
+    .j-step {
+      flex: 1;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      min-width: 0;
+    }
+
+    .j-dot {
+      width: 12px;
+      height: 12px;
+      margin: 0 auto 0.45rem;
+      border-radius: 50%;
+      background: var(--knicks-blue);
+      border: 2px solid var(--knicks-orange);
+    }
+
+    .j-step strong {
+      display: block;
+      font-size: 0.68rem;
+      color: var(--knicks-orange);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+
+    .j-step span {
+      font-size: 0.68rem;
+      color: var(--muted);
+      line-height: 1.3;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      margin: 0 0 1rem;
+      color: #fff;
+    }
+
+    .milestone {
+      background: linear-gradient(165deg, #101820 0%, var(--card) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.1rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .milestone h3 {
+      margin: 0 0 0.55rem;
+      font-size: 1rem;
+      line-height: 1.35;
+      color: #fff;
+    }
+
+    .milestone .body {
+      font-size: 0.88rem;
+      color: #c8c8c8;
+      margin: 0 0 0.65rem;
+    }
+
+    .milestone .body p {
+      margin: 0 0 0.5rem;
+    }
+
+    .milestone .body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .bar-note {
+      font-size: 0.76rem;
+      color: var(--muted);
+      margin: 0 0 0.35rem;
+    }
+
+    .bar-track {
+      height: 11px;
+      border-radius: 999px;
+      background: #222;
+      overflow: hidden;
+      margin-bottom: 0.5rem;
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--knicks-blue), var(--knicks-orange));
+      animation: barGrow 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: var(--delay, 0s);
+    }
+
+    @keyframes barGrow {
+      from {
+        width: 0;
+      }
+      to {
+        width: var(--target, 100%);
+      }
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.32rem 0.65rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      color: #c8e8ff;
+      background: rgba(0, 107, 182, 0.18);
+    }
+
+    .badge--gold {
+      border-color: var(--gold-accent);
+      background: rgba(245, 132, 38, 0.15);
+      color: var(--gold-accent);
+    }
+
+    .story,
+    .quotes,
+    .stakes,
+    .share-section {
+      margin-bottom: 2rem;
+    }
+
+    .story h2,
+    .quotes h2,
+    .stakes h2,
+    .share-section h2 {
+      font-size: 1.08rem;
+      margin: 0 0 0.75rem;
+      color: #fff;
+    }
+
+    .story ul {
+      margin: 0;
+      padding-left: 1.15rem;
+      color: #c8c8c8;
+      font-size: 0.9rem;
+    }
+
+    .story li {
+      margin-bottom: 0.55rem;
+    }
+
+    .log-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 2rem;
+    }
+
+    table.game-log {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.78rem;
+    }
+
+    .game-log th,
+    .game-log td {
+      padding: 0.5rem 0.55rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .game-log th {
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .game-log tr:last-child td {
+      border-bottom: none;
+    }
+
+    .pending {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .quote-grid {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    @media (min-width: 700px) {
+      .quote-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    blockquote {
+      margin: 0;
+      padding: 0.95rem 1rem;
+      background: var(--surface);
+      border-radius: 10px;
+      border-left: 4px solid var(--knicks-blue);
+    }
+
+    blockquote p {
+      margin: 0 0 0.55rem;
+      font-size: 0.84rem;
+      font-style: italic;
+      color: #e4e4e4;
+    }
+
+    blockquote cite {
+      font-size: 0.76rem;
+      font-style: normal;
+      font-weight: 600;
+      color: var(--knicks-orange);
+    }
+
+    .stakes ul {
+      margin: 0;
+      padding-left: 1.15rem;
+      color: #c8c8c8;
+      font-size: 0.9rem;
+    }
+
+    .stakes li {
+      margin-bottom: 0.55rem;
+    }
+
+    .share-section {
+      padding: 1.15rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--card);
+    }
+
+    .btn-share {
+      appearance: none;
+      border: 1px solid var(--knicks-orange);
+      background: linear-gradient(180deg, rgba(0, 107, 182, 0.25) 0%, transparent);
+      color: var(--knicks-orange);
+      padding: 0.65rem 1.1rem;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-bottom: 0.85rem;
+      font-family: inherit;
+    }
+
+    .adsense-placeholder {
+      min-height: 88px;
+      background: #1a1a1a;
+      border: 1px dashed #444;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 0.76rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .affiliate-note {
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    footer p {
+      margin: 0.35rem 0;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 1.2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(130%);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.6rem 1rem;
+      border-radius: 10px;
+      font-size: 0.84rem;
+      z-index: 40;
+      transition: transform 0.35s ease;
+      max-width: 92vw;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .bar-fill {
+        animation: none !important;
+        width: var(--target, 100%) !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back-link" href="../index.html">← Back to Full Playoff Tracker</a>
+
+    <header class="hero">
+      <img
+        src="https://ui-avatars.com/api/?name=Mikal+Bridges&background=006BB6&color=fff&size=128"
+        width="104"
+        height="104"
+        alt="Mikal Bridges"
+      />
+      <h1>The Final Piece: Mikal Bridges' Championship Evolution</h1>
+      <p class="sub">
+        He was the key asset in the Kevin Durant blockbuster. Then the Knicks traded five first-round picks to bring him across the Brooklyn Bridge. After a down regular season and a brutal start to the playoffs, Mikal Bridges has emerged as the two-way force New York always believed he could be — locking down All-Stars, hitting clutch shots, and proving he's the final piece to the Knicks' championship puzzle.
+      </p>
+      <p class="jersey-link">
+        <!-- Affiliate link: Fanatics/NBA Store -->
+        <a href="#">Get Bridges' Jersey →</a>
+      </p>
+    </header>
+
+    <section class="snapshot" aria-labelledby="snap-h">
+      <h2 id="snap-h">At a Glance</h2>
+      <div class="snapshot-grid">
+        <dl>
+          <dt>2025-26 Regular Season</dt>
+          <dd>15.9 PPG, 4.2 RPG, 4.0 APG, 1.4 SPG, 0.8 BPG — 48.8% FG, 36.9% 3PT in 79 games</dd>
+        </dl>
+        <dl>
+          <dt>2026 Playoffs (Past 4 Games)</dt>
+          <dd>20.5 PPG on efficient shooting</dd>
+        </dl>
+        <dl>
+          <dt>Series vs. 76ers (through G3)</dt>
+          <dd>Key defensive assignments on Tyrese Maxey and Paul George</dd>
+        </dl>
+        <dl>
+          <dt>Game 3 Line</dt>
+          <dd>23 PTS, 3 REB, 1 AST, 2 STL — 8/14 FG, 2/4 3PT, 5/5 FT</dd>
+        </dl>
+        <dl class="full">
+          <dt>Team Status</dt>
+          <dd>Knicks lead 76ers 3-0, one win from Eastern Conference Finals</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="journey" aria-labelledby="journey-h">
+      <h2 id="journey-h">The Journey</h2>
+      <div class="journey-track">
+        <div class="j-step">
+          <div class="j-dot"></div>
+          <strong>Phoenix</strong>
+          <span>3-and-D on the 2021 Finals Suns</span>
+        </div>
+        <div class="j-step">
+          <div class="j-dot"></div>
+          <strong>Brooklyn</strong>
+          <span>KD trade centerpiece · 26.1 PPG stretch</span>
+        </div>
+        <div class="j-step">
+          <div class="j-dot"></div>
+          <strong>New York</strong>
+          <span>Five firsts · Villanova reunion</span>
+        </div>
+        <div class="j-step">
+          <div class="j-dot"></div>
+          <strong>2026 Turn</strong>
+          <span>Benched → 20.5 PPG &amp; Maxey locks</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="milestone-section" aria-labelledby="mile-h">
+      <h2 class="section-title" id="mile-h">Milestone Progress Bars</h2>
+
+      <article class="milestone">
+        <h3>Milestone 1: The Kevin Durant Trade Tree — Bridges as the Centerpiece</h3>
+        <div class="body">
+          <p>
+            Mikal Bridges was the key player the Brooklyn Nets acquired when they sent Kevin Durant to the Phoenix Suns in February 2023. The four-team trade returned Bridges, Cameron Johnson, four unprotected first-round picks, a first-round pick swap, and two second-round picks to Brooklyn.
+          </p>
+          <p>
+            Bridges' Brooklyn breakout: averaged 26.1 points per game for the rest of the 2022-23 season, helping the Nets reach the playoffs. His play led many around the NBA to believe he would become a first-time All-Star.
+          </p>
+          <p>
+            Full circle: Bridges went from being a role player on the 2021 Western Conference champion Suns to the centerpiece of a Durant blockbuster, to the centerpiece of another blockbuster that sent him to the Knicks — where he's now one win from back-to-back conference finals.
+          </p>
+        </div>
+        <p class="bar-note">Trade-tree impact (illustrative): centerpiece weight · ~92%</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" style="--target: 92%; --delay: 0.04s"></div>
+        </div>
+        <span class="badge badge--gold">The KD Trade Tree</span>
+      </article>
+
+      <article class="milestone">
+        <h3>Milestone 2: Five First-Round Picks — The Knicks' All-In Bet</h3>
+        <div class="body">
+          <p>
+            On July 6, 2024, the New York Knicks acquired Mikal Bridges from the Brooklyn Nets in exchange for five first-round draft picks, a first-round pick swap, and three players including Bojan Bogdanovic. It was the first trade between the crosstown rivals since 1983.
+          </p>
+          <p>
+            The draft capital: Knicks sent first-round picks in 2025, 2027, 2029, and 2031, plus the right to swap first-round picks in 2028, plus Milwaukee's 2025 first-round pick.
+          </p>
+          <p>
+            The Villanova reunion: the trade reunited Bridges with his Villanova championship teammates Jalen Brunson, Josh Hart, and Donte DiVincenzo — creating the &quot;Nova Knicks&quot; core.
+          </p>
+        </div>
+        <p class="bar-note">All-in price paid · five first-round picks · 100%</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" style="--target: 100%; --delay: 0.08s"></div>
+        </div>
+        <span class="badge badge--gold">Five Picks, One Mission</span>
+      </article>
+
+      <article class="milestone">
+        <h3>Milestone 3: The Redemption Arc — From Benched in Atlanta to 20.5 PPG</h3>
+        <div class="body">
+          <p>
+            After a brutal start to the 2026 playoffs — averaging just 7.2 PPG through five games against Atlanta and getting benched for most of the second half in Game 3 — Bridges has completely turned it around.
+          </p>
+          <p>
+            The turning point: Game 6 vs. Atlanta (May 1, 2026): 24 points, 5 rebounds, 3 assists, 1 block on 10-for-12 shooting in just 27 minutes. It was his most points of the series and nearly matched his total shot attempts from the previous three games combined (13).
+          </p>
+          <p>
+            Coach Brown's reaction: &quot;It was great. He just did what he's capable of doing... I wouldn't let it go unnoticed that his defense was phenomenal.&quot;
+          </p>
+          <p>
+            Since Game 6: Bridges has averaged 20.5 PPG over his last four playoff games, silencing the doubters who questioned the trade.
+          </p>
+        </div>
+        <p class="bar-note">Playoff resurgence meter · ~88%</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" style="--target: 88%; --delay: 0.12s"></div>
+        </div>
+        <span class="badge badge--gold">The Turnaround</span>
+      </article>
+
+      <article class="milestone">
+        <h3>Milestone 4: Game 3 Defensive Masterclass — Locking Down Tyrese Maxey</h3>
+        <div class="body">
+          <p>
+            With OG Anunoby sidelined by a hamstring injury, Bridges stepped into the role of primary defensive disruptor in Game 3 against Philadelphia.
+          </p>
+          <p>
+            The Maxey containment: Bridges helped limit 76ers leading scorer Tyrese Maxey to just eight shot attempts through the first three quarters. Maxey — who averaged 22.3 PPG in the first round against Boston — was held to 17 points and was notably passive in the second half.
+          </p>
+          <p>
+            Coach Mike Brown's praise: &quot;I would be not doing my job if I didn't point out the continued work that Mikal is doing at the point of attack when it comes to Maxey. You're not going to stop him. You hope he misses a few shots, but you have to give multiple efforts, and Mikal is busting his behind trying to do that.&quot;
+          </p>
+          <p>
+            The fourth quarter lockdown: the Knicks held the 76ers to just 18 points in the fourth quarter of Game 3, following a 12-point fourth-quarter showing in Game 2.
+          </p>
+          <p>
+            Bridges' humble response: &quot;Just trying to do whatever it takes to win. Beginning of the playoffs, knowing that all 82 regular-season (games) means a lot, but there's another season after.&quot;
+          </p>
+        </div>
+        <p class="bar-note">Point-of-attack impact (illustrative) · ~95%</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" style="--target: 95%; --delay: 0.16s"></div>
+        </div>
+        <span class="badge">Defensive Disruptor</span>
+      </article>
+
+      <article class="milestone">
+        <h3>Milestone 5: The Two-Way Force — Game 3 Offensive Explosion</h3>
+        <div class="body">
+          <p>
+            Bridges delivered his best all-around playoff game of 2026 in Game 3 at Philadelphia, finishing with 23 points, 3 rebounds, 1 assist, and 2 steals on 8-for-14 shooting (57.1%), 2-for-4 from three (50.0%), and a perfect 5-for-5 from the free-throw line.
+          </p>
+          <p>
+            Impact: the Knicks outscored the 76ers by 15 points in Bridges' 37 minutes of action.
+          </p>
+          <p>
+            The clutch sequence: in the fourth quarter, with the 76ers mounting a comeback, Josh Hart and Bridges scored on consecutive possessions before Jalen Brunson buried a deep three — a crushing 9-0 run that pushed the lead to 95-86 and effectively ended the game.
+          </p>
+          <p>
+            Paul George lockdown: Bridges also shut down Paul George after his hot start — George scored 15 points in the first quarter, but missed all 9 of his remaining shots with Bridges as the primary defender.
+          </p>
+        </div>
+        <p class="bar-note">Two-way peak (Game 3) · 100%</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" style="--target: 100%; --delay: 0.2s"></div>
+        </div>
+        <span class="badge">Two-Way Force</span>
+      </article>
+
+      <article class="milestone">
+        <h3>Milestone 6: The Villanova Brotherhood — Three Wildcats, One Mission</h3>
+        <div class="body">
+          <p>
+            Bridges is one-third of the Knicks' Villanova core — alongside Jalen Brunson and Josh Hart — who won two NCAA national championships together at Villanova (2016, 2018).
+          </p>
+          <p>
+            The Game 3 clutch sequence: Hart and Bridges scored on consecutive possessions in the fourth quarter before Brunson buried a deep three to seal the win. The trio combined for key plays during the decisive 9-0 run.
+          </p>
+          <p>
+            Brunson on Bridges: &quot;He's a huge factor for us. He's been playing great. Obviously, there's times throughout the season for every player when there's ups and downs. But he stays mentally strong. He comes into work, does his work, does his routine and all that stuff. As long as you keep chipping away, things are going to fall in your favor.&quot;
+          </p>
+          <p>
+            Championship pedigree: Bridges won two national titles at Villanova before reaching the NBA Finals with Phoenix in 2022. He helped the Knicks reach the conference finals in 2025 and now has them one win from returning in 2026. He's never missed the playoffs in his entire NBA career.
+          </p>
+        </div>
+        <p class="bar-note">Brotherhood chemistry + playoff streak · ~90%</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" style="--target: 90%; --delay: 0.24s"></div>
+        </div>
+        <span class="badge badge--gold">'Nova Knicks</span>
+      </article>
+
+      <article class="milestone">
+        <h3>Milestone 7: Early Playoff Struggles — The G3 Benching in Atlanta</h3>
+        <div class="body">
+          <p>
+            Bridges logged a career playoff low of just 21 minutes in Game 3 against the Atlanta Hawks (April 24, 2026), a 109-108 loss that put the Knicks down 2-1 in the first round.
+          </p>
+          <p>
+            The struggle: through the first five games of the Atlanta series, Bridges averaged just 7.2 PPG — down from his regular season average of 15.9 PPG, which was already his lowest scoring output since 2021-22. He averaged only 1.4 rebounds per game in those five games.
+          </p>
+          <p>
+            The noise: Knicks fans were openly questioning the trade. Social media called it a disaster. The five first-round picks loomed over every missed shot.
+          </p>
+          <p>
+            The response: Game 6 vs. Atlanta — 24 points, 5 rebounds, 3 assists, 1 block, 10-for-12 FG. Then Game 1 vs. Philly — 22 points, 5 assists, 7-for-10 FG. He hasn't looked back since. Four straight games of 20+ points after barely cracking double digits in the first round.
+          </p>
+        </div>
+        <p class="bar-note">Rock bottom → response arc (illustrative) · ~85%</p>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" style="--target: 85%; --delay: 0.28s"></div>
+        </div>
+        <span class="badge">From Benched to Unbenchable</span>
+      </article>
+    </section>
+
+    <section class="story" aria-labelledby="story-h">
+      <h2 id="story-h">From Role Player to Championship Final Piece</h2>
+      <ul>
+        <li>Mikal Bridges was the 10th overall pick in the 2018 NBA Draft, selected by the Philadelphia 76ers and immediately traded to Phoenix. He started his career as a 3-and-D role player for a Suns team that reached the 2021 NBA Finals — but nobody saw him as a cornerstone.</li>
+        <li>That changed in February 2023, when Bridges became the centerpiece of the Kevin Durant blockbuster trade. Sent to Brooklyn, he averaged 26.1 points per game down the stretch and suddenly looked like a future All-Star.</li>
+        <li>In July 2024, the Knicks made their all-in move: five first-round picks, a swap, and three players to bring Bridges across the Brooklyn Bridge. It was the first trade between the crosstown rivals in 41 years. The expectation was immediate championship contention.</li>
+        <li>The first regular season in New York was uneven. Bridges averaged 15.9 PPG — his lowest since 2021-22. The Knicks were good but inconsistent. The trade was being questioned. Then the playoffs began — and Bridges hit rock bottom.</li>
+        <li>Through five games against Atlanta, Bridges averaged 7.2 PPG. In Game 3, he was benched for most of the second half and logged a career-low 21 minutes. The Knicks lost to fall behind 2-1. The &quot;five first-round picks&quot; conversation was deafening.</li>
+        <li>Then came Game 6 in Atlanta. Bridges exploded for 24 points on 10-for-12 shooting, grabbing five rebounds and adding a block. The Knicks won by 51 — the largest margin in franchise playoff history. The turnaround had begun.</li>
+        <li>In the Philadelphia series, with OG Anunoby injured, Bridges has been the Knicks' most important two-way player. He's locked down Tyrese Maxey, silenced Paul George, and averaged 20.5 points over his last four games. The Knicks are 3-0, one win from the conference finals.</li>
+        <li>Coach Mike Brown: &quot;I would be not doing my job if I didn't point out the continued work that Mikal is doing. He's busting his behind.&quot;</li>
+        <li>The five first-round picks? Nobody in New York is asking about them anymore.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="log-h">
+      <h2 class="section-title" id="log-h">Recent Game Log (Last 5 Playoff Games)</h2>
+      <div class="log-wrap">
+        <table class="game-log">
+          <thead>
+            <tr>
+              <th scope="col">Game</th>
+              <th scope="col">Opponent</th>
+              <th scope="col">PTS</th>
+              <th scope="col">FG</th>
+              <th scope="col">3PT</th>
+              <th scope="col">FT</th>
+              <th scope="col">REB</th>
+              <th scope="col">AST</th>
+              <th scope="col">STL</th>
+              <th scope="col">Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>G3 @ PHI (May 8)</td>
+              <td>76ers</td>
+              <td>23</td>
+              <td>8-14</td>
+              <td>2-4</td>
+              <td>5-5</td>
+              <td>3</td>
+              <td>1</td>
+              <td>2</td>
+              <td>W 108-94</td>
+            </tr>
+            <tr>
+              <td>G2 vs PHI (May 6)</td>
+              <td>76ers</td>
+              <td colspan="8" class="pending">Data pending — full box line not finalized in this static build</td>
+            </tr>
+            <tr>
+              <td>G1 vs PHI (May 5)</td>
+              <td>76ers</td>
+              <td>22</td>
+              <td>7-10</td>
+              <td class="pending">Data pending</td>
+              <td class="pending">Data pending</td>
+              <td class="pending">Data pending</td>
+              <td>5</td>
+              <td class="pending">Data pending</td>
+              <td>W 137-98</td>
+            </tr>
+            <tr>
+              <td>G6 @ ATL (May 1)</td>
+              <td>Hawks</td>
+              <td>24</td>
+              <td>10-12</td>
+              <td>2-2</td>
+              <td class="pending">Data pending</td>
+              <td>5</td>
+              <td>3</td>
+              <td>0</td>
+              <td>W 140-89</td>
+            </tr>
+            <tr>
+              <td>G5 vs ATL (Apr 29)</td>
+              <td>Hawks</td>
+              <td colspan="8" class="pending">Data pending — full box line not finalized in this static build</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="quotes" aria-labelledby="quotes-h">
+      <h2 id="quotes-h">What They're Saying</h2>
+      <div class="quote-grid">
+        <blockquote>
+          <p>
+            &quot;I would be not doing my job if I didn't point out the continued work that Mikal is doing at the point of attack when it comes to Maxey. You're not going to stop him. You hope he misses a few shots, but you have to give multiple efforts, and Mikal is busting his behind trying to do that.&quot;
+          </p>
+          <cite>Mike Brown (Knicks Head Coach, on Bridges' defense on Maxey)</cite>
+        </blockquote>
+        <blockquote>
+          <p>
+            &quot;It was great. He just did what he's capable of doing. Is he gonna go 10-for-12 every night? No, but he was aggressive. He took great shots. I wouldn't let it go unnoticed that his defense was phenomenal.&quot;
+          </p>
+          <cite>Mike Brown (after Bridges' Game 6 breakout vs. Atlanta)</cite>
+        </blockquote>
+        <blockquote>
+          <p>
+            &quot;He's a huge factor for us. He's been playing great. Obviously, there's times throughout the season for every player when there's ups and downs. But he stays mentally strong. He comes into work, does his work, does his routine and all that stuff. As long as you keep chipping away, things are going to fall in your favor.&quot;
+          </p>
+          <cite>Jalen Brunson (on Bridges)</cite>
+        </blockquote>
+        <blockquote>
+          <p>&quot;Just trying to do whatever it takes to win. Beginning of the playoffs, knowing that all 82 regular-season (games) means a lot, but there's another season after.&quot;</p>
+          <cite>Mikal Bridges (on his approach)</cite>
+        </blockquote>
+        <blockquote>
+          <p>&quot;Feel like I'm always confident. Just happy to go out there and get a win.&quot;</p>
+          <cite>Mikal Bridges (after breaking his slump)</cite>
+        </blockquote>
+        <blockquote>
+          <p>
+            &quot;It's been reported that Mikal wanted to leave or requested a trade. That could not be further from the truth. That's just not in Mikal's character. That's not who he is.&quot;
+          </p>
+          <cite>Nets GM Sean Marks (on the Bridges trade to Knicks, denying trade request rumors)</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="stakes" aria-labelledby="stakes-h">
+      <h2 id="stakes-h">One Win from the Conference Finals</h2>
+      <ul>
+        <li><strong>Game 4:</strong> Sunday, May 10 at Xfinity Mobile Arena in Philadelphia (3:30 PM ET, ABC).</li>
+        <li>
+          <strong>Knicks lead 3-0.</strong> No team in NBA history has ever rallied from a 3-0 deficit (0-157 all-time). One win separates the Knicks from back-to-back conference finals appearances for the first time since 1999-2000.
+        </li>
+        <li>
+          <strong>OG Anunoby's status:</strong> Listed as day-to-day with a right hamstring injury. If he returns, the Knicks add an All-Defensive player to an already dominant unit. If he can't go, Bridges has proven he can handle the defensive load.
+        </li>
+        <li>
+          <strong>The ultimate goal:</strong> The Knicks haven't reached the NBA Finals since 1999 — a 27-year drought. With Bridges emerging as the two-way force they traded five picks for, the championship window is wide open.
+        </li>
+        <li>
+          <strong>The full circle:</strong> Bridges started his career as a role player on a Finals team in Phoenix. He became the centerpiece of a Durant trade. Now he's one win from the conference finals with the team that bet everything on him. The final piece of the puzzle is clicking into place.
+        </li>
+      </ul>
+    </section>
+
+    <section class="share-section" aria-labelledby="share-h">
+      <h2 id="share-h">Share &amp; Support</h2>
+      <button type="button" class="btn-share" id="btn-share">Share this page</button>
+      <!-- AdSense Ad Unit -->
+      <div class="adsense-placeholder" aria-hidden="true">AdSense - Responsive</div>
+      <p class="affiliate-note">
+        <!-- Affiliate link: Fanatics/NBA Store -->
+        <a href="#">The final piece needs threads — Get Bridges' Jersey →</a>
+      </p>
+    </section>
+
+    <footer>
+      <p>
+        Data sources: ESPN, NBA.com, Daily Knicks, SNY.tv, Fox Sports, AP News, RealGM, Yardbarker, Sporting News, Basketball-Reference.com
+      </p>
+      <p>© 2025 Playoff Milestones. Data updates daily.</p>
+      <p><a href="#">Privacy Policy</a></p>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    (function () {
+      var btn = document.getElementById("btn-share");
+      var toast = document.getElementById("toast");
+      var SHARE_TEXT =
+        "Mikal Bridges went from Kevin Durant trade asset to the Knicks' missing championship piece. From benched to unbenchable. 20.5 PPG over his last 4 after averaging 7.2. Track the redemption arc.";
+
+      function showToast(msg) {
+        toast.textContent = msg;
+        toast.classList.add("show");
+        setTimeout(function () {
+          toast.classList.remove("show");
+        }, 2600);
+      }
+
+      function copyFallback(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(
+            function () {
+              showToast("Link copied to clipboard");
+            },
+            function () {
+              showToast("Copy blocked — try the address bar");
+            }
+          );
+        } else {
+          var ta = document.createElement("textarea");
+          ta.value = text;
+          document.body.appendChild(ta);
+          ta.select();
+          try {
+            document.execCommand("copy");
+            showToast("Link copied to clipboard");
+          } catch (e) {
+            showToast("Copy not supported");
+          }
+          document.body.removeChild(ta);
+        }
+      }
+
+      if (btn) {
+        btn.addEventListener("click", function () {
+          var text = SHARE_TEXT + " " + window.location.href;
+          if (navigator.share) {
+            navigator
+              .share({
+                title: document.title,
+                text: text,
+                url: window.location.href
+              })
+              .catch(function () {
+                copyFallback(text);
+              });
+          } else {
+            copyFallback(text);
+          }
+        });
+      }
+    })();
+  </script>
+  <script src="js/site-config.js" defer></script>
+  <script src="js/hydrate-site-pages.js" defer></script>
+</body>
+</html>

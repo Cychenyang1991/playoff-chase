@@ -1,0 +1,1253 @@
+{
+  "meta": {
+    "postseasonSeasons": [
+      2025
+    ],
+    "note": "Data updated through May 10, 2026. Includes results of Round 2 Games 1–3. Lakers G3: Thunder 131, Lakers 108. OKC leads series 3-0.",
+    "sitePagesNote": "Site page copy can be edited per page: key is the HTML filename (relative to site root). With <html data-site-page=\"...\"> and js/hydrate-site-pages.js included, use data-json-field for plain text (including <title>, meta description content) and data-json-html-field for trusted inline HTML. See austin-reaves-redemption-2026.html hero.*. Rebuild SEO fields via: node scripts/build-site-pages-json.mjs && node scripts/merge-site-pages-into-players.mjs"
+  },
+  "playerPages": {
+    "cade": "cade-cunningham-playoffs-2026.html",
+    "tobias": "tobias-harris-scoring-streak-2026.html",
+    "mitchell": "donovan-mitchell-vs-pistons.html",
+    "pistons": "pistons-playoff-record.html",
+    "reaves": "austin-reaves-redemption-2026.html",
+    "chet": "chet-holmgren-defensive-dominance-2026.html",
+    "lukaDepth": "luka-doncic-injury-impact-2026.html",
+    "lebron300": "lebron-300th-playoff-game-2026.html",
+    "lakersUnderdog": "lakers-historic-underdog-2026.html",
+    "mikalBridges": "mikal-bridges-final-piece-knicks-2026.html",
+    "jalenBrunson": "jalen-brunson-king-of-new-york-2026.html",
+    "joelEmbiidKnicks": "joel-embiid-knicks-nightmare-2026.html",
+    "knicksThreeDestruction": "knicks-historic-three-game-destruction-2026.html",
+    "sixersKnicksCurse": "sixers-knicks-42-year-playoff-curse-2026.html",
+    "wembyGame1": "wembanyama-12-blocks-game1-loss-2026.html",
+    "wembyGame3": "wembanyama-game3-coronation-2026.html",
+    "antWall": "edwards-vs-wembanyama-hero-wall-2026.html",
+    "gobertTorch": "gobert-vs-wembanyama-torch-pass-2026.html"
+  },
+  "players": [
+    {
+      "id": "lebron",
+      "names": [
+        "LeBron James",
+        "Lebron James",
+        "LeBron",
+        "Lebron"
+      ],
+      "displayName": "LeBron James",
+      "avatar": "https://ui-avatars.com/api/?name=LeBron+James&background=552583&color=fff&size=128",
+      "teamGradient": [
+        "#552583",
+        "#fdb927"
+      ],
+      "milestones": [
+        {
+          "name": "Playoff Points (record watch)",
+          "current": 8312,
+          "target": 8500,
+          "chasing": "Extending his own #1 mark",
+          "displayChasing": "Self (#1 all-time — pace to 8,500)"
+        },
+        {
+          "name": "Playoff Assists",
+          "current": 2175,
+          "target": 2346,
+          "chasing": "Magic Johnson",
+          "displayChasing": "Magic Johnson"
+        },
+        {
+          "name": "Playoff Rebounds",
+          "current": 2687,
+          "target": 2859,
+          "chasing": "Tim Duncan",
+          "displayChasing": "Tim Duncan"
+        },
+        {
+          "name": "Playoff 3-Pointers Made",
+          "current": 468,
+          "target": 474,
+          "chasing": "James Harden",
+          "displayChasing": "James Harden"
+        },
+        {
+          "name": "Playoff Free Throws Made",
+          "current": 1256,
+          "target": 1320,
+          "chasing": "Kobe Bryant",
+          "displayChasing": "Kobe Bryant"
+        }
+      ],
+      "upcoming": [
+        "About 170 more playoff assists to pass Magic Johnson's postseason assist record.",
+        "188 points away from the 8,500 playoff points milestone.",
+        "Roughly 170 rebounds to surpass Tim Duncan on the all-time playoff glass."
+      ],
+      "statusTemplate": {
+        "kind": "milestone-gap",
+        "milestoneIndex": 0,
+        "template": "LeBron has {{current}} playoff points, extending his all-time record."
+      },
+      "seriesStatus": "Lakers trail Thunder 0-3 after 108-131 Game 3 loss. Face potential sweep."
+    },
+    {
+      "id": "curry",
+      "names": [
+        "Stephen Curry",
+        "Steph Curry",
+        "Curry",
+        "Stephen"
+      ],
+      "displayName": "Stephen Curry",
+      "avatar": "https://ui-avatars.com/api/?name=Stephen+Curry&background=1D428A&color=fff&size=128",
+      "teamGradient": [
+        "#1D428A",
+        "#ffc72c"
+      ],
+      "milestones": [
+        {
+          "name": "Playoff 3-Pointers Made",
+          "current": 650,
+          "target": 700,
+          "chasing": "Extending his own #1 mark",
+          "displayChasing": "Self (#1 all-time — pace to 700)"
+        },
+        {
+          "name": "Playoff Points",
+          "current": 4147,
+          "target": 4457,
+          "chasing": "Jerry West",
+          "displayChasing": "Jerry West"
+        },
+        {
+          "name": "Playoff Assists",
+          "current": 953,
+          "target": 970,
+          "chasing": "Jerry West",
+          "displayChasing": "Jerry West"
+        },
+        {
+          "name": "Playoff Free Throws Made",
+          "current": 721,
+          "target": 864,
+          "chasing": "James Harden",
+          "displayChasing": "James Harden"
+        },
+        {
+          "name": "Playoff Field Goals Made",
+          "current": 1388,
+          "target": 1748,
+          "chasing": "Tony Parker",
+          "displayChasing": "Tony Parker"
+        }
+      ],
+      "upcoming": [
+        "About 310 more playoff points vaults him into the top ten on the career postseason scoring list.",
+        "Seventeen more assists ties Jerry West's playoff assist line from the classic-era leaderboards.",
+        "Fifty more triples before the next tier keeps the distance between him and every other shooter historically wide."
+      ],
+      "statusTemplate": {
+        "kind": "milestone-gap",
+        "milestoneIndex": 1,
+        "template": "Curry is {{gap}} playoff points away from passing Jerry West on the all-time postseason scoring list."
+      },
+      "seriesStatus": "Eliminated in First Round"
+    },
+    {
+      "id": "durant",
+      "names": [
+        "Kevin Durant",
+        "Durant",
+        "KD"
+      ],
+      "displayName": "Kevin Durant",
+      "avatar": "https://ui-avatars.com/api/?name=Kevin+Durant&background=E56020&color=fff&size=128",
+      "teamGradient": [
+        "#e56020",
+        "#f2b024"
+      ],
+      "milestones": [
+        {
+          "name": "Playoff Points",
+          "current": 4985,
+          "target": 5172,
+          "chasing": "Tim Duncan",
+          "displayChasing": "Tim Duncan"
+        },
+        {
+          "name": "Playoff 3-Pointers Made",
+          "current": 431,
+          "target": 475,
+          "chasing": "Klay Thompson",
+          "displayChasing": "Klay Thompson"
+        },
+        {
+          "name": "Playoff Field Goals Made",
+          "current": 1762,
+          "target": 1978,
+          "chasing": "Tim Duncan",
+          "displayChasing": "Tim Duncan"
+        },
+        {
+          "name": "Playoff Rebounds",
+          "current": 1333,
+          "target": 1561,
+          "chasing": "Al Horford",
+          "displayChasing": "Al Horford"
+        },
+        {
+          "name": "Playoff Assists",
+          "current": 713,
+          "target": 764,
+          "chasing": "Tim Duncan",
+          "displayChasing": "Tim Duncan"
+        }
+      ],
+      "upcoming": [
+        "Under 200 points to pass another Hall-of-Fame guard on the playoff scoring ladder.",
+        "40 more triples moves him into the next cluster behind Curry-era shooters.",
+        "A healthy conference finals run could flip another rebounds-plus-points combo milestone."
+      ],
+      "statusTemplate": {
+        "kind": "milestone-gap",
+        "milestoneIndex": 0,
+        "template": "Durant is {{gap}} playoff points from climbing another spot on the all-time postseason scoring list."
+      },
+      "seriesStatus": "Eliminated in First Round"
+    },
+    {
+      "id": "giannis",
+      "names": [
+        "Giannis Antetokounmpo",
+        "Giannis",
+        "Antetokounmpo",
+        "Giannis Antetekounmpo"
+      ],
+      "displayName": "Giannis Antetokounmpo",
+      "avatar": "https://ui-avatars.com/api/?name=Giannis+Antetokounmpo&background=00471B&color=fff&size=128",
+      "teamGradient": [
+        "#00471c",
+        "#f2b024"
+      ],
+      "milestones": [
+        {
+          "name": "Playoff Points",
+          "current": 2270,
+          "target": 2353,
+          "chasing": "Al Horford",
+          "displayChasing": "Al Horford"
+        },
+        {
+          "name": "Playoff Rebounds",
+          "current": 1022,
+          "target": 1051,
+          "chasing": "Dolph Schayes",
+          "displayChasing": "Dolph Schayes"
+        },
+        {
+          "name": "Playoff Assists",
+          "current": 446,
+          "target": 449,
+          "chasing": "Ray Allen",
+          "displayChasing": "Ray Allen"
+        },
+        {
+          "name": "Playoff Steals",
+          "current": 71,
+          "target": 81,
+          "chasing": "Jamal Murray",
+          "displayChasing": "Jamal Murray"
+        },
+        {
+          "name": "Playoff Field Goals Made",
+          "current": 891,
+          "target": 942,
+          "chasing": "Kyrie Irving",
+          "displayChasing": "Kyrie Irving"
+        }
+      ],
+      "upcoming": [
+        "One more big scoring series could lift him past several Hall-of-Fame forwards clustered around 2,350 playoff points.",
+        "Twenty-five boards in a deep run tightens the gap on the all-time playoff rebound list.",
+        "Three more playoff assists ties Ray Allen on the next rung of the all-time assist list."
+      ],
+      "statusTemplate": {
+        "kind": "milestone-gap",
+        "milestoneIndex": 0,
+        "template": "Giannis is {{gap}} playoff points away from passing Al Horford on the career postseason scoring list."
+      },
+      "seriesStatus": "Eliminated in First Round"
+    },
+    {
+      "id": "jokic",
+      "names": [
+        "Nikola Jokić",
+        "Nikola Jokic",
+        "Jokić",
+        "Jokic",
+        "Nikola"
+      ],
+      "displayName": "Nikola Jokić",
+      "avatar": "https://ui-avatars.com/api/?name=Nikola+Jokic&background=0E2240&color=fff&size=128",
+      "teamGradient": [
+        "#0e2240",
+        "#fec524"
+      ],
+      "milestones": [
+        {
+          "name": "Playoff Assists",
+          "current": 769,
+          "target": 770,
+          "chasing": "Bill Russell",
+          "displayChasing": "Bill Russell"
+        },
+        {
+          "name": "Playoff Points",
+          "current": 2580,
+          "target": 2601,
+          "chasing": "Kevin Garnett",
+          "displayChasing": "Kevin Garnett"
+        },
+        {
+          "name": "Playoff Rebounds",
+          "current": 1238,
+          "target": 1246,
+          "chasing": "Pau Gasol",
+          "displayChasing": "Pau Gasol"
+        },
+        {
+          "name": "Playoff Triple-Doubles",
+          "current": 17,
+          "target": 28,
+          "chasing": "LeBron James",
+          "displayChasing": "LeBron James"
+        },
+        {
+          "name": "Playoff Steals",
+          "current": 68,
+          "target": 81,
+          "chasing": "Jamal Murray",
+          "displayChasing": "Jamal Murray"
+        }
+      ],
+      "upcoming": [
+        "One more triple-double run tightens the gap with LeBron on the all-time playoff triple-double list.",
+        "Roughly twenty points clears the next cluster of forwards ahead of him on postseason scoring.",
+        "Eight more boards and he moves past Pau Gasol's playoff rebound total on the career list."
+      ],
+      "statusTemplate": {
+        "kind": "assist-gap",
+        "milestoneIndex": 0,
+        "one": "Jokić is 1 playoff assist away from matching Bill Russell's career playoff assist total.",
+        "many": "Jokić is {{gap}} playoff assists away from matching Bill Russell's career playoff assist total."
+      },
+      "seriesStatus": "Eliminated in First Round"
+    },
+    {
+      "id": "cade",
+      "names": [
+        "Cade Cunningham",
+        "Cade",
+        "Cunningham"
+      ],
+      "displayName": "Cade Cunningham",
+      "avatar": "https://ui-avatars.com/api/?name=Cade+Cunningham&background=1D428A&color=fff&size=128",
+      "teamGradient": [
+        "#1D428A",
+        "#C8102E"
+      ],
+      "milestones": [
+        {
+          "name": "Playoff Points (series)",
+          "current": 83,
+          "target": 100,
+          "chasing": "Pistons single-series record",
+          "displayChasing": "Isiah Thomas"
+        },
+        {
+          "name": "Playoff Triple-Doubles",
+          "current": 2,
+          "target": 3,
+          "chasing": "Pistons franchise record",
+          "displayChasing": "Isiah Thomas (3)"
+        },
+        {
+          "name": "Playoff Assists (series)",
+          "current": 29,
+          "target": 40,
+          "chasing": "Pistons single-series record",
+          "displayChasing": "Isiah Thomas"
+        }
+      ],
+      "upcoming": [
+        "Recorded his 2nd career playoff triple-double in Game 3 (27 PTS, 10 REB, 10 AST).",
+        "One more triple-double would tie Isiah Thomas' franchise record for a single postseason series.",
+        "Averaging 27.7 PPG and 9.7 APG in the series, leading the team in both."
+      ],
+      "statusTemplate": {
+        "kind": "milestone-gap",
+        "milestoneIndex": 0,
+        "vars": {
+          "avg": 27.7,
+          "ast": 9.7
+        },
+        "template": "Cade is averaging {{avg}} points and {{ast}} assists in the series against the Cavaliers."
+      },
+      "seriesStatus": "Pistons lead Cavaliers 2-1. G1: 111-101, G2: 107-97 (5-game win streak), G3: lost 109-116. Cade had a 27-point triple-double but committed 8 turnovers."
+    },
+    {
+      "id": "tobias",
+      "names": [
+        "Tobias Harris",
+        "Tobias",
+        "Harris"
+      ],
+      "displayName": "Tobias Harris",
+      "avatar": "https://ui-avatars.com/api/?name=Tobias+Harris&background=1D428A&color=fff&size=128",
+      "teamGradient": [
+        "#1D428A",
+        "#C8102E"
+      ],
+      "milestones": [
+        {
+          "name": "Consecutive 20+ PTS playoff games",
+          "current": 8,
+          "target": 10,
+          "chasing": "Sustaining the longest 20-point playoff streak of his career",
+          "displayChasing": "Personal record"
+        },
+        {
+          "name": "Total 2026 playoff points",
+          "current": 220,
+          "target": 300,
+          "chasing": "Pistons single-postseason record",
+          "displayChasing": "Isiah Thomas"
+        }
+      ],
+      "upcoming": [
+        "Has scored 20+ points in 8 consecutive playoff games, extending his personal record.",
+        "Posted 21 PTS, 7 REB, 2 STL, 2 BLK in Game 3, continuing his consistent two-way impact."
+      ],
+      "statusTemplate": {
+        "kind": "milestone-gap",
+        "milestoneIndex": 0,
+        "template": "Tobias Harris has now scored 20+ points in {{current}} consecutive playoff games."
+      },
+      "seriesStatus": "Pistons lead 2-1. Harris extended his 20-point streak to 8 games with a 21-point effort in Game 3."
+    },
+    {
+      "id": "mitchell",
+      "names": [
+        "Donovan Mitchell",
+        "Mitchell",
+        "Spida",
+        "Donovan"
+      ],
+      "displayName": "Donovan Mitchell",
+      "avatar": "https://ui-avatars.com/api/?name=Donovan+Mitchell&background=860038&color=fdbb30&size=128",
+      "teamGradient": [
+        "#860038",
+        "#FDBB30"
+      ],
+      "milestones": [
+        {
+          "name": "35+ PTS playoff games (Cavaliers history)",
+          "current": 1,
+          "target": 2,
+          "chasing": "Cavaliers franchise record",
+          "displayChasing": "LeBron James"
+        },
+        {
+          "name": "Series scoring average",
+          "current": 30,
+          "target": 35,
+          "chasing": "Personal series record",
+          "displayChasing": "Personal best"
+        }
+      ],
+      "upcoming": [
+        "Exploded for 35 points and 10 rebounds in Game 3, becoming only the third Cavalier with a 35+10 playoff game.",
+        "Has raised his series scoring average to 30.0 PPG, fueling Cleveland's comeback push."
+      ],
+      "statusTemplate": {
+        "kind": "milestone-gap",
+        "milestoneIndex": 0,
+        "vars": {
+          "pts": 35
+        },
+        "template": "Mitchell scored {{pts}} points in Game 3 to lead the Cavaliers to a crucial win."
+      },
+      "seriesStatus": "Cavaliers trail Pistons 1-2. G1: 101-111, G2: 97-107, G3: 116-109. Mitchell's 35-point, 10-rebound performance kept Cleveland alive."
+    },
+    {
+      "id": "pistons",
+      "names": [
+        "Detroit Pistons",
+        "Pistons",
+        "Detroit"
+      ],
+      "displayName": "Detroit Pistons",
+      "avatar": "https://ui-avatars.com/api/?name=Detroit+Pistons&background=1D428A&color=C8102E&size=128",
+      "teamGradient": [
+        "#1D428A",
+        "#C8102E"
+      ],
+      "milestones": [
+        {
+          "name": "Winning streak",
+          "current": 5,
+          "target": 6,
+          "chasing": "Franchise playoff win streak record",
+          "displayChasing": "2008 Pistons"
+        },
+        {
+          "name": "Streak snapped in G3",
+          "current": 0,
+          "target": 5,
+          "chasing": "Streak ended but still lead series 2-1",
+          "displayChasing": "N/A"
+        }
+      ],
+      "upcoming": [
+        "5-game win streak was snapped by the Cavaliers in Game 3, but the Pistons still control the series.",
+        "Last time Detroit had a 5-game playoff win streak was in 2008."
+      ],
+      "statusTemplate": {
+        "kind": "milestone-gap",
+        "milestoneIndex": 0,
+        "template": "Detroit's 5-game winning streak was snapped in Game 3. The Pistons still lead the series 2-1."
+      },
+      "seriesStatus": "Pistons lead Cavaliers 2-1. The 5-game streak ended with a 109-116 loss in Game 3."
+    },
+    {
+      "id": "reaves",
+      "names": [
+        "Austin Reaves",
+        "Austin",
+        "Reaves"
+      ],
+      "displayName": "Austin Reaves",
+      "avatar": "https://ui-avatars.com/api/?name=Austin+Reaves&background=552583&color=fff&size=128",
+      "teamGradient": [
+        "#552583",
+        "#FDB927"
+      ],
+      "milestones": [
+        {
+          "name": "Game 3 scoring drop",
+          "current": 17,
+          "target": 31,
+          "chasing": "Returning to G2 form",
+          "displayChasing": "Playoff career high"
+        },
+        {
+          "name": "Series scoring average",
+          "current": 18,
+          "target": 20,
+          "chasing": "Consistency in series",
+          "displayChasing": "Personal goal"
+        }
+      ],
+      "upcoming": [
+        "After a career-high 31 points in Game 2, Reaves had 17 points and 9 assists in Game 3, with scoring cooling but playmaking rising.",
+        "Lakers lost Game 3 108-131 and are down 0-3."
+      ],
+      "statusTemplate": {
+        "kind": "milestone-gap",
+        "milestoneIndex": 0,
+        "vars": {
+          "pts": 17,
+          "ast": 9
+        },
+        "template": "After a 31-point Game 2, Reaves scored {{pts}} points with {{ast}} assists in Game 3."
+      },
+      "seriesStatus": "Lakers trail 0-3. Reaves averaging approximately 17 PTS and 6 AST in the playoffs."
+    },
+    {
+      "id": "chet",
+      "names": [
+        "Chet Holmgren",
+        "Chet",
+        "Holmgren"
+      ],
+      "displayName": "Chet Holmgren",
+      "avatar": "https://ui-avatars.com/api/?name=Chet+Holmgren&background=007AC1&color=fff&size=128",
+      "teamGradient": [
+        "#007AC1",
+        "#EF3B24"
+      ],
+      "milestones": [
+        {
+          "name": "Near 20-10 average",
+          "current": 19,
+          "target": 20,
+          "chasing": "20+ PPG threshold",
+          "displayChasing": "Elite scoring threshold"
+        },
+        {
+          "name": "Series blocks",
+          "current": 7,
+          "target": 10,
+          "chasing": "Series blocks leader",
+          "displayChasing": "Wembanyama / players"
+        }
+      ],
+      "upcoming": [
+        "Averaging 19.0 PPG, 9.1 RPG, and 2.0 BPG in the playoffs, anchoring Oklahoma City's interior.",
+        "Has scored at least 18 points in 5 of 7 playoff games.",
+        "Contributed 18 PTS and 9 REB in Game 3, a 131-108 win over the Lakers."
+      ],
+      "statusTemplate": {
+        "kind": "milestone-gap",
+        "milestoneIndex": 0,
+        "vars": {
+          "avg": 19,
+          "reb": 9.1
+        },
+        "template": "Chet is averaging {{avg}} points and {{reb}} rebounds in the 2026 playoffs."
+      },
+      "seriesStatus": "Thunder lead Lakers 3-0, undefeated in 7 playoff games. G3: 131-108 blowout win."
+    },
+    {
+      "id": "lukaDepth",
+      "names": [
+        "Luka Doncic",
+        "Luka Dončić",
+        "Luka",
+        "Doncic",
+        "Lakers Thunder",
+        "Lakers vs Thunder",
+        "Thunder depth Lakers"
+      ],
+      "displayName": "Luka injury & Thunder depth (2026)",
+      "avatar": "https://ui-avatars.com/api/?name=Luka+Doncic&background=552583&color=fff&size=128",
+      "teamGradient": [
+        "#552583",
+        "#FDB927"
+      ],
+      "milestones": [
+        {
+          "name": "Games missed (Doncic)",
+          "current": 3,
+          "target": 4,
+          "chasing": "Consecutive absences this series",
+          "displayChasing": "N/A"
+        },
+        {
+          "name": "Thunder bench points (G3)",
+          "current": 48,
+          "target": 50,
+          "chasing": "Series-high bench output",
+          "displayChasing": "N/A"
+        }
+      ],
+      "upcoming": [
+        "Luka Doncic remains out, Lakers down 0-3 and one loss from elimination.",
+        "Ajay Mitchell tallied 24 PTS, 10 AST and 0 turnovers in Game 3, filling the backcourt seamlessly."
+      ],
+      "statusTemplate": {
+        "kind": "milestone-gap",
+        "milestoneIndex": 0,
+        "template": "Lakers are down 0-3 without Doncic. OKC is 7-0 in the playoffs."
+      },
+      "seriesStatus": "Lakers trail 0-3. Doncic remains sidelined. Thunder are 7-0."
+    },
+    {
+      "id": "lebron300",
+      "names": [
+        "LeBron 300 playoff games",
+        "LeBron 300th playoff game",
+        "LeBron James 300 playoff",
+        "300th playoff game LeBron",
+        "LeBron 300 playoffs"
+      ],
+      "displayName": "LeBron's 300th playoff game (2026)",
+      "avatar": "https://ui-avatars.com/api/?name=LeBron+James&background=552583&color=fff&size=128",
+      "teamGradient": [
+        "#552583",
+        "#FDB927"
+      ],
+      "milestones": [
+        {
+          "name": "Career playoff games played",
+          "current": 301,
+          "target": 310,
+          "chasing": "Next milestone",
+          "displayChasing": "Self (historic)"
+        }
+      ],
+      "upcoming": [
+        "In his 300th playoff game, LeBron had 23 PTS and 6 AST in a 107-125 loss.",
+        "In Game 3 (his 301st), he posted 19 PTS, 8 AST, and 6 REB as the Lakers lost 108-131."
+      ],
+      "statusTemplate": {
+        "kind": "milestone-gap",
+        "milestoneIndex": 0,
+        "template": "LeBron James has now played in {{current}} career playoff games."
+      },
+      "seriesStatus": "Through Game 3, his career playoff total stands at 301 games."
+    },
+    {
+      "id": "lakersUnderdog",
+      "names": [
+        "Lakers underdog",
+        "Lakers +950",
+        "+950 Lakers",
+        "Lakers historic underdog",
+        "Lakers vs Thunder underdog",
+        "Lakers Thunder odds",
+        "Lakers biggest underdog",
+        "David Goliath Lakers"
+      ],
+      "displayName": "Lakers historic underdog vs Thunder (2026)",
+      "avatar": "https://ui-avatars.com/api/?name=Los+Angeles+Lakers&background=552583&color=fdb927&size=128",
+      "teamGradient": [
+        "#552583",
+        "#FDB927"
+      ],
+      "milestones": [
+        {
+          "name": "Series score",
+          "current": 0,
+          "target": 1,
+          "chasing": "Avoiding the sweep",
+          "displayChasing": "First win"
+        },
+        {
+          "name": "Losing streak vs Thunder (season)",
+          "current": 7,
+          "target": 1,
+          "chasing": "Snapping the streak",
+          "displayChasing": "Any win"
+        }
+      ],
+      "upcoming": [
+        "Lakers' historic underdog saga deepens: 0-3 deficit, on the verge of a sweep.",
+        "Now 0-7 vs OKC this season (4 regular season, 3 playoffs)."
+      ],
+      "statusTemplate": {
+        "kind": "milestone-gap",
+        "milestoneIndex": 0,
+        "template": "Lakers are down 0-3 and face a potential sweep by the Thunder."
+      },
+      "seriesStatus": "No team in NBA history has overcome a 0-3 deficit (0-157 all-time)."
+    },
+    {
+      "id": "mikalBridges",
+      "names": [
+        "Mikal Bridges",
+        "Mikal",
+        "Bridges",
+        "Bridges Knicks",
+        "Nova Knicks Bridges",
+        "KD trade Bridges",
+        "Five picks Bridges"
+      ],
+      "displayName": "Mikal Bridges: final piece (2026 Knicks)",
+      "avatar": "https://ui-avatars.com/api/?name=Mikal+Bridges&background=006BB6&color=fff&size=128",
+      "teamGradient": [
+        "#006BB6",
+        "#F58426"
+      ],
+      "milestones": [
+        {
+          "name": "Last 4 games scoring avg",
+          "current": 21,
+          "target": 25,
+          "chasing": "Best playoff stretch",
+          "displayChasing": "Personal best"
+        },
+        {
+          "name": "Series defensive contributions",
+          "current": 5,
+          "target": 10,
+          "chasing": "Combined steals + blocks in series",
+          "displayChasing": "Two-way impact"
+        }
+      ],
+      "upcoming": [
+        "Scored 23 PTS (8-14 FG) in Game 3 while holding Tyrese Maxey to just 8 shot attempts through three quarters.",
+        "Averaging 20.5 PPG over his last 4 playoff games."
+      ],
+      "statusTemplate": {
+        "kind": "milestone-gap",
+        "milestoneIndex": 0,
+        "vars": {
+          "avg": 20.5
+        },
+        "template": "Bridges is averaging {{avg}} points over his last 4 playoff games."
+      },
+      "seriesStatus": "Bridges has become the defensive anchor after Anunoby's injury."
+    },
+    {
+      "id": "jalenBrunson",
+      "names": [
+        "Jalen Brunson",
+        "Brunson",
+        "Jalen",
+        "King of New York",
+        "Brunson Knicks playoffs"
+      ],
+      "displayName": "Jalen Brunson: King of New York (2026)",
+      "avatar": "https://ui-avatars.com/api/?name=Jalen+Brunson&background=006BB6&color=F58426&size=128",
+      "teamGradient": [
+        "#006BB6",
+        "#F58426"
+      ],
+      "milestones": [
+        {
+          "name": "30-pt playoff games (Knicks history)",
+          "current": 24,
+          "target": 25,
+          "chasing": "Extending his own record",
+          "displayChasing": "Self (new heights)"
+        },
+        {
+          "name": "Series scoring average",
+          "current": 31,
+          "target": 35,
+          "chasing": "Legendary series performance",
+          "displayChasing": "MJ / LeBron territory"
+        }
+      ],
+      "upcoming": [
+        "Scored 33 PTS with 9 AST in Game 3, pushing the Knicks to a 3-0 lead.",
+        "24 career playoff 30-point games as a Knick — the most in franchise history (Patrick Ewing had 18).",
+        "Averaging 31.3 PPG and 9.0 APG in the series, delivering a dominant two-way show."
+      ],
+      "statusTemplate": {
+        "kind": "milestone-gap",
+        "milestoneIndex": 0,
+        "template": "Brunson now has {{current}} career playoff games with 30+ points as a Knick."
+      },
+      "seriesStatus": "Knicks lead 76ers 3-0, one win away from a sweep."
+    },
+    {
+      "id": "joelEmbiidKnicks",
+      "names": [
+        "Joel Embiid",
+        "Embiid",
+        "Embiid Knicks nightmare",
+        "Embiid 0-3 Knicks",
+        "Sixers Embiid playoffs 2026"
+      ],
+      "displayName": "Joel Embiid: Knicks nightmare (2026)",
+      "avatar": "https://ui-avatars.com/api/?name=Joel+Embiid&background=006BB6&color=C8102E&size=128",
+      "teamGradient": [
+        "#006BB6",
+        "#ED174C"
+      ],
+      "milestones": [
+        {
+          "name": "Game 3 production",
+          "current": 18,
+          "target": 30,
+          "chasing": "Series bounce-back",
+          "displayChasing": "Dominant performance"
+        },
+        {
+          "name": "Team series score",
+          "current": 0,
+          "target": 1,
+          "chasing": "Avoiding the sweep",
+          "displayChasing": "First win"
+        }
+      ],
+      "upcoming": [
+        "Returned in Game 3 with 18 PTS, 6 REB, 5 AST, 3 BLK but couldn't prevent a 0-3 hole.",
+        "Playing through ankle and hip injuries, far from full strength."
+      ],
+      "statusTemplate": {
+        "kind": "milestone-gap",
+        "milestoneIndex": 0,
+        "vars": {
+          "pts": 18
+        },
+        "template": "Embiid returned in Game 3 with {{pts}} points, but the Sixers are down 0-3."
+      },
+      "seriesStatus": "76ers trail 0-3, facing a sweep by the Knicks."
+    },
+    {
+      "id": "knicksThreeDestruction",
+      "names": [
+        "Knicks three game destruction",
+        "Knicks 119 points",
+        "Knicks 25 point wins",
+        "Knicks playoff blowouts 2026",
+        "119 points destruction"
+      ],
+      "displayName": "Knicks: 119 points of destruction (2026)",
+      "avatar": "https://ui-avatars.com/api/?name=New+York+Knicks&background=006BB6&color=F58426&size=128",
+      "teamGradient": [
+        "#006BB6",
+        "#F58426"
+      ],
+      "milestones": [
+        {
+          "name": "Current win streak",
+          "current": 6,
+          "target": 8,
+          "chasing": "Sustaining dominance",
+          "displayChasing": "Franchise record"
+        },
+        {
+          "name": "Series lead",
+          "current": 3,
+          "target": 4,
+          "chasing": "Completing the sweep",
+          "displayChasing": "Series sweep"
+        }
+      ],
+      "upcoming": [
+        "After three straight 25+ point playoff wins, Game 3 was a 108-94 victory — still in control.",
+        "Now riding a 6-game playoff win streak."
+      ],
+      "statusTemplate": {
+        "kind": "milestone-gap",
+        "milestoneIndex": 0,
+        "template": "The Knicks have won {{current}} straight playoff games."
+      },
+      "seriesStatus": "Knicks lead 76ers 3-0, one win from the Eastern Conference Finals."
+    },
+    {
+      "id": "sixersKnicksCurse",
+      "names": [
+        "Sixers Knicks curse",
+        "76ers Knicks playoffs",
+        "42 years Sixers Knicks",
+        "Sixers vs Knicks 1983",
+        "Knicks Sixers playoff history"
+      ],
+      "displayName": "Sixers vs Knicks: 42-year playoff curse",
+      "avatar": "https://ui-avatars.com/api/?name=Sixers+vs+Knicks&background=C8102E&color=006BB6&size=128",
+      "teamGradient": [
+        "#C8102E",
+        "#006BB6"
+      ],
+      "milestones": [
+        {
+          "name": "Playoff series losses to Knicks",
+          "current": 4,
+          "target": 0,
+          "chasing": "Breaking the curse",
+          "displayChasing": "Next playoff meeting"
+        },
+        {
+          "name": "Year of last series win over Knicks",
+          "current": 2026,
+          "target": 1983,
+          "chasing": "43-year drought",
+          "displayChasing": "Historical curse"
+        }
+      ],
+      "upcoming": [
+        "The 76ers haven't won a playoff series against the Knicks since 1983.",
+        "Trailing 0-3, the curse is virtually certain to extend to 43 years."
+      ],
+      "statusTemplate": {
+        "kind": "milestone-gap",
+        "milestoneIndex": 0,
+        "template": "The 76ers have lost {{current}} straight playoff series against the Knicks since 1983."
+      },
+      "seriesStatus": "76ers down 0-3. Since 1983, Philadelphia is 0-4 in playoff series vs New York."
+    },
+    {
+      "id": "wembyGame1",
+      "names": [
+        "Wembanyama Game 1",
+        "Wembanyama 12 blocks",
+        "Wemby G1",
+        "Spurs Game 1 loss",
+        "Wembanyama blocks record"
+      ],
+      "displayName": "Wembanyama 12 Blocks Game 1 (2026)",
+      "avatar": "https://ui-avatars.com/api/?name=Victor+Wembanyama&background=000000&color=fff&size=128",
+      "teamGradient": [
+        "#000000",
+        "#C0C0C0"
+      ],
+      "milestones": [
+        {
+          "name": "Blocks in single game (G1)",
+          "current": 12,
+          "target": 12,
+          "chasing": "Broke NBA playoff record",
+          "displayChasing": "Mark Eaton (10)"
+        },
+        {
+          "name": "Shooting in G1",
+          "current": 5,
+          "target": 17,
+          "chasing": "29.4% FG, worst of his playoff career",
+          "displayChasing": "Needs improvement"
+        }
+      ],
+      "upcoming": [
+        "Blocked 12 shots in Game 1, setting a new NBA playoff single-game record.",
+        "Became only the third player in playoff history with a blocks triple-double (11 PTS, 15 REB, 12 BLK).",
+        "However, shot just 5-for-17 (0-8 3PT) — the worst postseason shooting of his career."
+      ],
+      "statusTemplate": {
+        "kind": "milestone-gap",
+        "milestoneIndex": 0,
+        "template": "Wembanyama set the NBA playoff record with {{current}} blocks in Game 1."
+      },
+      "seriesStatus": "Spurs lost Game 1 (102-104) despite Wembanyama's historic 12 blocks."
+    },
+    {
+      "id": "wembyGame3",
+      "names": [
+        "Wembanyama Game 3",
+        "Wembanyama 39 points",
+        "Wemby G3",
+        "Spurs 2-1 lead",
+        "Wembanyama 35-15-5"
+      ],
+      "displayName": "Wembanyama Game 3 Masterpiece (2026)",
+      "avatar": "https://ui-avatars.com/api/?name=Victor+Wembanyama&background=000000&color=fff&size=128",
+      "teamGradient": [
+        "#000000",
+        "#C0C0C0"
+      ],
+      "milestones": [
+        {
+          "name": "35+15+5 Club (G3)",
+          "current": 39,
+          "target": 35,
+          "chasing": "Joined Kareem, Hakeem, Shaq",
+          "displayChasing": "Kareem, Hakeem, Shaq"
+        },
+        {
+          "name": "4th quarter points (G3)",
+          "current": 16,
+          "target": 15,
+          "chasing": "Dominated despite 5 fouls",
+          "displayChasing": "Clutch gene"
+        }
+      ],
+      "upcoming": [
+        "Posted 39 points, 15 rebounds, 5 blocks on 72/60/83 shooting in Game 3.",
+        "Became the 4th player in NBA playoff history with 35+ PTS, 15+ REB, and 5+ BLK.",
+        "The only one among them to do it on 70%+ field goal shooting."
+      ],
+      "statusTemplate": {
+        "kind": "milestone-gap",
+        "milestoneIndex": 0,
+        "template": "Wembanyama's 39-15-5 Game 3 places him alongside Kareem, Hakeem, and Shaq."
+      },
+      "seriesStatus": "Spurs win 115-108, take 2-1 series lead. Game 3 was Wembanyama's coronation."
+    },
+    {
+      "id": "antWall",
+      "names": [
+        "Anthony Edwards",
+        "Edwards",
+        "Ant",
+        "Edwards Wembanyama",
+        "Edwards vs Wembanyama",
+        "Ant wall"
+      ],
+      "displayName": "Anthony Edwards vs. Wembanyama (2026)",
+      "avatar": "https://ui-avatars.com/api/?name=Anthony+Edwards&background=002B5C&color=fff&size=128",
+      "teamGradient": [
+        "#002B5C",
+        "#7AC143"
+      ],
+      "milestones": [
+        {
+          "name": "Game 3 scoring",
+          "current": 32,
+          "target": 40,
+          "chasing": "Carrying the load injured",
+          "displayChasing": "Playoff career high"
+        },
+        {
+          "name": "Game 3 rebounds",
+          "current": 14,
+          "target": 15,
+          "chasing": "New playoff career high in boards",
+          "displayChasing": "Personal record"
+        }
+      ],
+      "upcoming": [
+        "In Game 1, returned early from a hyperextended left knee to score 18 off the bench in a surprise win.",
+        "Game 3: poured in 32 PTS, 14 REB, 6 AST, still unable to break Wembanyama's wall.",
+        "After Game 2, images of Edwards with ice packs on both knees underscored his gutsy effort."
+      ],
+      "statusTemplate": {
+        "kind": "milestone-gap",
+        "milestoneIndex": 0,
+        "vars": {
+          "pts": 32
+        },
+        "template": "Despite {{pts}} points in Game 3, Edwards couldn't overcome Wembanyama's wall."
+      },
+      "seriesStatus": "Timberwolves trail Spurs 1-2. Edwards battles injury as Minnesota faces elimination risks."
+    },
+    {
+      "id": "gobertTorch",
+      "names": [
+        "Rudy Gobert",
+        "Gobert",
+        "Gobert Wembanyama",
+        "French towers",
+        "DPOY torch",
+        "Gobert darkest hour"
+      ],
+      "displayName": "Gobert vs. Wembanyama: Passing the Torch (2026)",
+      "avatar": "https://ui-avatars.com/api/?name=Rudy+Gobert&background=002B5C&color=fff&size=128",
+      "teamGradient": [
+        "#002B5C",
+        "#7AC143"
+      ],
+      "milestones": [
+        {
+          "name": "Game 3 scoring gap",
+          "current": 13,
+          "target": 39,
+          "chasing": "Outscored by Wemby",
+          "displayChasing": "Wembanyama"
+        },
+        {
+          "name": "Game 3 +/- gap",
+          "current": -12,
+          "target": 16,
+          "chasing": "Plus-minus discrepancy",
+          "displayChasing": "Wembanyama"
+        }
+      ],
+      "upcoming": [
+        "In Game 3, 33-year-old Gobert was dominated by 22-year-old Wembanyama: 39 PTS vs 13 PTS.",
+        "Wemby deployed a Hakeem Olajuwon spin fadeaway over Gobert three times in the 4th quarter.",
+        "This signified the formal torch-passing of French basketball from the 4-time DPOY to the unanimous DPOY."
+      ],
+      "statusTemplate": {
+        "kind": "milestone-gap",
+        "milestoneIndex": 0,
+        "template": "Wembanyama outscored Gobert {{gap}} points in Game 3, signaling a torch pass."
+      },
+      "seriesStatus": "Timberwolves trail 1-2. Gobert was thoroughly outplayed by Wembanyama on both ends in Game 3."
+    }
+  ],
+  "sitePages": {
+    "austin-reaves-redemption-2026.html": {
+      "seo": {
+        "title": "Austin Reaves' 48-Hour Redemption: From 8-Point Disaster to 31-Point Playoff Career High",
+        "description": "The most dramatic bounce-back of the 2026 NBA Playoffs. Austin Reaves went from the worst playoff game by a Laker in 35 years to a career-high 31 points — in just 48 hours. Game 3 (May 9) added 17 points and 9 assists, but the Lakers fell behind 0-3."
+      },
+      "hero": {
+        "h1": "The 48-Hour Redemption of Austin Reaves",
+        "sub": "Game 1: 8 points on 3-of-16 shooting. Game 2: 31 points on 10-of-16 shooting. Game 3 (May 9, home): 17 points and 9 assists — playmaking showed up even as the Lakers lost 108-131 and fell into an 0-3 hole.",
+        "game3SummaryHtml": "<strong>17 PTS</strong> · <strong>9 AST</strong> (team high) · follow-up to the 31-point explosion, with scoring cooling but table-setting up. The Lakers lost <strong>108-131</strong> and trail the Thunder <strong>0-3</strong> in the Western Semifinals."
+      }
+    },
+    "cade-cunningham-playoffs-2026.html": {
+      "seo": {
+        "title": "Cade Cunningham 2026 Playoff Milestones Tracker: The Rise of Detroit's Superstar",
+        "description": "Track Cade Cunningham's historic 2026 playoff run. From breaking Pistons franchise records to joining Oscar Robertson and Luka Doncic, see every milestone as Detroit chases the Eastern Conference Finals."
+      }
+    },
+    "chet-holmgren-defensive-dominance-2026.html": {
+      "seo": {
+        "title": "Chet Holmgren 2026 Playoffs: DPOY-Level Defense & Historic Two-Way Dominance",
+        "description": "Chet Holmgren is anchoring the Thunder's title run with DPOY-level defense and near-190-club shooting. Every block, steal, and record from his dominant 2026 postseason vs the Lakers and beyond."
+      }
+    },
+    "donovan-mitchell-vs-pistons.html": {
+      "seo": {
+        "title": "Donovan Mitchell vs Pistons 2026 Playoffs | Scouting Report & Series Stats",
+        "description": "Donovan Mitchell and the Cavaliers vs the #1-seed Detroit Pistons in the 2026 Eastern Conference Semifinals. Series snapshot, head-to-head playoff numbers, and what Mitchell needs to flip the series."
+      }
+    },
+    "edwards-vs-wembanyama-hero-wall-2026.html": {
+      "seo": {
+        "title": "The Hero and the Unicorn Wall: Anthony Edwards' Gritty Return vs. Wembanyama's Empire — 2026 NBA Playoffs",
+        "description": "Anthony Edwards returned from a knee injury 9 days early, scored 18 points off the bench in Game 1, then poured in 32 points and 14 rebounds in Game 3. But Wembanyama's record 12 blocks in Game 1 and 39-point Game 3 masterpiece built an unbreakable wall."
+      }
+    },
+    "gobert-vs-wembanyama-torch-pass-2026.html": {
+      "seo": {
+        "title": "The Prodigy and the Master: Rudy Gobert's Darkest Hour vs. Victor Wembanyama — 2026 NBA Playoffs",
+        "description": "Rudy Gobert has 4 DPOY trophies and just locked down Nikola Jokic. But in the 2026 Western Semifinals, his 22-year-old French protégé Victor Wembanyama is destroying him — 39 points on 72% shooting, a Hakeem Olajuwon spin fadeaway over the master, and a 2-1 series deficit."
+      }
+    },
+    "index.html": {
+      "seo": {
+        "title": "NBA Playoffs Milestone Tracker | Player Stories & Record Chases",
+        "description": "Search NBA playoff stars by name, open every story page from one hub, and follow live milestone chase cards for LeBron James, Stephen Curry, Kevin Durant, Giannis Antetokounmpo, Nikola Jokić, and more."
+      }
+    },
+    "jalen-brunson-king-of-new-york-2026.html": {
+      "seo": {
+        "title": "Jalen Brunson: The King of New York — 24 Playoff 30-Point Games & Counting | 2026 NBA Playoffs",
+        "description": "Jalen Brunson has more 30-point playoff games than any player in Knicks history. From his NBA-record 15-point streak to joining the MJ & Kareem club, track every milestone of the King of New York's 2026 playoff dominance vs. the 76ers."
+      }
+    },
+    "joel-embiid-knicks-nightmare-2026.html": {
+      "seo": {
+        "title": "Joel Embiid's Philly Nightmare: The Knicks Takeover, the Injuries, and the 0-3 Abyss — 2026 NBA Playoffs",
+        "description": "Joel Embiid begged 76ers fans not to sell their tickets. 59% of Game 3 ticket sales came from New York. Knicks fans booed him at his own free-throw line. Now he's down 0-3 with a sprained ankle and sore hip."
+      }
+    },
+    "knicks-historic-three-game-destruction-2026.html": {
+      "seo": {
+        "title": "119 Points of Destruction: The Knicks' Record-Shattering Three-Game Playoff Run — 2026 NBA Playoffs",
+        "description": "The Knicks are the first team in NBA history to win three straight playoff games by 25+ points. 29, 51, and 39-point wins. Largest three-game margin in playoff history."
+      }
+    },
+    "lakers-historic-underdog-2026.html": {
+      "seo": {
+        "title": "Lakers' Biggest Playoff Underdog Challenge in Franchise History: +950 vs. Thunder — 2026 NBA Playoffs",
+        "description": "The Lakers face the largest playoff underdog odds in franchise history since 1988. +950 series price, 15.5-point Game 1 spread, LeBron's biggest career underdog. Now down 0-3 after Game 3."
+      }
+    },
+    "lebron-300th-playoff-game-2026.html": {
+      "seo": {
+        "title": "The Changing of the Guard: LeBron James' 300th Playoff Game vs. OKC's Rising Dynasty — 2026 NBA Playoffs",
+        "description": "The 2026 Western Conference Semifinals is more than a series — it's the passing of the torch. LeBron James reached 300 playoff games as the Thunder's young dynasty rolled to a 2-0 lead; after Game 3, OKC is up 3-0."
+      }
+    },
+    "luka-doncic-injury-impact-2026.html": {
+      "seo": {
+        "title": "2026 NBA Playoffs: Lakers Without Luka Doncic vs. Thunder's Unstoppable Depth — A Two-Sided Story",
+        "description": "The Lakers are missing scoring champion Luka Doncic, and the Thunder are showing why they're the deepest team in the NBA. After Game 3, OKC bench and depth continue to overwhelm."
+      }
+    },
+    "mikal-bridges-final-piece-knicks-2026.html": {
+      "seo": {
+        "title": "Mikal Bridges: The Final Piece — From KD Trade Asset to Knicks Championship Puzzle | 2026 NBA Playoffs",
+        "description": "Mikal Bridges was the centerpiece of the Kevin Durant trade. Now he's locking down Tyrese Maxey, silencing all doubters, and proving he's the missing piece to New York's championship puzzle."
+      }
+    },
+    "pistons-playoff-record.html": {
+      "seo": {
+        "title": "Detroit Pistons Playoff Records Tracker 2026: From 14 Wins to Championship Chase",
+        "description": "Track every Detroit Pistons franchise playoff record in 2026. From ending the 18-year series win drought to Cade Cunningham breaking Isiah Thomas' scoring record."
+      }
+    },
+    "sixers-knicks-42-year-playoff-curse-2026.html": {
+      "seo": {
+        "title": "42 Years of Pain: The 76ers' Playoff Curse Against the Knicks — 1983 to 2026",
+        "description": "The 76ers haven't won a playoff series against the Knicks since 1983. Four straight Knicks series wins. 9 all-time playoff meetings. A 42-year curse."
+      }
+    },
+    "tobias-harris-scoring-streak-2026.html": {
+      "seo": {
+        "title": "Tobias Harris 2026 Playoff Scoring Streak: 7 Straight 20-Point Games and Counting",
+        "description": "Track Tobias Harris' incredible 2026 playoff scoring streak. From zero consecutive 20-point games in the regular season to 7 straight in the playoffs — now at 8 games and counting."
+      }
+    },
+    "wembanyama-12-blocks-game1-loss-2026.html": {
+      "seo": {
+        "title": "Wembanyama's 12 Blocks Not Enough: Spurs' Historic Defensive Night Ends in 104-102 Game 1 Loss — 2026 NBA Playoffs",
+        "description": "Victor Wembanyama set the NBA playoff record with 12 blocks and became only the 3rd player ever with a blocks triple-double. But the Spurs lost 104-102 to the Timberwolves."
+      }
+    },
+    "wembanyama-game3-coronation-2026.html": {
+      "seo": {
+        "title": "The Coronation of Wemby: 39 Points, Historic 35/15/5 Club & the Game 3 Masterclass — 2026 NBA Playoffs",
+        "description": "Victor Wembanyama delivered 39 points, 15 rebounds, and 5 blocks on 72% shooting in Game 3. He joined Kareem, Hakeem, and Shaq as the only players in NBA history with 35/15/5 in a playoff game."
+      }
+    }
+  }
+}

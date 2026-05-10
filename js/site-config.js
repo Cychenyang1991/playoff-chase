@@ -18,6 +18,18 @@
  * 3) Paste Project URL and anon public key below.
  */
 window.NBA_SITE_CONFIG = {
+  /** Optional: override default path to player data (same origin). */
+  playersJsonUrl: "players.json",
+
+  /**
+   * Ball Don't Lie NBA API — https://app.balldontlie.io (free key).
+   * When set, optional milestone.live + player.liveProfile in players.json can refresh totals from playoff box scores.
+   */
+  balldontlieApiKey: "",
+  balldontlieBaseUrl: "https://api.balldontlie.io/v1",
+  /** Default playoff seasons to sum when player.liveProfile omits postseasonSeasons. */
+  balldontliePostseasonSeasons: [2025],
+
   supabaseUrl: "",
   supabaseAnonKey: "",
   supabaseTable: "guestbook_entries",

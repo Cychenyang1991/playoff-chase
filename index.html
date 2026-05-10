@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-site-page="index.html">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NBA Playoffs Milestone Tracker | Player Stories &amp; Record Chases</title>
-  <meta name="description" content="Browse featured NBA playoff milestone pages, search stars by name, and open deep-dive player stories. Dedicated hubs for rising names plus instant milestone cards for LeBron James, Stephen Curry, Kevin Durant, Giannis Antetokounmpo, and Nikola Jokić." />
+  <title data-json-field="seo.title">NBA Playoffs Milestone Tracker | Player Stories &amp; Record Chases</title>
+  <meta name="description" data-json-field="seo.description" content="Search NBA playoff stars by name, open every story page from one hub, and follow live milestone chase cards for LeBron James, Stephen Curry, Kevin Durant, Giannis Antetokounmpo, Nikola Jokić, and more." />
   <style>
     :root {
-      --bg: #0a0a0a;
-      --bg-elevated: #141414;
-      --bg-card: #111111;
-      --border: #2a2a2a;
-      --text: #f0f0f0;
-      --text-muted: #8a8a8a;
-      --accent: #f5a623;
-      --accent-dim: rgba(245, 166, 35, 0.15);
+      --bg: #10131a;
+      --bg-elevated: #181c26;
+      --bg-card: #141820;
+      --border: #2e3548;
+      --text: #eef1f6;
+      --text-muted: #8b92a3;
+      --accent: #f2b024;
+      --accent-dim: rgba(242, 176, 36, 0.16);
       --radius: 14px;
       --font: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     }
@@ -31,7 +31,8 @@
       margin: 0;
       min-height: 100vh;
       font-family: var(--font);
-      background: var(--bg);
+      background-color: var(--bg);
+      background-image: radial-gradient(ellipse 125% 70% at 50% -12%, rgba(68, 92, 145, 0.16) 0%, transparent 52%);
       color: var(--text);
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
@@ -77,105 +78,62 @@
       opacity: 0.65;
     }
 
-    .featured-section {
-      margin-bottom: 2rem;
-      padding: 1.35rem 1.15rem;
-      background: linear-gradient(165deg, #161616 0%, var(--bg-card) 100%);
+    .homepage-monetization {
+      margin: 0 0 1.75rem;
+      padding: 1.15rem 1.1rem;
+      background: linear-gradient(165deg, #1f2534 0%, var(--bg-card) 100%);
       border: 1px solid var(--border);
       border-radius: var(--radius);
     }
 
-    .featured-section h2 {
-      margin: 0 0 0.35rem;
+    .site-pages-section {
+      margin-bottom: 2rem;
+      padding: 1.35rem 1.15rem;
+      background: linear-gradient(165deg, #1f2534 0%, var(--bg-card) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .site-pages-section h2 {
+      margin: 0 0 1rem;
       font-size: 1.1rem;
       font-weight: 700;
       color: #fff;
     }
 
-    .featured-intro {
-      margin: 0 0 1.1rem;
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.45;
+    .site-pages-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem 0.65rem;
     }
 
-    .featured-grid {
-      display: grid;
-      gap: 1rem;
-    }
-
-    @media (min-width: 560px) {
-      .featured-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (min-width: 960px) {
-      .featured-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .featured-card {
-      display: block;
-      padding: 1.1rem 1.15rem;
+    .site-page-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.55rem 0.9rem;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
       background: var(--bg-elevated);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      text-decoration: none;
-      color: inherit;
-      transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+      border-radius: 10px;
+      transition: border-color 0.2s, box-shadow 0.2s, color 0.15s;
+      line-height: 1.3;
+      max-width: 100%;
     }
 
-    .featured-card:hover {
+    .site-page-link:hover {
       border-color: var(--accent);
-      box-shadow: 0 8px 32px rgba(245, 166, 35, 0.12);
-      transform: translateY(-2px);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(242, 176, 36, 0.1);
     }
 
-    .featured-card-inner {
-      display: flex;
-      gap: 0.85rem;
-      align-items: flex-start;
-    }
-
-    .featured-card img {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      border: 2px solid var(--accent);
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    .featured-card h3 {
-      margin: 0 0 0.35rem;
-      font-size: 1.02rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .featured-card p {
-      margin: 0 0 0.65rem;
-      font-size: 0.84rem;
-      color: #b8b8b8;
-      line-height: 1.45;
-    }
-
-    .featured-card .cta {
-      font-size: 0.82rem;
-      font-weight: 700;
+    .site-page-link::after {
+      content: " →";
       color: var(--accent);
-    }
-
-    .featured-card:hover .cta {
-      text-decoration: underline;
-    }
-
-    .homepage-monetization {
-      margin-top: 1.35rem;
-      padding-top: 1.15rem;
-      border-top: 1px solid var(--border);
+      font-weight: 700;
+      flex-shrink: 0;
     }
 
     .search-section label {
@@ -266,7 +224,7 @@
     }
 
     .card {
-      background: linear-gradient(165deg, #161616 0%, var(--bg-card) 100%);
+      background: linear-gradient(165deg, #1f2534 0%, var(--bg-card) 100%);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 1.35rem;
@@ -392,6 +350,43 @@
       margin-bottom: 0.35rem;
     }
 
+    .all-trackers-section {
+      margin: 2rem 0;
+      padding: 1.35rem 1.15rem;
+      background: linear-gradient(165deg, #1f2534 0%, var(--bg-card) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .all-trackers-section > h2 {
+      margin: 0 0 1.25rem;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    #all-trackers-mount {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .tracker-panel {
+      display: block;
+      margin: 0;
+      padding: 1.25rem 1.15rem;
+      scroll-margin-top: 1rem;
+      transition: box-shadow 0.25s ease, border-color 0.25s ease;
+      background: linear-gradient(165deg, #1f2534 0%, var(--bg-card) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .tracker-panel.is-focused {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(242, 176, 36, 0.35);
+    }
+
     .actions {
       margin-top: 1.25rem;
       display: flex;
@@ -403,7 +398,7 @@
     .btn-share {
       appearance: none;
       border: 1px solid var(--accent);
-      background: linear-gradient(180deg, rgba(245, 166, 35, 0.2) 0%, rgba(245, 166, 35, 0.05) 100%);
+      background: linear-gradient(180deg, rgba(242, 176, 36, 0.2) 0%, rgba(242, 176, 36, 0.05) 100%);
       color: var(--accent);
       padding: 0.65rem 1.1rem;
       border-radius: 10px;
@@ -414,7 +409,7 @@
     }
 
     .btn-share:hover {
-      box-shadow: 0 4px 20px rgba(245, 166, 35, 0.25);
+      box-shadow: 0 4px 20px rgba(242, 176, 36, 0.25);
     }
 
     .btn-share:active {
@@ -526,7 +521,7 @@
     .comments-section {
       margin-top: 2.25rem;
       padding: 1.35rem 1.15rem;
-      background: linear-gradient(165deg, #161616 0%, var(--bg-card) 100%);
+      background: linear-gradient(165deg, #1f2534 0%, var(--bg-card) 100%);
       border: 1px solid var(--border);
       border-radius: var(--radius);
     }
@@ -617,154 +612,104 @@
       <ul id="autocomplete-list" role="listbox" aria-label="Matching players"></ul>
     </section>
 
-    <section class="featured-section" aria-labelledby="featured-heading">
-      <h2 id="featured-heading">Featured Player Stories</h2>
-      <p class="featured-intro">Latest milestone hubs — full narratives, tables, and stats on dedicated pages.</p>
-      <div class="featured-grid">
-        <a class="featured-card" href="cade-cunningham-playoffs-2026.html">
-          <div class="featured-card-inner">
-            <img
-              src="https://ui-avatars.com/api/?name=Cade+Cunningham&background=1D428A&color=fff&size=128"
-              width="56"
-              height="56"
-              alt="Cade Cunningham"
-            />
-            <div>
-              <h3>Cade Cunningham</h3>
-              <p>Cade Cunningham's historic playoff debut — tracking his record-breaking run with Detroit.</p>
-              <span class="cta">View Page →</span>
-            </div>
-          </div>
-        </a>
-        <a class="featured-card" href="tobias-harris-scoring-streak-2026.html">
-          <div class="featured-card-inner">
-            <img
-              src="https://ui-avatars.com/api/?name=Tobias+Harris&background=1D428A&color=fff&size=128"
-              width="56"
-              height="56"
-              alt="Tobias Harris"
-            />
-            <div>
-              <h3>Tobias Harris</h3>
-              <p>Seven straight 20-point playoff games — the scoring streak, the Game 7, and the redemption arc.</p>
-              <span class="cta">View Page →</span>
-            </div>
-          </div>
-        </a>
-        <a class="featured-card" href="donovan-mitchell-vs-pistons.html">
-          <div class="featured-card-inner">
-            <img
-              src="https://ui-avatars.com/api/?name=Donovan+Mitchell&background=860038&color=fdbb30&size=128"
-              width="56"
-              height="56"
-              alt="Donovan Mitchell"
-            />
-            <div>
-              <h3>Donovan Mitchell vs Pistons</h3>
-              <p>2026 East Semis hub — Spida vs Detroit: series snapshot, game log, and milestone angles.</p>
-              <span class="cta">View Page →</span>
-            </div>
-          </div>
-        </a>
-        <a class="featured-card" href="pistons-playoff-record.html">
-          <div class="featured-card-inner">
-            <img
-              src="https://ui-avatars.com/api/?name=Detroit+Pistons&background=1D428A&color=C8102E&size=128"
-              width="56"
-              height="56"
-              alt="Detroit Pistons"
-            />
-            <div>
-              <h3>Pistons franchise records</h3>
-              <p>2026 edition — droughts ended, streaks, and the full playoff timeline in one tracker.</p>
-              <span class="cta">View Page →</span>
-            </div>
-          </div>
-        </a>
-        <a class="featured-card" href="austin-reaves-redemption-2026.html">
-          <div class="featured-card-inner">
-            <img
-              src="https://ui-avatars.com/api/?name=Austin+Reaves&background=552583&color=fff&size=128"
-              width="56"
-              height="56"
-              alt="Austin Reaves"
-            />
-            <div>
-              <h3>Austin Reaves</h3>
-              <p>48-hour redemption — from 8 points to a 31-point playoff career high, with quotes and milestones.</p>
-              <span class="cta">View Page →</span>
-            </div>
-          </div>
-        </a>
-        <a class="featured-card" href="chet-holmgren-defensive-dominance-2026.html">
-          <div class="featured-card-inner">
-            <img
-              src="https://ui-avatars.com/api/?name=Chet+Holmgren&background=007AC1&color=fff&size=128"
-              width="56"
-              height="56"
-              alt="Chet Holmgren"
-            />
-            <div>
-              <h3>Chet Holmgren</h3>
-              <p>DPOY-level defense vs the Lakers — blocks, near-190 shooting, and the full 2026 playoff log.</p>
-              <span class="cta">View Page →</span>
-            </div>
-          </div>
-        </a>
-        <a class="featured-card" href="luka-doncic-injury-impact-2026.html">
-          <div class="featured-card-inner">
-            <img
-              src="https://ui-avatars.com/api/?name=Luka+Doncic&background=552583&color=fff&size=128"
-              width="56"
-              height="56"
-              alt="Luka Dončić"
-            />
-            <div>
-              <h3>Lakers vs. Thunder: depth &amp; injury</h3>
-              <p>Luka’s void, OKC’s 48–20 bench edge, SGA foul trouble — the full 2026 West Semis two-sided story.</p>
-              <span class="cta">View Page →</span>
-            </div>
-          </div>
-        </a>
-        <a class="featured-card" href="lebron-300th-playoff-game-2026.html">
-          <div class="featured-card-inner">
-            <img
-              src="https://ui-avatars.com/api/?name=LeBron+James&background=552583&color=fff&size=128"
-              width="56"
-              height="56"
-              alt="LeBron James"
-            />
-            <div>
-              <h3>LeBron’s 300th playoff game</h3>
-              <p>Generational shift vs OKC — milestone hub with stats, quotes, and the 2026 playoff narrative.</p>
-              <span class="cta">View Page →</span>
-            </div>
-          </div>
-        </a>
-        <a class="featured-card" href="lakers-historic-underdog-2026.html">
-          <div class="featured-card-inner">
-            <img
-              src="https://ui-avatars.com/api/?name=Los+Angeles+Lakers&background=552583&color=fdb927&size=128"
-              width="56"
-              height="56"
-              alt="Los Angeles Lakers"
-            />
-            <div>
-              <h3>Lakers’ historic underdog run</h3>
-              <p>+950 vs Thunder, 15.5-point Game 1 spread, 97% public money — the full David vs. Goliath dashboard.</p>
-              <span class="cta">View Page →</span>
-            </div>
-          </div>
-        </a>
+    <div class="homepage-monetization ad-row">
+      <!-- AdSense Ad Unit -->
+      <div class="adsense-placeholder" aria-hidden="true">AdSense - Responsive</div>
+      <div class="affiliate-wrap">
+        <!-- Affiliate link: Fanatics/NBA Store -->
+        <a href="#">Get his jersey and witness history →</a>
       </div>
-      <div class="homepage-monetization ad-row">
-        <!-- AdSense Ad Unit -->
-        <div class="adsense-placeholder" aria-hidden="true">AdSense - Responsive</div>
-        <div class="affiliate-wrap">
-          <!-- Affiliate link: Fanatics/NBA Store -->
-          <a href="#">Get his jersey and witness history →</a>
-        </div>
-      </div>
+    </div>
+
+    <section class="site-pages-section" aria-labelledby="site-pages-heading">
+      <h2 id="site-pages-heading">All story pages</h2>
+      <nav class="site-pages-grid" aria-label="Every article on this site">
+        <a
+          class="site-page-link"
+          href="austin-reaves-redemption-2026.html"
+          title="Austin Reaves' 48-Hour Redemption: From 8-Point Disaster to 31-Point Playoff Career High"
+          >Austin Reaves redemption</a>
+        <a
+          class="site-page-link"
+          href="cade-cunningham-playoffs-2026.html"
+          title="Cade Cunningham 2026 Playoff Milestones Tracker: The Rise of Detroit's Superstar"
+          >Cade Cunningham playoffs</a>
+        <a
+          class="site-page-link"
+          href="chet-holmgren-defensive-dominance-2026.html"
+          title="Chet Holmgren 2026 Playoffs: DPOY-Level Defense &amp; Historic Two-Way Dominance"
+          >Chet Holmgren defense</a>
+        <a
+          class="site-page-link"
+          href="donovan-mitchell-vs-pistons.html"
+          title="Donovan Mitchell vs Pistons 2026 Playoffs | Scouting Report &amp; Series Stats"
+          >Donovan Mitchell vs Pistons</a>
+        <a
+          class="site-page-link"
+          href="jalen-brunson-king-of-new-york-2026.html"
+          title="Jalen Brunson: The King of New York — 24 Playoff 30-Point Games &amp; Counting | 2026 NBA Playoffs"
+          >Jalen Brunson</a>
+        <a
+          class="site-page-link"
+          href="joel-embiid-knicks-nightmare-2026.html"
+          title="Joel Embiid's Philly Nightmare: The Knicks Takeover, the Injuries, and the 0-3 Abyss — 2026 NBA Playoffs"
+          >Joel Embiid vs Knicks</a>
+        <a
+          class="site-page-link"
+          href="knicks-historic-three-game-destruction-2026.html"
+          title="119 Points of Destruction: The Knicks' Record-Shattering Three-Game Playoff Run — 2026 NBA Playoffs"
+          >Knicks three-game destruction</a>
+        <a
+          class="site-page-link"
+          href="lakers-historic-underdog-2026.html"
+          title="Lakers' Biggest Playoff Underdog Challenge in Franchise History: +950 vs. Thunder — 2026 NBA Playoffs"
+          >Lakers historic underdog</a>
+        <a
+          class="site-page-link"
+          href="lebron-300th-playoff-game-2026.html"
+          title="The Changing of the Guard: LeBron James' 300th Playoff Game vs. OKC's Rising Dynasty — 2026 NBA Playoffs"
+          >LeBron 300th playoff game</a>
+        <a
+          class="site-page-link"
+          href="luka-doncic-injury-impact-2026.html"
+          title="2026 NBA Playoffs: Lakers Without Luka Doncic vs. Thunder's Unstoppable Depth — A Two-Sided Story"
+          >Luka injury / Lakers–Thunder</a>
+        <a
+          class="site-page-link"
+          href="mikal-bridges-final-piece-knicks-2026.html"
+          title="Mikal Bridges: The Final Piece — From KD Trade Asset to Knicks Championship Puzzle | 2026 NBA Playoffs"
+          >Mikal Bridges Knicks</a>
+        <a
+          class="site-page-link"
+          href="pistons-playoff-record.html"
+          title="Detroit Pistons Playoff Records Tracker 2026: From 14 Wins to Championship Chase"
+          >Pistons playoff records</a>
+        <a
+          class="site-page-link"
+          href="sixers-knicks-42-year-playoff-curse-2026.html"
+          title="42 Years of Pain: The 76ers' Playoff Curse Against the Knicks — 1983 to 2026"
+          >Sixers–Knicks 42-year curse</a>
+        <a
+          class="site-page-link"
+          href="tobias-harris-scoring-streak-2026.html"
+          title="Tobias Harris 2026 Playoff Scoring Streak: 7 Straight 20-Point Games and Counting"
+          >Tobias Harris scoring streak</a>
+        <a
+          class="site-page-link"
+          href="wembanyama-12-blocks-game1-loss-2026.html"
+          title="Wembanyama's 12 Blocks Not Enough: Spurs' Historic Defensive Night Ends in 104-102 Game 1 Loss — 2026 NBA Playoffs"
+          >Wembanyama 12 blocks Game 1</a>
+        <a
+          class="site-page-link"
+          href="wembanyama-game3-coronation-2026.html"
+          title="The Coronation of Wemby: 39 Points, Historic 35/15/5 Club &amp; the Game 3 Masterclass — 2026 NBA Playoffs"
+          >Wembanyama Game 3 coronation</a>
+      </nav>
+    </section>
+
+    <section class="all-trackers-section" aria-labelledby="all-trackers-heading">
+      <h2 id="all-trackers-heading">Playoff milestone chases</h2>
+      <div id="all-trackers-mount"></div>
     </section>
 
     <p id="not-found" class="not-found" role="status">Player not found. We keep adding more stars.</p>
@@ -825,373 +770,137 @@
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
+  <script src="js/site-config.js"></script>
+  <script src="js/hydrate-site-pages.js" defer></script>
+  <script src="js/nba-live.js"></script>
   <script>
     (function () {
-      /* Dedicated static pages: add slug here and a minimal PLAYERS entry + featured card in HTML. */
-      var PLAYER_PAGES = {
-        cade: "cade-cunningham-playoffs-2026.html",
-        tobias: "tobias-harris-scoring-streak-2026.html",
-        mitchell: "donovan-mitchell-vs-pistons.html",
-        pistons: "pistons-playoff-record.html",
-        reaves: "austin-reaves-redemption-2026.html",
-        chet: "chet-holmgren-defensive-dominance-2026.html",
-        lukaDepth: "luka-doncic-injury-impact-2026.html",
-        lebron300: "lebron-300th-playoff-game-2026.html",
-        lakersUnderdog: "lakers-historic-underdog-2026.html"
-      };
+      /* Player data: players.json (+ optional Ball Don't Lie live totals: js/nba-live.js, NBA_SITE_CONFIG). */
+      var PLAYER_PAGES = {};
+      var PLAYERS = [];
+      var inlineTrackerIds = {};
 
-      var PLAYERS = [
-        {
-          id: "lebron",
-          names: ["LeBron James", "Lebron James", "LeBron", "Lebron"],
-          displayName: "LeBron James",
-          avatar: "https://ui-avatars.com/api/?name=LeBron+James&background=552583&color=fff&size=128",
-          teamGradient: ["#552583", "#fdb927"],
-          statusTemplate: function (p) {
-            var m = p.milestones[1];
-            var gap = m.target - m.current;
-            return "LeBron is " + gap + " playoff assists away from passing Magic Johnson for the all-time postseason assists record.";
-          },
-          milestones: [
-            {
-              name: "Playoff Points (record watch)",
-              current: 8289,
-              target: 8500,
-              chasing: "Extending his own #1 mark",
-              displayChasing: "Self (#1 all-time — pace to 8,500)"
-            },
-            {
-              name: "Playoff Assists",
-              current: 2151,
-              target: 2346,
-              chasing: "Magic Johnson",
-              displayChasing: "Magic Johnson"
-            },
-            {
-              name: "Playoff Rebounds",
-              current: 2675,
-              target: 2859,
-              chasing: "Tim Duncan",
-              displayChasing: "Tim Duncan"
-            },
-            {
-              name: "Playoff 3-Pointers Made",
-              current: 464,
-              target: 474,
-              chasing: "James Harden",
-              displayChasing: "James Harden"
-            },
-            {
-              name: "Playoff Free Throws Made",
-              current: 1248,
-              target: 1320,
-              chasing: "Kobe Bryant",
-              displayChasing: "Kobe Bryant"
-            }
-          ],
-          upcoming: [
-            "About 200 more playoff dimes puts Magic’s 2,346 assist total squarely in range.",
-            "Roughly 185 boards moves him past Tim Duncan (2,859) on the all-time playoff glass list.",
-            "A long run with steady foul shooting could lift him past Kobe-era postseason free-throw volume."
-          ]
-        },
-        {
-          id: "curry",
-          names: ["Stephen Curry", "Steph Curry", "Curry", "Stephen"],
-          displayName: "Stephen Curry",
-          avatar: "https://ui-avatars.com/api/?name=Stephen+Curry&background=1D428A&color=fff&size=128",
-          teamGradient: ["#1D428A", "#ffc72c"],
-          statusTemplate: function (p) {
-            var gap = p.milestones[1].target - p.milestones[1].current;
-            return "Curry is " + gap + " playoff points away from passing Jerry West on the all-time postseason scoring list.";
-          },
-          milestones: [
-            {
-              name: "Playoff 3-Pointers Made",
-              current: 650,
-              target: 700,
-              chasing: "Extending his own #1 mark",
-              displayChasing: "Self (#1 all-time — pace to 700)"
-            },
-            {
-              name: "Playoff Points",
-              current: 4147,
-              target: 4457,
-              chasing: "Jerry West",
-              displayChasing: "Jerry West"
-            },
-            {
-              name: "Playoff Assists",
-              current: 953,
-              target: 970,
-              chasing: "Jerry West",
-              displayChasing: "Jerry West"
-            },
-            {
-              name: "Playoff Free Throws Made",
-              current: 721,
-              target: 864,
-              chasing: "James Harden",
-              displayChasing: "James Harden"
-            },
-            {
-              name: "Playoff Field Goals Made",
-              current: 1388,
-              target: 1748,
-              chasing: "Tony Parker",
-              displayChasing: "Tony Parker"
-            }
-          ],
-          upcoming: [
-            "About 310 more playoff points vaults him into the top ten on the career postseason scoring list.",
-            "Seventeen more assists ties Jerry West’s playoff assist line from the classic-era leaderboards.",
-            "Fifty more triples before the next tier keeps the distance between him and every other shooter historically wide."
-          ]
-        },
-        {
-          id: "durant",
-          names: ["Kevin Durant", "Durant", "KD"],
-          displayName: "Kevin Durant",
-          avatar: "https://ui-avatars.com/api/?name=Kevin+Durant&background=E56020&color=fff&size=128",
-          teamGradient: ["#e56020", "#f5a623"],
-          statusTemplate: function (p) {
-            var gap = p.milestones[0].target - p.milestones[0].current;
-            return "Durant is " + gap + " playoff points from climbing another spot on the all-time postseason scoring list.";
-          },
-          milestones: [
-            {
-              name: "Playoff Points",
-              current: 4985,
-              target: 5172,
-              chasing: "Tim Duncan",
-              displayChasing: "Tim Duncan"
-            },
-            {
-              name: "Playoff 3-Pointers Made",
-              current: 431,
-              target: 475,
-              chasing: "Klay Thompson",
-              displayChasing: "Klay Thompson"
-            },
-            {
-              name: "Playoff Field Goals Made",
-              current: 1762,
-              target: 1978,
-              chasing: "Tim Duncan",
-              displayChasing: "Tim Duncan"
-            },
-            {
-              name: "Playoff Rebounds",
-              current: 1333,
-              target: 1561,
-              chasing: "Al Horford",
-              displayChasing: "Al Horford"
-            },
-            {
-              name: "Playoff Assists",
-              current: 713,
-              target: 764,
-              chasing: "Tim Duncan",
-              displayChasing: "Tim Duncan"
-            }
-          ],
-          upcoming: [
-            "Under 200 points to pass another Hall-of-Fame guard on the playoff scoring ladder.",
-            "40 more triples moves him into the next cluster behind Curry-era shooters.",
-            "A healthy conference finals run could flip another rebounds-plus-points combo milestone."
-          ]
-        },
-        {
-          id: "giannis",
-          names: ["Giannis Antetokounmpo", "Giannis", "Antetokounmpo", "Giannis Antetekounmpo"],
-          displayName: "Giannis Antetokounmpo",
-          avatar: "https://ui-avatars.com/api/?name=Giannis+Antetokounmpo&background=00471B&color=fff&size=128",
-          teamGradient: ["#00471c", "#f5a623"],
-          statusTemplate: function (p) {
-            var gap = p.milestones[0].target - p.milestones[0].current;
-            return "Giannis is " + gap + " playoff points away from passing Al Horford on the career postseason scoring list.";
-          },
-          milestones: [
-            {
-              name: "Playoff Points",
-              current: 2270,
-              target: 2353,
-              chasing: "Al Horford",
-              displayChasing: "Al Horford"
-            },
-            {
-              name: "Playoff Rebounds",
-              current: 1022,
-              target: 1051,
-              chasing: "Dolph Schayes",
-              displayChasing: "Dolph Schayes"
-            },
-            {
-              name: "Playoff Assists",
-              current: 446,
-              target: 449,
-              chasing: "Ray Allen",
-              displayChasing: "Ray Allen"
-            },
-            {
-              name: "Playoff Steals",
-              current: 71,
-              target: 81,
-              chasing: "Jamal Murray",
-              displayChasing: "Jamal Murray"
-            },
-            {
-              name: "Playoff Field Goals Made",
-              current: 891,
-              target: 942,
-              chasing: "Kyrie Irving",
-              displayChasing: "Kyrie Irving"
-            }
-          ],
-          upcoming: [
-            "One more big scoring series could lift him past several Hall-of-Fame forwards clustered around 2,350 playoff points.",
-            "Twenty-five boards in a deep run tightens the gap on the all-time playoff rebound list.",
-            "Three more playoff assists ties Ray Allen on the next rung of the all-time assist list."
-          ]
-        },
-        {
-          id: "jokic",
-          names: ["Nikola Jokić", "Nikola Jokic", "Jokić", "Jokic", "Nikola"],
-          displayName: "Nikola Jokić",
-          avatar: "https://ui-avatars.com/api/?name=Nikola+Jokic&background=0E2240&color=fff&size=128",
-          teamGradient: ["#0e2240", "#fec524"],
-          statusTemplate: function (p) {
-            var m = p.milestones[0];
-            var gap = m.target - m.current;
-            return (
-              "Jokić is " +
-              gap +
-              " playoff assist" +
-              (gap === 1 ? "" : "s") +
-              " away from matching Bill Russell’s career playoff assist total."
-            );
-          },
-          milestones: [
-            {
-              name: "Playoff Assists",
-              current: 769,
-              target: 770,
-              chasing: "Bill Russell",
-              displayChasing: "Bill Russell"
-            },
-            {
-              name: "Playoff Points",
-              current: 2580,
-              target: 2601,
-              chasing: "Kevin Garnett",
-              displayChasing: "Kevin Garnett"
-            },
-            {
-              name: "Playoff Rebounds",
-              current: 1238,
-              target: 1246,
-              chasing: "Pau Gasol",
-              displayChasing: "Pau Gasol"
-            },
-            {
-              name: "Playoff Triple-Doubles",
-              current: 17,
-              target: 28,
-              chasing: "LeBron James",
-              displayChasing: "LeBron James"
-            },
-            {
-              name: "Playoff Steals",
-              current: 68,
-              target: 81,
-              chasing: "Jamal Murray",
-              displayChasing: "Jamal Murray"
-            }
-          ],
-          upcoming: [
-            "One more triple-double run tightens the gap with LeBron on the all-time playoff triple-double list.",
-            "Roughly twenty points clears the next cluster of forwards ahead of him on postseason scoring.",
-            "Eight more boards and he moves past Pau Gasol’s playoff rebound total on the career list."
-          ]
-        },
-        {
-          id: "cade",
-          names: ["Cade Cunningham", "Cade", "Cunningham"],
-          displayName: "Cade Cunningham",
-          avatar: "https://ui-avatars.com/api/?name=Cade+Cunningham&background=1D428A&color=fff&size=128"
-        },
-        {
-          id: "tobias",
-          names: ["Tobias Harris", "Tobias", "Harris"],
-          displayName: "Tobias Harris",
-          avatar: "https://ui-avatars.com/api/?name=Tobias+Harris&background=1D428A&color=fff&size=128"
-        },
-        {
-          id: "mitchell",
-          names: ["Donovan Mitchell", "Mitchell", "Spida", "Donovan"],
-          displayName: "Donovan Mitchell",
-          avatar: "https://ui-avatars.com/api/?name=Donovan+Mitchell&background=860038&color=fdbb30&size=128"
-        },
-        {
-          id: "pistons",
-          names: ["Detroit Pistons", "Pistons", "Detroit"],
-          displayName: "Detroit Pistons",
-          avatar: "https://ui-avatars.com/api/?name=Detroit+Pistons&background=1D428A&color=C8102E&size=128"
-        },
-        {
-          id: "reaves",
-          names: ["Austin Reaves", "Austin", "Reaves"],
-          displayName: "Austin Reaves",
-          avatar: "https://ui-avatars.com/api/?name=Austin+Reaves&background=552583&color=fff&size=128"
-        },
-        {
-          id: "chet",
-          names: ["Chet Holmgren", "Chet", "Holmgren"],
-          displayName: "Chet Holmgren",
-          avatar: "https://ui-avatars.com/api/?name=Chet+Holmgren&background=007AC1&color=fff&size=128"
-        },
-        {
-          id: "lukaDepth",
-          names: [
-            "Luka Doncic",
-            "Luka Dončić",
-            "Luka",
-            "Doncic",
-            "Lakers Thunder",
-            "Lakers vs Thunder",
-            "Thunder depth Lakers"
-          ],
-          displayName: "Luka injury & Thunder depth (2026)",
-          avatar: "https://ui-avatars.com/api/?name=Luka+Doncic&background=552583&color=fff&size=128"
-        },
-        {
-          id: "lebron300",
-          names: [
-            "LeBron 300 playoff games",
-            "LeBron 300th playoff game",
-            "LeBron James 300 playoff",
-            "300th playoff game LeBron",
-            "LeBron 300 playoffs"
-          ],
-          displayName: "LeBron's 300th playoff game (2026)",
-          avatar: "https://ui-avatars.com/api/?name=LeBron+James&background=552583&color=fff&size=128"
-        },
-        {
-          id: "lakersUnderdog",
-          names: [
-            "Lakers underdog",
-            "Lakers +950",
-            "+950 Lakers",
-            "Lakers historic underdog",
-            "Lakers vs Thunder underdog",
-            "Lakers Thunder odds",
-            "Lakers biggest underdog",
-            "David Goliath Lakers"
-          ],
-          displayName: "Lakers historic underdog vs Thunder (2026)",
-          avatar: "https://ui-avatars.com/api/?name=Los+Angeles+Lakers&background=552583&color=fdb927&size=128"
+      function normalizeStatusTemplate(tpl) {
+        if (!tpl) {
+          return function () {
+            return "";
+          };
         }
-      ];
+        if (typeof tpl === "string") {
+          return function () {
+            return tpl;
+          };
+        }
+        if (tpl.kind === "milestone-gap") {
+          var gapTemplate = String(tpl.template || "");
+          var gapMilestoneIndex = typeof tpl.milestoneIndex === "number" ? tpl.milestoneIndex : 0;
+          var gapTplVars = {};
+          if (tpl.vars && typeof tpl.vars === "object") {
+            for (var gvk in tpl.vars) {
+              if (Object.prototype.hasOwnProperty.call(tpl.vars, gvk)) {
+                gapTplVars[gvk] = tpl.vars[gvk];
+              }
+            }
+          }
+          return function (p) {
+            var m = p.milestones && p.milestones[gapMilestoneIndex];
+            if (!m) return "";
+            var gap = m.target - m.current;
+            var str = gapTemplate;
+            str = str.split("{{gap}}").join(String(gap));
+            str = str.split("{{current}}").join(String(m.current));
+            str = str.split("{{target}}").join(String(m.target));
+            var merged = {};
+            for (var gk in gapTplVars) {
+              if (Object.prototype.hasOwnProperty.call(gapTplVars, gk)) {
+                merged[gk] = gapTplVars[gk];
+              }
+            }
+            if (p.statusVars && typeof p.statusVars === "object") {
+              for (var pk in p.statusVars) {
+                if (!Object.prototype.hasOwnProperty.call(merged, pk)) {
+                  merged[pk] = p.statusVars[pk];
+                }
+              }
+            }
+            for (var rep in merged) {
+              str = str.split("{{" + rep + "}}").join(String(merged[rep]));
+            }
+            return str;
+          };
+        }
+        if (tpl.kind === "assist-gap") {
+          return function (p) {
+            var m = p.milestones && p.milestones[tpl.milestoneIndex];
+            if (!m) return "";
+            var gap = m.target - m.current;
+            return gap === 1 ? tpl.one || "" : String(tpl.many || "").split("{{gap}}").join(String(gap));
+          };
+        }
+        return function () {
+          return "";
+        };
+      }
+
+      function normalizePlayersFromJson(arr) {
+        return (arr || []).map(function (p) {
+          var o = {};
+          for (var key in p) {
+            if (Object.prototype.hasOwnProperty.call(p, key)) {
+              o[key] = p[key];
+            }
+          }
+          if (p.statusTemplate) {
+            o.statusTemplate = normalizeStatusTemplate(p.statusTemplate);
+          }
+          return o;
+        });
+      }
+
+      function loadPlayersThen(done) {
+        var cfg = window.NBA_SITE_CONFIG || {};
+        var url = String(cfg.playersJsonUrl || "players.json").trim();
+        var si = document.getElementById("player-search");
+        if (si) {
+          si.placeholder = "Loading player data…";
+          si.disabled = true;
+        }
+        fetch(url, { credentials: "same-origin" })
+          .then(function (r) {
+            if (!r.ok) throw new Error("players " + r.status);
+            return r.json();
+          })
+          .then(function (data) {
+            PLAYER_PAGES = data.playerPages || {};
+            PLAYERS = normalizePlayersFromJson(data.players || []);
+            var meta = data.meta || {};
+            var enrichP =
+              window.NBALive && typeof window.NBALive.enrich === "function"
+                ? window.NBALive.enrich(PLAYERS, meta).catch(function () {})
+                : Promise.resolve();
+            return enrichP.then(function () {
+              renderAllInlineTrackers();
+            });
+          })
+          .catch(function () {
+            PLAYER_PAGES = {};
+            PLAYERS = [];
+          })
+          .finally(function () {
+            if (si) {
+              si.disabled = false;
+              si.placeholder = "Enter player name (e.g. Stephen Curry)";
+            }
+            if (!PLAYERS.length) {
+              var m0 = document.getElementById("all-trackers-mount");
+              if (m0) m0.innerHTML = "";
+            }
+            if (!PLAYERS.length && typeof showToast === "function") {
+              showToast("Could not load players.json");
+            }
+            done();
+          });
+      }
 
       function getPlayerById(id) {
         for (var i = 0; i < PLAYERS.length; i++) {
@@ -1230,6 +939,120 @@
         var list = findPlayers(query);
         if (list.length === 1) return list[0];
         return null;
+      }
+
+      function escapeHtml(str) {
+        return String(str)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
+      }
+
+      function fillPlayerMilestones(p, milestonesHost, upcomingUl) {
+        milestonesHost.innerHTML = "";
+        if (!p.milestones || !p.milestones.length) return;
+        var gradColors = p.teamGradient && p.teamGradient.length ? p.teamGradient : ["#f2b024", "#f2b024"];
+        p.milestones.forEach(function (m) {
+          var pct = Math.min(100, Math.round((m.current / m.target) * 1000) / 10);
+          var row = document.createElement("div");
+          row.className = "milestone";
+          var grad =
+            "linear-gradient(90deg, " + gradColors[0] + ", " + (gradColors[1] || "#f2b024") + ")";
+          row.innerHTML =
+            '<div class="milestone-top">' +
+            '<span class="milestone-name">' +
+            escapeHtml(m.name) +
+            "</span>" +
+            '<span class="milestone-nums"><strong>' +
+            m.current +
+            "</strong> / " +
+            m.target +
+            " · " +
+            pct +
+            "%</span></div>" +
+            '<div class="chasing">Chasing: ' +
+            escapeHtml(m.displayChasing || m.chasing) +
+            "</div>" +
+            '<div class="bar-track"><div class="bar-fill" data-pct="' +
+            pct +
+            '" style="background:' +
+            grad +
+            ';"></div></div>';
+          milestonesHost.appendChild(row);
+        });
+        upcomingUl.innerHTML = "";
+        (p.upcoming || []).forEach(function (line) {
+          var li = document.createElement("li");
+          li.textContent = line;
+          upcomingUl.appendChild(li);
+        });
+      }
+
+      function animateBarsIn(host) {
+        requestAnimationFrame(function () {
+          host.querySelectorAll(".bar-fill").forEach(function (bar) {
+            var pct = bar.getAttribute("data-pct");
+            bar.style.width = "0%";
+            requestAnimationFrame(function () {
+              bar.style.width = pct + "%";
+            });
+          });
+        });
+      }
+
+      function renderAllInlineTrackers() {
+        inlineTrackerIds = {};
+        var mount = document.getElementById("all-trackers-mount");
+        if (!mount) return;
+        mount.innerHTML = "";
+        PLAYERS.forEach(function (p) {
+          if (!p.milestones || !p.milestones.length) return;
+          if (PLAYER_PAGES[p.id]) return;
+          inlineTrackerIds[p.id] = true;
+          var art = document.createElement("article");
+          art.className = "tracker-panel";
+          art.id = "inline-tracker-" + p.id;
+
+          var header = document.createElement("div");
+          header.className = "card-header";
+          var img = document.createElement("img");
+          img.src = p.avatar || "";
+          img.width = 64;
+          img.height = 64;
+          img.alt = p.displayName || "";
+          var titleWrap = document.createElement("div");
+          var h2 = document.createElement("h2");
+          h2.textContent = p.displayName || p.id;
+          titleWrap.appendChild(h2);
+          header.appendChild(img);
+          header.appendChild(titleWrap);
+
+          var status = document.createElement("p");
+          status.className = "status-line";
+          status.textContent =
+            typeof p.statusTemplate === "function" ? p.statusTemplate(p) : p.statusTemplate || "";
+
+          var mc = document.createElement("div");
+          var upSec = document.createElement("section");
+          upSec.className = "upcoming";
+          var h3u = document.createElement("h3");
+          h3u.textContent = "Upcoming milestones";
+          var ulu = document.createElement("ul");
+          upSec.appendChild(h3u);
+          upSec.appendChild(ulu);
+
+          fillPlayerMilestones(p, mc, ulu);
+
+          art.appendChild(header);
+          art.appendChild(status);
+          art.appendChild(mc);
+          art.appendChild(upSec);
+          mount.appendChild(art);
+        });
+        requestAnimationFrame(function () {
+          animateBarsIn(mount);
+        });
       }
 
       var searchInput = document.getElementById("player-search");
@@ -1287,6 +1110,23 @@
           return;
         }
 
+        if (inlineTrackerIds[p.id]) {
+          currentPlayer = p;
+          listEl.classList.remove("visible");
+          searchInput.setAttribute("aria-expanded", "false");
+          notFound.classList.remove("visible");
+          card.classList.remove("visible");
+          document.querySelectorAll(".tracker-panel.is-focused").forEach(function (el) {
+            el.classList.remove("is-focused");
+          });
+          var panel = document.getElementById("inline-tracker-" + p.id);
+          if (panel) {
+            panel.classList.add("is-focused");
+            panel.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+          return;
+        }
+
         currentPlayer = p;
         listEl.classList.remove("visible");
         searchInput.setAttribute("aria-expanded", "false");
@@ -1298,63 +1138,14 @@
         cardName.textContent = p.displayName;
 
         var statusText =
-          typeof p.statusTemplate === "function" ? p.statusTemplate(p) : p.statusTemplate;
+          typeof p.statusTemplate === "function" ? p.statusTemplate(p) : p.statusTemplate || "";
         cardStatus.textContent = statusText;
 
-        milestonesContainer.innerHTML = "";
-        p.milestones.forEach(function (m) {
-          var pct = Math.min(100, Math.round((m.current / m.target) * 1000) / 10);
-          var row = document.createElement("div");
-          row.className = "milestone";
-          var grad =
-            "linear-gradient(90deg, " + p.teamGradient[0] + ", " + (p.teamGradient[1] || "#f5a623") + ")";
-          row.innerHTML =
-            '<div class="milestone-top">' +
-            '<span class="milestone-name">' +
-            escapeHtml(m.name) +
-            "</span>" +
-            '<span class="milestone-nums"><strong>' +
-            m.current +
-            "</strong> / " +
-            m.target +
-            " · " +
-            pct +
-            "%</span></div>" +
-            '<div class="chasing">Chasing: ' +
-            escapeHtml(m.displayChasing || m.chasing) +
-            "</div>" +
-            '<div class="bar-track"><div class="bar-fill" data-pct="' +
-            pct +
-            '" style="background:' +
-            grad +
-            ';"></div></div>';
-          milestonesContainer.appendChild(row);
-        });
-
-        upcomingList.innerHTML = "";
-        p.upcoming.forEach(function (line) {
-          var li = document.createElement("li");
-          li.textContent = line;
-          upcomingList.appendChild(li);
-        });
-
-        requestAnimationFrame(function () {
-          milestonesContainer.querySelectorAll(".bar-fill").forEach(function (bar) {
-            var pct = bar.getAttribute("data-pct");
-            bar.style.width = "0%";
-            requestAnimationFrame(function () {
-              bar.style.width = pct + "%";
-            });
-          });
-        });
-      }
-
-      function escapeHtml(str) {
-        return String(str)
-          .replace(/&/g, "&amp;")
-          .replace(/</g, "&lt;")
-          .replace(/>/g, "&gt;")
-          .replace(/"/g, "&quot;");
+        fillPlayerMilestones(p, milestonesContainer, upcomingList);
+        if (!p.milestones || !p.milestones.length) {
+          return;
+        }
+        animateBarsIn(milestonesContainer);
       }
 
       function tryCommitSearch() {
@@ -1383,6 +1174,9 @@
           listEl.classList.remove("visible");
           card.classList.remove("visible");
           currentPlayer = null;
+          document.querySelectorAll(".tracker-panel.is-focused").forEach(function (el) {
+            el.classList.remove("is-focused");
+          });
           return;
         }
         var matches = findPlayers(q);
@@ -1484,9 +1278,9 @@
           document.body.removeChild(ta);
         }
       }
+      loadPlayersThen(function () {});
     })();
   </script>
-  <script src="js/site-config.js" defer></script>
   <script src="js/giscus-loader.js" defer></script>
   <script src="js/visit-counter.js" defer></script>
 </body>
